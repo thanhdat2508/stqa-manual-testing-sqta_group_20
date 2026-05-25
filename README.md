@@ -27,6 +27,7 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 | 2   | 23BA14044 | Nguyễn Thành Đạt     | Thành viên  |
 | 3   | 23BA14045 | Hoàng Thành Đạt      | Thành viên  |
 | 4   | 23BA14043 | Nguyễn Cao Hoàng Đạt | Thành viên  |
+| 5   | 23BA14058 | Đỗ Hữu Đức           | Thành viên  |
 
 ---
 
