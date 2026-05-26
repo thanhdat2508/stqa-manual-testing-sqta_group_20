@@ -4,93 +4,53 @@
 > Xem [examples/sample-bug-report.md](../examples/sample-bug-report.md) để hiểu cách viết bug report tốt.
 > Mỗi bug cần: tiêu đề mô tả hành vi lỗi, bước tái hiện, expected vs actual, severity + giải thích.
 
-| Thông tin | |
-|---|---|
-| **Nhóm** | `<!-- Tên nhóm -->` |
-| **Ngày báo cáo** | `<!-- DD/MM/YYYY -->` |
+| Thông tin        |              |
+| ---------------- | ------------ |
+| **Nhóm**         | `Group 30`   |
+| **Ngày báo cáo** | `25/05/2026` |
 
 ---
 
 ## BUG-01
 
-| Thuộc tính | Chi tiết |
-|-----------|---------|
-| **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi**          | BUG-01             |
+| **TC liên quan**    | `TC-01`            |
+| **REQ liên quan**   | `REQ-01`           |
+| **Mức độ**          | `High`             |
+| **Người phát hiện** | `Nguyễn Thành Đạt` |
+| **Ngày phát hiện**  | `25/05/2026`       |
+| **Trạng thái**      | `Open`             |
 
 **Tiêu đề:**
-`<!-- Mô tả hành vi lỗi cụ thể -->`
+`Đăng nhập với email viết hoa không thành công`
 
 **Môi trường:**
-- Trình duyệt: Chrome `<!-- version -->`
-- Hệ điều hành: `<!-- OS -->`
+
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `MacOS`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`<!-- VD: Trang đăng nhập đã mở, dữ liệu đã reset -->`
+`Khi vào trang và bắt đầu đăng nhập với email được viết hoa`
 
 **Bước tái hiện:**
-1. `<!-- Bước 1 -->`
-2. `<!-- Bước 2 -->`
-3. `<!-- Bước 3 -->`
+
+1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
+2. `Bước 2: Nhập mật khẩu`
 
 **Kết quả mong đợi:**
-`<!-- Kết quả đúng theo SRS -->`
+`Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
 
 **Kết quả thực tế:**
-`<!-- Kết quả hệ thống thật sự trả về -->`
+`Lỗi đăng nhập khi viết hoa email đăng nhập`
 
 **Tác động:**
-`<!-- VD: Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
+`Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
 
 **Minh chứng:**
-`<!-- Đính kèm ảnh chụp màn hình nếu có -->`
+![BUG-01](/submisions/images/BUG-01.png)
 
 **Đề xuất xử lý:**
-`<!-- Gợi ý cách sửa lỗi nếu có -->` 
-
----
-
-## BUG-02
-
-| Thuộc tính | Chi tiết |
-|-----------|---------|
-| **Mã lỗi** | BUG-02 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
-
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi -->`
-
-**Bước tái hiện:**
-1. `<!-- -->`
-2. `<!-- -->`
-3. `<!-- -->`
-
-**Kết quả mong đợi:**
-`<!-- -->`
-
-**Kết quả thực tế:**
-`<!-- -->`
-
-**Tác động:**
-`<!-- -->`
-
-**Minh chứng:**
-`<!-- -->`
-
-**Đề xuất xử lý:**
-`<!-- -->`
-
----
-
-<!-- Copy template BUG trên để thêm BUG-03, BUG-04, ... cho mỗi TC Fail -->
+`Thêm function toLowerCase() trước khi đưa server xử lý`
