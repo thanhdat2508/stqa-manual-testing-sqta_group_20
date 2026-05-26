@@ -11,46 +11,50 @@
 
 ---
 
-## BUG-01
+## BUG-08
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi**          | BUG-01             |
-| **TC liên quan**    | `TC-01`            |
-| **REQ liên quan**   | `REQ-01`           |
-| **Mức độ**          | `High`             |
-| **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`       |
-| **Trạng thái**      | `Open`             |
+| Thuộc tính          | Chi tiết               |
+| ------------------- | ---------------------- |
+| **Mã lỗi**          | BUG-08                 |
+| **TC liên quan**    | `TC-08`                |
+| **REQ liên quan**   | `REQ-05`               |
+| **Mức độ**          | `High`                 |
+| **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
+| **Ngày phát hiện**  | `25/05/2026`           |
+| **Trạng thái**      | `Open`                 |
 
 **Tiêu đề:**
-`Đăng nhập với email viết hoa không thành công`
+`Không hiển thị cảnh báo trả sách quá hạn khi trả quá hạn`
 
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt - Tiếng Anh
 
 **Điều kiện tiên quyết:**
-`Khi vào trang và bắt đầu đăng nhập với email được viết hoa`
+`Đã đăng nhập tài khoản thành công, đang có ít nhất 1 cuốn sách quá hạn trả trong danh sách mượn`
 
 **Bước tái hiện:**
 
-1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
-2. `Bước 2: Nhập mật khẩu`
+1. `Bước 1: Đăng nhập tài khoản thành công`
+2. `Bước 2: Vào mục "Sách đang mượn"`
+3. `Bước 3: Xác nhận có sách đã quá ngày hạn trả. Bấm "Trả sách" trên cuốn sách quá hạn đó`
+4. `Bước 4: Xác nhận trả sách`
 
 **Kết quả mong đợi:**
-`Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
+`Sau khi trả, hệ thống phải hiển thị thông báo cảnh báo kiểu "Sách đã quá hạn X ngày, bạn có thể bị phạt phí" để người dùng biết`
 
 **Kết quả thực tế:**
-`Lỗi đăng nhập khi viết hoa email đăng nhập`
+`Hệ thống xử lý trả sách bình thường, không hiển thị bất kỳ cảnh báo hay thông báo phí phạt nào`
 
 **Tác động:**
-`Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
+`Người dùng không biết mình bị phạt, gây bất ngờ và khiếu nại. Thủ thư không có cơ sở thông báo phí phạt vì hệ thống không ghi nhận. Ảnh hưởng đến tính minh bạch của hệ thống thư viện`
 
 **Minh chứng:**
-![BUG-01](/submisions/images/BUG-01.png)
+![BUG-08](/submisions/images/BUG-08.png)
 
 **Đề xuất xử lý:**
-`Thêm function toLowerCase() trước khi đưa server xử lý`
+`Thêm popup cảnh báo trước khi xác nhận trả sách quá hạn, hiển thị số ngày trễ và mức phí phạt tương ứng`
+`Backend cần tính toán và trả về thông tin phí phạt kèm theo response khi trả sách quá hạn`
+`Lưu lại lịch sử phạt vào database để thủ thư tra cứu`
