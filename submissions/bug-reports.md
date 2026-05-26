@@ -54,3 +54,47 @@
 
 **Đề xuất xử lý:**
 `Thêm function toLowerCase() trước khi đưa server xử lý`
+
+## BUG-06
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi**          | BUG-06           |
+| **TC liên quan**    | `TC-01`            |
+| **REQ liên quan**   | `REQ-06`           |
+| **Mức độ**          | `High`             |
+| **Người phát hiện** | `Bùi Mạnh Hiếu` |
+| **Ngày phát hiện**  | `25/05/2026`       |
+| **Trạng thái**      | `Open`             |
+
+**Tiêu đề:**
+`Lỗi popup thông báo về trạng thái tài khoản, tài khoảng "Tạm ngưng" nhưng báo bị "Hết Hạn"`
+
+**Môi trường:**
+
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Đăng nhập và sử dụng tài khoản trạng thái "Tạm ngưng"`
+
+**Bước tái hiện:**
+
+1. `Bước 1: Đăng nhập vào tài khoản có trạng thái "Tạm ngưng" `
+2. `Bước 2: Mượn sách`
+
+**Kết quả mong đợi:**
+`Mong đợi hệ thống thông báo popup sẽ hiện cảnh báo riêng cho từng loại tài khoản`
+
+**Kết quả thực tế:**
+`Thông báo lỗi sai trạng thái tài khoản`
+
+**Tác động:**
+`Gây hiểu nhầm về trạng thái thành viên, không đồng nhất trạng thái `
+
+**Minh chứng:**
+![BUG-06](/submisions/images/BUG-06.png)
+
+**Đề xuất xử lý:**
+`Thêm function toLowerCase() trước khi đưa server xử lý`
