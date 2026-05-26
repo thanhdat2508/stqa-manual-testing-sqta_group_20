@@ -11,46 +11,47 @@
 
 ---
 
-## BUG-01
+## BUG-02
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi**          | BUG-01             |
-| **TC liên quan**    | `TC-01`            |
-| **REQ liên quan**   | `REQ-01`           |
-| **Mức độ**          | `High`             |
-| **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`       |
-| **Trạng thái**      | `Open`             |
+| Thuộc tính | Chi tiết |
+|-----------|---------|
+| **Mã lỗi** | BUG-02|
+| **TC liên quan** | `<!-- TC-xx -->` |
+| **REQ liên quan** | `<!-- REQ-04 -->` |
+| **Mức độ** | `<!-- High -->` |
+| **Người phát hiện** | `<!-- Nguyen Cao Hoang Dat -->`|
+| **Ngày phát hiện** | `<!-- 25/05/2026-->` |
+| **Trạng thái** | `<!-- Open -->` |
 
 **Tiêu đề:**
-`Đăng nhập với email viết hoa không thành công`
+`<!-- Mượn quá số sách cho phép  -->`
 
 **Môi trường:**
-
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
+- Trình duyệt: Chrome `<!-- Version 148.0.7778.179 -->`
+- Hệ điều hành: `<!-- Window -->`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`Khi vào trang và bắt đầu đăng nhập với email được viết hoa`
+`<!-- Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở trạng thái đã mượn đúng 3 sách (đạt giới hạn tối đa cho phép), dữ liệu chưa reset. -->`
 
 **Bước tái hiện:**
-
-1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
-2. `Bước 2: Nhập mật khẩu`
+1. `<!-- Đăng nhập tài khoàn thành công -->`
+2. `<!-- Mượn lần lượt 3 cuốn sách bất kỳ còn trong kho -->`
+3. `<!-- Tìm thêm 1 cuốn sách bất kỳ còn trong kho, bấm "Mượn sách" trên cuốn thứ 4 -->`
 
 **Kết quả mong đợi:**
-`Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
+`<!-- Đã đạt giới hạn mượn sách tối đa (3 sách) -->`
 
 **Kết quả thực tế:**
-`Lỗi đăng nhập khi viết hoa email đăng nhập`
+`<!-- Hệ thống vẫn cho phép mượn cuốn thứ 4, không có thông báo chặn nào xuất hiện. -->`
 
 **Tác động:**
-`Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
+`<!--  Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
 
 **Minh chứng:**
-![BUG-01](/submisions/images/BUG-01.png)
+![BUG-02](./images/BUG-02.png)
 
 **Đề xuất xử lý:**
-`Thêm function toLowerCase() trước khi đưa server xử lý`
+`<!-- Kiểm tra số sách đang mượn hiện tại của người dùng trước khi hiển thị nút "Mượn sách". Nếu đã đạt 3 cuốn → vô hiệu hóa nút hoặc ẩn nút "Mượn sách" -->` 
+
+---
