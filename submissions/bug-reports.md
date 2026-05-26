@@ -105,7 +105,7 @@
 ## BUG-03
 
 | Thuộc tính          | Chi tiết               |
-| ------------------- | ------------------ |
+| ------------------- | ---------------------- |
 | **Mã lỗi** | `BUG-03`               |
 | **TC liên quan** | `TC-03`                |
 | **REQ liên quan** | `REQ-04`               |
@@ -235,3 +235,48 @@
 
 **Đề xuất xử lý:**
 `Kiểm tra chính xác enum hoặc chuỗi điều kiện trạng thái tài khoản trả về từ API trước khi hiển thị text trên popup thông báo, tránh hardcode chung một câu thông báo lỗi.`
+
+---
+
+## BUG-07
+
+| Thuộc tính          | Chi tiết                |
+| ------------------- | ----------------------- |
+| **Mã lỗi** | `BUG-07`                |
+| **TC liên quan** | `TC-xx`                 |
+| **REQ liên quan** | `REQ-05`                 |
+| **Mức độ** | `High`                  |
+| **Người phát hiện** | `Đỗ Hữu Đức`            |
+| **Ngày phát hiện** | `25/05/2026`            |
+| **Trạng thái** | `Open`                  |
+
+**Tiêu đề:**
+`Các thành viên có thể tự do tra cứu mã của nhau`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: `Tiếng Việt & Tiếng Anh`
+
+**Điều kiện tiên quyết:**
+`Tài khoản thành viên đã đăng nhập vào hệ thống và hệ thống đang kích hoạt chức năng quản lý mã mượn sách/mã thành viên.`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập vào hệ thống bằng tài khoản thành viên (VD: biet.hoang@email.com)`
+2. `Bước 2: Truy cập vào chức năng tra cứu hoặc tìm kiếm thông tin thành viên/mã mượn sách`
+3. `Bước 3: Thực hiện tìm kiếm thông tin hoặc mã của thành viên khác (VD: Nhập mã MEM002 của tài khoản ba.nguyen@email.com)`
+
+**Kết quả mong đợi:**
+`Thành viên chỉ được phép xem phiếu mượn của chính mình và hoàn toàn KHÔNG được quyền xem phiếu mượn của thành viên khác.`
+
+**Kết quả thực tế:**
+`Hệ thống không chặn quyền, cho phép các thành viên dễ dàng tra cứu thông tin và mã mượn sách của nhau.`
+
+**Tác động:**
+`Gây rủi ro nghiêm trọng về bảo mật thông tin tài khoản, vi phạm quy tắc định danh cá nhân và rò rỉ dữ liệu người dùng.`
+
+**Minh chứng:**
+![BUG-07](./images/BUG-07.png)
+
+**Đề xuất xử lý:**
+`Thực hiện phân quyền nghiêm ngặt ở cả Client-side (ẩn ô tìm kiếm của user khác) lẫn Server-side (kiểm tra session/token, nếu ID yêu cầu tra cứu không trùng với ID đăng nhập và không phải role Thủ thư/Admin thì lập tức từ chối request).`
