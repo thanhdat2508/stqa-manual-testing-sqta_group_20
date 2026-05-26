@@ -11,20 +11,20 @@
 
 ---
 
-## BUG-01
+## BUG-04
 
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
-| **Mã lỗi**          | BUG-01             |
+| **Mã lỗi**          | `BUG-04`           |
 | **TC liên quan**    | `TC-01`            |
-| **REQ liên quan**   | `REQ-01`           |
-| **Mức độ**          | `High`             |
+| **REQ liên quan**   | `REQ-03`           |
+| **Mức độ**          | `Cao`              |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`       |
+| **Ngày phát hiện**  | `26/05/2026`       |
 | **Trạng thái**      | `Open`             |
 
 **Tiêu đề:**
-`Đăng nhập với email viết hoa không thành công`
+`Filter bị phân biệt chữ hoa và chữ thường`
 
 **Môi trường:**
 
@@ -33,24 +33,24 @@
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`Khi vào trang và bắt đầu đăng nhập với email được viết hoa`
+`Đăng nhập vào hệ thống thành công và vào được trang ```Sách``` `
 
 **Bước tái hiện:**
 
-1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
-2. `Bước 2: Nhập mật khẩu`
+1. `Bước 1: Đăng nhập vào hệ thống ( Bất kỳ tài khoản nào )`
+2. `Bước 2: Tìm kiếm theo filter không in hoa`
 
 **Kết quả mong đợi:**
-`Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
+`Mong đợi ra được kết quả các sách có cùng thể loại dù lọc theo thể loại in hoa hay không in hoa`
 
 **Kết quả thực tế:**
-`Lỗi đăng nhập khi viết hoa email đăng nhập`
+`Không ra kết quả danh sách sách với thể loại được lọc`
 
 **Tác động:**
-`Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
+`Gây ảnh hưởng đến việc tìm kiếm sản phẩm`
 
 **Minh chứng:**
-![BUG-01](/submisions/images/BUG-01.png)
+![BUG-04](./images/BUG-04.png)
 
 **Đề xuất xử lý:**
-`Thêm function toLowerCase() trước khi đưa server xử lý`
+`Lấy filter từ user sau đó sử dụng function toLowerCase() để chuyển thành dạng viết thường. Sau đó mới đưa có function logic xử lý`
