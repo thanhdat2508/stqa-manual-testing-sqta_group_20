@@ -141,7 +141,7 @@
 `Trải nghiệm người dùng không nhất quán — giao diện hiển thị đúng ngôn ngữ nhưng thông báo lỗi thì không, gây khó hiểu cho người dùng không đọc được tiếng Việt`
 
 **Minh chứng:**
-![BUG-03](/submisions/images/BUG-03.png)
+![BUG-03](./images/BUG-03.png)
 
 **Đề xuất xử lý:**
 `Các chuỗi text trong popup đỏ cần được đưa vào file localization. Đảm bảo tất cả thông báo lỗi đều tuân theo ngôn ngữ đang được chọn — không hardcode tiếng Việt`
