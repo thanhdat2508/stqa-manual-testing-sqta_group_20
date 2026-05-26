@@ -11,46 +11,53 @@
 
 ---
 
-## BUG-01
+## BUG-07
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi**          | BUG-01             |
-| **TC liên quan**    | `TC-01`            |
-| **REQ liên quan**   | `REQ-01`           |
-| **Mức độ**          | `High`             |
-| **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`       |
-| **Trạng thái**      | `Open`             |
+
+| Thuộc tính | Chi tiết |
+|-----------|---------|
+| **Mã lỗi** | BUG-07 |
+| **TC liên quan** | `<!-- TC-xx -->` |
+| **REQ liên quan** | `<!-- REQ-05 -->` |
+| **Mức độ** | `<!-- High -->` |
+| **Người phát hiện** | `<!-- Đỗ Hữu Đức -->` |
+| **Ngày phát hiện** | `<!-- 25/05/2026 -->` |
+| **Trạng thái** | `<!-- Open -->` |
 
 **Tiêu đề:**
-`Đăng nhập với email viết hoa không thành công`
+
+`<!-- Các thành viên có thể tra cứu mã của nhau. -->`
 
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: `Tiếng Việt & Tiếng Anh`
 
 **Điều kiện tiên quyết:**
-`Khi vào trang và bắt đầu đăng nhập với email được viết hoa`
+
+`<!-- Tài khoản thành viên đã đăng nhập vào hệ thống. -->`
+`<!-- Hệ thống có chức năng quản lý mã mượn sách/mã thành viên.. -->`
 
 **Bước tái hiện:**
 
-1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
-2. `Bước 2: Nhập mật khẩu`
+1. `<!-- Đăng nhập vào hệ thống bằng tài khoản thành viên VD:biet.hoang@email.com . -->`
+2. `<!-- Truy cập vào chức năng tra cứu hoặc tìm kiếm thông tin thành viên/mã mượn sách. -->`
+3. `<!-- Thực hiện tìm kiếm thông tin hoặc mã của thành viên B VD: Nhập mã MEM002 của tài khoản ba.nguyen@email.com. -->`
 
 **Kết quả mong đợi:**
-`Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
+`<!-- Chỉ xem phiếu mượn của chính mình. KHÔNG được xem phiếu mượn của thành viên khác -->`
 
 **Kết quả thực tế:**
-`Lỗi đăng nhập khi viết hoa email đăng nhập`
+`<!-- Hệ thống cho phép các thành viên dễ dàng tra cứu mã của nhau. -->`
 
 **Tác động:**
-`Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
+`<!-- Gây rủi ro bảo mật thông tin tài khoản, vi phạm quy tắc định danh cá nhân -->`
 
 **Minh chứng:**
-![BUG-01](/submisions/images/BUG-01.png)
+`<!-- ![BUG-07](./images/BUG-07.png) -->`
 
 **Đề xuất xử lý:**
-`Thêm function toLowerCase() trước khi đưa server xử lý`
+`<!-- Phân quyền lại chức năng tra cứu mã thành viên (chỉ dành cho Thủ thư/Admin) -->` 
+
+---
