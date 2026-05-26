@@ -105,7 +105,7 @@
 ## BUG-03
 
 | Thuộc tính          | Chi tiết               |
-| ------------------- | ---------------------- |
+| ------------------- | ------------------ |
 | **Mã lỗi** | `BUG-03`               |
 | **TC liên quan** | `TC-03`                |
 | **REQ liên quan** | `REQ-04`               |
@@ -190,3 +190,48 @@
 
 **Đề xuất xử lý:**
 `Lấy filter từ user sau đó sử dụng function toLowerCase() để chuyển thành dạng viết thường. Sau đó mới đưa có function logic xử lý`
+
+---
+
+## BUG-05
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi** | `BUG-05`           |
+| **TC liên quan** | `TC-01`            |
+| **REQ liên quan** | `REQ-06`           |
+| **Mức độ** | `High`             |
+| **Người phát hiện** | `Bùi Mạnh Hiếu`    |
+| **Ngày phát hiện** | `25/05/2026`       |
+| **Trạng thái** | `Open`             |
+
+**Tiêu đề:**
+`Lỗi popup thông báo về trạng thái tài khoản, tài khoảng "Tạm ngưng" nhưng báo bị "Hết Hạn"`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Đăng nhập và sử dụng tài khoản trạng thái "Tạm ngưng"`
+
+**Bước tái hiện:**
+
+1. `Bước 1: Đăng nhập vào tài khoản có trạng thái "Tạm ngưng"`
+2. `Bước 2: Mượn sách`
+
+**Kết quả mong đợi:**
+`Mong đợi hệ thống thông báo popup sẽ hiện cảnh báo riêng cho từng loại tài khoản`
+
+**Kết quả thực tế:**
+`Thông báo lỗi sai trạng thái tài khoản`
+
+**Tác động:**
+`Gây hiểu nhầm về trạng thái thành viên, không đồng nhất trạng thái`
+
+**Minh chứng:**
+![BUG-05](/submisions/images/BUG-05.png)
+
+**Đề xuất xử lý:**
+`Kiểm tra chính xác enum hoặc chuỗi điều kiện trạng thái tài khoản trả về từ API trước khi hiển thị text trên popup thông báo, tránh hardcode chung một câu thông báo lỗi.`
