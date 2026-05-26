@@ -15,7 +15,7 @@
 
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
-| **Mã lỗi**          | BUG-01             |
+| **Mã lỗi**          | `BUG-01 `          |
 | **TC liên quan**    | `TC-01`            |
 | **REQ liên quan**   | `REQ-01`           |
 | **Mức độ**          | `High`             |
@@ -33,12 +33,13 @@
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`Khi vào trang và bắt đầu đăng nhập với email được viết hoa`
+`Đã tồn tại tài khoản trên hệ thống`
 
 **Bước tái hiện:**
 
 1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
 2. `Bước 2: Nhập mật khẩu`
+3. `Bước 3: Nhấn đăng nhập`
 
 **Kết quả mong đợi:**
 `Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
@@ -50,7 +51,7 @@
 `Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
 
 **Minh chứng:**
-![BUG-01](/submisions/images/BUG-01.png)
+![BUG-01](./images/BUG-01.png)
 
 **Đề xuất xử lý:**
-`Thêm function toLowerCase() trước khi đưa server xử lý`
+`Thêm function toLowerCase() để biến hết tất cả email được truyền từ user sang kiểu lowercase, sau đó mới đưa cho logic đăng nhập xử lý`
