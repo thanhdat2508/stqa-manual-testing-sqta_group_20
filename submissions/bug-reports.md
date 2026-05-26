@@ -270,7 +270,7 @@
 `Thành viên chỉ được phép xem phiếu mượn của chính mình và hoàn toàn KHÔNG được quyền xem phiếu mượn của thành viên khác.`
 
 **Kết quả thực tế:**
-`Hệ thống không chặn quyền, cho phép các thành viên dễ dàng tra cứu thông tin và mã mượn sách của nhau.`
+`Hệ thống không chặn quyền, cho phép các thành viên dễ dàng tra cứu thông tin và mã mượn sách of nhau.`
 
 **Tác động:**
 `Gây rủi ro nghiêm trọng về bảo mật thông tin tài khoản, vi phạm quy tắc định danh cá nhân và rò rỉ dữ liệu người dùng.`
@@ -326,6 +326,50 @@
 
 **Đề xuất xử lý:**
 `Thêm popup cảnh báo trước khi xác nhận trả sách quá hạn, hiển thị số ngày trễ và mức phí phạt tương ứng. Đồng thời Backend cần tính toán và trả về thông tin phí phạt kèm theo response khi trả sách quá hạn và lưu lại lịch sử phạt vào database để thủ thư tra cứu.`
+
+---
+
+## BUG-11
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi** | `BUG-11`           |
+| **TC liên quan** | `TC-01`            |
+| **REQ liên quan** | `REQ-04`           |
+| **Mức độ** | `High`             |
+| **Người phát hiện** | `Bùi Mạnh Hiếu`    |
+| **Ngày phát hiện** | `25/05/2026`       |
+| **Trạng thái** | `Open`             |
+
+**Tiêu đề:**
+`Lỗi trắng trang web + mất dữ liệu khi spam nhiều lần mục mượn sách`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window 10`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Đăng nhập được vào tài khoản và tương tác với trang web`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập tài khoản khả dụng`
+2. `Bước 2: Spam nhiều lần nút Mượn sau khi ấn vào ô dấu cộng`
+
+**Kết quả mong đợi:**
+`Hệ thống cần ngăn người dùng spam liên tiếp nhằm phòng tránh các lỗi phát sinh từ máy chủ hoặc làm mất tính đồng bộ dữ liệu.`
+
+**Kết quả thực tế:**
+`Người dùng vẫn spam click được liên tục dẫn đến xung đột request gây lỗi trắng trang và mất dữ liệu hiển thị.`
+
+**Tác động:**
+`Gây quá tải cục bộ cho server nhận request và làm hỏng trải nghiệm cốt lõi của người dùng.`
+
+**Minh chứng:**
+![BUG-11](/submisions/images/BUG-11.png)
+
+**Đề xuất xử lý:**
+`Thêm thuộc tính disabled cho button mượn sách ngay sau lượt click đầu tiên để tránh người dùng tiếp tục spam request trong lúc server đang xử lý dữ liệu.`
 
 ---
 
