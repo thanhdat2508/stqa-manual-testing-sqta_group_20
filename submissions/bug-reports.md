@@ -54,3 +54,48 @@
 
 **Đề xuất xử lý:**
 `Thêm function toLowerCase() trước khi đưa server xử lý`
+
+## BUG-11
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi**          | BUG-11           |
+| **TC liên quan**    | `TC-01`            |
+| **REQ liên quan**   | `REQ-04`           |
+| **Mức độ**          | `High`             |
+| **Người phát hiện** | `Bùi Mạnh Hiếu` |
+| **Ngày phát hiện**  | `25/05/2026`       |
+| **Trạng thái**      | `Open`             |
+
+**Tiêu đề:**
+`Lỗi trắng trang web + mất dữ liệu khi spam nhiều lần mục mượn sách`
+
+**Môi trường:**
+
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window 10`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Đăng nhập được vào tài khoản và tương tác với trang web`
+
+**Bước tái hiện:**
+
+1. `Bước 1: Đăng nhập tài khoản khả dụng`
+2. `Bước 2: Spam nhiều lần nút Mượn sau khi ấn vào ô dấu cộng`
+
+**Kết quả mong đợi:**
+`Mong đợi ngăn người dùng spam để tránh lỗi server và mất dữ liệu `
+
+**Kết quả thực tế:**
+`Người dùng vẫn spam được gây lỗi và mất dữ liệu`
+
+**Tác động:**
+`Gây ảnh hưởng tới server và giảm trải nghiệm người dùng `
+
+**Minh chứng:**
+![BUG-01](/submisions/images/BUG-01.png)
+
+**Đề xuất xử lý:**
+`thêm disable button để tránh người dùng tiếp tục spam sau khi ấn và không ảnh hưởng tới server dữ liệu`
+
