@@ -231,7 +231,7 @@
 `Gây hiểu nhầm về trạng thái thành viên, không đồng nhất trạng thái`
 
 **Minh chứng:**
-![BUG-05](/submisions/images/BUG-05.png)
+![BUG-05](./images/BUG-05.png)
 
 **Đề xuất xử lý:**
 `Kiểm tra chính xác enum hoặc chuỗi điều kiện trạng thái tài khoản trả về từ API trước khi hiển thị text trên popup thông báo, tránh hardcode chung một câu thông báo lỗi.`
