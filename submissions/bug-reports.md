@@ -111,7 +111,7 @@
 | **REQ liên quan** | `REQ-04`               |
 | **Mức độ** | `Medium`               |
 | **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
-| **Ngày phát hiện** | `25/05/2026`           |
+| **Ngày phát hiện** | `25/05/2026`       |
 | **Trạng thái** | `Open`                 |
 
 **Tiêu đề:**
@@ -203,7 +203,7 @@
 | **Mức độ** | `High`             |
 | **Người phát hiện** | `Bùi Mạnh Hiếu`    |
 | **Ngày phát hiện** | `25/05/2026`       |
-| **Trạng thái** | `Open`             |
+| Trạng thái          | `Open`             |
 
 **Tiêu đề:**
 `Lỗi popup thông báo về trạng thái tài khoản, tài khoảng "Tạm ngưng" nhưng báo bị "Hết Hạn"`
@@ -370,6 +370,51 @@
 
 **Đề xuất xử lý:**
 `Thêm thuộc tính disabled cho button mượn sách ngay sau lượt click đầu tiên để tránh người dùng tiếp tục spam request trong lúc server đang xử lý dữ liệu.`
+
+---
+
+## BUG-12
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi** | `BUG-12`           |
+| **TC liên quan** | `TC-01`            |
+| **REQ liên quan** | `REQ-05`           |
+| **Mức độ** | `Medium`           |
+| **Người phát hiện** | `Đỗ Hữu Đức`       |
+| **Ngày phát hiện** | `25/05/2026`       |
+| **Trạng thái** | `Open`             |
+
+**Tiêu đề:**
+`Người dùng có thể tự ý trả sách mà không cần thủ thư xác nhận`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt & Tiếng Anh
+
+**Điều kiện tiên quyết:**
+`Thành viên đang có sách trong trạng thái "Đang mượn".`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập vào tài khoản thành viên.`
+2. `Bước 2: Truy cập vào mục quản lý sách đang mượn hoặc lịch sử mượn trả`
+3. `Bước 3: Nhấn vào nút hoặc thực hiện hành động "Trả sách" từ phía giao diện người dùng.`
+
+**Kết quả mong đợi:**
+`Hành động trả sách từ phía người dùng chỉ là gửi "Yêu cầu trả sách". Sách chỉ được tính là đã trả sau khi Thủ thư tiếp nhận, kiểm tra tình trạng sách vật lý và xác nhận trên hệ thống.`
+
+**Kết quả thực tế:**
+`Hệ thống cho phép người dùng tự ý bấm trả sách và trạng thái chuyển thành đã trả thành công mà không cần qua bước kiểm tra, xác nhận của thủ thư.`
+
+**Tác động:**
+`Sai lệch dữ liệu kho sách vật lý và hệ thống. Thành viên có thể gian lận bằng cách bấm trả trên hệ thống nhưng không trả sách thật, gây thất thoát tài sản của thư viện.`
+
+**Minh chứng:**
+![BUG-12](./images/BUG-12.png)
+
+**Đề xuất xử lý:**
+`Chuyển luồng xử lý: Khi user bấm trả sách, trạng thái chuyển thành "Chờ thủ thư xác nhận". Chỉ tài khoản có quyền Thủ thư mới có quyền phê duyệt hoàn thành quy trình trả sách.`
 
 ---
 
