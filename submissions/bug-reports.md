@@ -11,46 +11,48 @@
 
 ---
 
-## BUG-01
+## BUG-15
 
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
-| **Mã lỗi**          | BUG-01             |
+| **Mã lỗi**          | BUG-15             |
 | **TC liên quan**    | `TC-01`            |
-| **REQ liên quan**   | `REQ-01`           |
+| **REQ liên quan**   | `REQ-05`           |
 | **Mức độ**          | `High`             |
-| **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`       |
+| **Người phát hiện** | `Đỗ Hữu Đức` |
+| **Ngày phát hiện**  | `26/05/2026`       |
 | **Trạng thái**      | `Open`             |
 
 **Tiêu đề:**
-`Đăng nhập với email viết hoa không thành công`
+`Cho phép thành viên tự ý gia hạn sách của người khác.`
 
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt & Tiếng Anh
 
 **Điều kiện tiên quyết:**
-`Khi vào trang và bắt đầu đăng nhập với email được viết hoa`
+`Tài khoản thành viên đã đăng nhập vào hệ thống.`
+`Có một thành viên khác (Thành viên B) đang mượn sách và lộ mã mượn hoặc ID lượt mượn.`
 
 **Bước tái hiện:**
 
-1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
-2. `Bước 2: Nhập mật khẩu`
+1. `Bước 1: Đăng nhập vào hệ thống bằng tài khoản của thành viên A.`
+2. `Bước 2: Truy cập vào mục Mượn/Trả (Tra cứu phiếu mượn) và nhập mã của thành viên B.`
+3. `Bước 2: Tiến hành trả sách.`
 
 **Kết quả mong đợi:**
-`Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
+`Hệ thống phải chặn hành động này lại và báo lỗi phân quyền. Chỉ chính chủ tài khoản đang mượn sách (hoặc Thủ thư) mới có quyền gửi yêu cầu hoặc thực hiện thao tác trả sách đó.`
 
 **Kết quả thực tế:**
-`Lỗi đăng nhập khi viết hoa email đăng nhập`
+`Hệ thống cho phép thành viên A tự ý bấm trả sách (hoặc gửi lệnh trả sách thành công) cho các cuốn sách mà thành viên B đang mượn.`
 
 **Tác động:**
-`Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
+`Phá hoại dữ liệu mượn trả của người khác. Gây lỗi logic nghiêm trọng trong quản lý quy trình mượn sách, khiến thành viên B bị mất sách trên thực tế nhưng trên hệ thống lại ghi nhận là đã trả, gây tranh chấp và khó khăn cho thủ thư khi đối chiếu kho.`
 
 **Minh chứng:**
-![BUG-01](/submisions/images/BUG-01.png)
+![BUG-15](/submisions/images/BUG-15.png)
 
 **Đề xuất xử lý:**
-`Thêm function toLowerCase() trước khi đưa server xử lý`
+`Bổ sung kiểm tra quyền sở hữu ở Backend đối với API xử lý trả sách: Đảm bảo CurrentUserID của session đăng nhập phải trùng khớp với UserID của người đang mượn cuốn sách đó, nếu không phải trả về lỗi.`
