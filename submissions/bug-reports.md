@@ -111,7 +111,7 @@
 | **REQ liên quan** | `REQ-04`               |
 | **Mức độ** | `Medium`               |
 | **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
-| **Ngày phát hiện** | `25/05/2026`       |
+| **Ngày phát hiện** | `25/05/2026`           |
 | **Trạng thái** | `Open`                 |
 
 **Tiêu đề:**
@@ -203,7 +203,7 @@
 | **Mức độ** | `High`             |
 | **Người phát hiện** | `Bùi Mạnh Hiếu`    |
 | **Ngày phát hiện** | `25/05/2026`       |
-| Trạng thái          | `Open`             |
+| **Trạng thái** | `Open`             |
 
 **Tiêu đề:**
 `Lỗi popup thông báo về trạng thái tài khoản, tài khoảng "Tạm ngưng" nhưng báo bị "Hết Hạn"`
@@ -214,7 +214,7 @@
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`Đăng nhập và sử dụng tài khoản trạng thái "Tạm ngưng"`
+`Đã đăng nhập và sử dụng tài khoản trạng thái "Tạm ngưng"`
 
 **Bước tái hiện:**
 
@@ -461,6 +461,51 @@
 
 **Đề xuất xử lý:**
 `Khi đang xử lý yêu cầu, nút bấm hiển thị cần được chuyển sang trạng thái disabled (hoặc thêm hiệu ứng loading spinner) để chặn các tương tác tiếp theo từ phía client cho đến khi nhận được response từ server.`
+
+---
+
+## BUG-14
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi** | `BUG-14`           |
+| **TC liên quan** | `TC-01`            |
+| **REQ liên quan** | `REQ-07`           |
+| **Mức độ** | `Medium`           |
+| **Người phát hiện** | `Bùi Mạnh Hiếu`    |
+| **Ngày phát hiện** | `25/05/2026`       |
+| **Trạng thái** | `Open`             |
+
+**Tiêu đề:**
+`Nhập email đã tồn tại nhưng lại báo "Email không hợp lệ" thay vì báo "Email đã tồn tại"`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Windows 10`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Đăng nhập được vào tài khoản thủ thư`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập tài khoản thủ thư`
+2. `Bước 2: Thêm thành viên`
+3. `Bước 3: Nhập vào 1 email đã tồn tại`
+
+**Kết quả mong đợi:**
+`Hệ thống trả về thông báo lỗi phân biệt rõ ràng: "Email này đã được đăng ký trên hệ thống" để người vận hành nắm rõ lý do.`
+
+**Kết quả thực tế:**
+`Hệ thống hiển thị một thông báo chung chung là "Email không hợp lệ", dễ gây lầm tưởng rằng định dạng cấu trúc chuỗi email bị sai.`
+
+**Tác động:**
+`Gây cản trở và nhầm lẫn cho thủ thư trong quá trình quản lý, tạo mới hồ sơ thành viên.`
+
+**Minh chứng:**
+![BUG-14](/submisions/images/BUG-14.png)
+
+**Đề xuất xử lý:**
+`Cập nhật lại logic validate ở cả Client-side và Server-side. Khi nhận mã lỗi trùng lặp cơ sở dữ liệu (ví dụ: lỗi Unique Constraint từ cơ sở dữ liệu), hệ thống cần map đúng thông báo tương ứng thay vì gộp chung vào validation định dạng.`
 
 ---
 
