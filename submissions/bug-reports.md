@@ -313,7 +313,7 @@
 4. `Bước 4: Xác nhận trả sách`
 
 **Kết quả mong đợi:**
-`Sau khi trả, hệ thống phải hiển thị thông báo cảnh báo kiểu "Sách đã quá hạn X ngày, bạn có thể bị phạt phí" để người dùng biết`
+`After returning, the system must display a warning notification like "Book is overdue by X days, you may be fined" so users are aware`
 
 **Kết quả thực tế:**
 `Hệ thống xử lý trả sách bình thường, không hiển thị bất kỳ cảnh báo hay thông báo phí phạt nào`
@@ -326,3 +326,49 @@
 
 **Đề xuất xử lý:**
 `Thêm popup cảnh báo trước khi xác nhận trả sách quá hạn, hiển thị số ngày trễ và mức phí phạt tương ứng. Đồng thời Backend cần tính toán và trả về thông tin phí phạt kèm theo response khi trả sách quá hạn và lưu lại lịch sử phạt vào database để thủ thư tra cứu.`
+
+---
+
+## BUG-13
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi** | `BUG-13`           |
+| **TC liên quan** | `TC-01`            |
+| **REQ liên quan** | `REQ-05`           |
+| **Mức độ** | `Low`              |
+| **Người phát hiện** | `Nguyễn Thành Đạt` |
+| **Ngày phát hiện** | `25/05/2026`       |
+| **Trạng thái** | `Open`             |
+
+**Tiêu đề:**
+`Lỗi POPUP khi nhấn 2 lần nút trả sách`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Tài khoản đủ yêu cầu và có sách đang mượn`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập tài khoản đang hoạt động`
+2. `Bước 2: Vào mục mượn trả`
+3. `Bước 3: Nhấn liên tục vào nút trả sách`
+
+**Kết quả mong đợi:**
+`Chỉ hiện duy nhất 1 popup thành công khi nhấn trả sách`
+
+**Kết quả thực tế:**
+`Bị lỗi hiển thị popup thành công sau đó xuất hiện luôn popup lỗi`
+
+**Tác động:**
+`Gây hiểu nhầm đối với người dùng khi thực hiện thao tác click đúp hoặc nhấn quá nhanh vào nút bấm`
+
+**Minh chứng:**
+![BUG-13-1](/submisions/images/BUG-13-1.png)
+![BUG-13-2](/submisions/images/BUG-13-2.png)
+
+**Đề xuất xử lý:**
+`Khi đang xử lý yêu cầu, nút bấm hiển thị cần được chuyển sang trạng thái disabled (hoặc thêm hiệu ứng loading spinner) để chặn các tương tác tiếp theo từ phía client cho đến khi nhận được response từ server.`
