@@ -24,12 +24,11 @@
 | **Trạng thái**      | `Open`             |
 
 **Tiêu đề:**
-`Đăng nhập với email viết hoa không thành công`
+`Email phân biệt chữ hoa và chữ thường khi đăng nhập`
 
 **Môi trường:**
-
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
+- Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
@@ -42,16 +41,61 @@
 3. `Bước 3: Nhấn đăng nhập`
 
 **Kết quả mong đợi:**
-`Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
+`Hệ thống cho phép đăng nhập thành công (không phân biệt chữ hoa/thường đối với Email)`
 
 **Kết quả thực tế:**
-`Lỗi đăng nhập khi viết hoa email đăng nhập`
+`Hệ thống không nhận diện được tài khoản và báo lỗi đăng nhập`
 
 **Tác động:**
-`Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
+`Ảnh hưởng trực tiếp đến trải nghiệm người dùng khi đăng nhập`
 
 **Minh chứng:**
 ![BUG-01](./images/BUG-01.png)
 
 **Đề xuất xử lý:**
 `Thêm function toLowerCase() để biến hết tất cả email được truyền từ user sang kiểu lowercase, sau đó mới đưa cho logic đăng nhập xử lý`
+
+---
+
+## BUG-02
+
+| Thuộc tính          | Chi tiết                   |
+| ------------------- | -------------------------- |
+| **Mã lỗi**          | `BUG-02`                   |
+| **TC liên quan**    | `TC-xx`                    |
+| **REQ liên quan**   | `REQ-04`                   |
+| **Mức độ**          | `High`                     |
+| **Người phát hiện** | `Nguyen Cao Hoang Dat`     |
+| **Ngày phát hiện**  | `25/05/2026`               |
+| **Trạng thái**      | `Open`                     |
+
+**Tiêu đề:**
+`Mượn quá số sách cho phép`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở trạng thái đã mượn đúng 3 sách (đạt giới hạn tối đa cho phép), dữ liệu chưa reset.`
+
+**Bước tái hiện:**
+1. `Đăng nhập tài khoàn thành công`
+2. `Mượn lần lượt 3 cuốn sách bất kỳ còn trong kho`
+3. `Tìm thêm 1 cuốn sách bất kỳ còn trong kho, bấm "Mượn sách" trên cuốn thứ 4`
+
+**Kết quả mong đợi:**
+`Hệ thống báo lỗi đã đạt giới hạn mượn sách tối đa (3 sách) và không cho phép mượn tiếp cuốn thứ 4`
+
+**Kết quả thực tế:**
+`Hệ thống vẫn cho phép mượn cuốn thứ 4, không có thông báo chặn nào xuất hiện.`
+
+**Tác động:**
+`Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn`
+
+**Minh chứng:**
+![BUG-02](./images/BUG-02.png)
+
+**Đề xuất xử lý:**
+`Kiểm tra số sách đang mượn hiện tại của người dùng trước khi hiển thị nút "Mượn sách". Nếu đã đạt 3 cuốn → vô hiệu hóa nút hoặc ẩn nút "Mượn sách"`
