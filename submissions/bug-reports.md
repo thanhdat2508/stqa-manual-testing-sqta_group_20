@@ -11,46 +11,47 @@
 
 ---
 
-## BUG-01
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi**          | BUG-01             |
-| **TC liên quan**    | `TC-01`            |
-| **REQ liên quan**   | `REQ-01`           |
-| **Mức độ**          | `High`             |
-| **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`       |
-| **Trạng thái**      | `Open`             |
+## BUG-03
+
+| Thuộc tính          | Chi tiết               |
+| ------------------- | ---------------------- |
+| **Mã lỗi**          | BUG-03                 |
+| **TC liên quan**    | `TC-03`                |
+| **REQ liên quan**   | `REQ-04`               |
+| **Mức độ**          | `Medium`               |
+| **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
+| **Ngày phát hiện**  | `25/05/2026`           |
+| **Trạng thái**      | `Open`                 |
 
 **Tiêu đề:**
-`Đăng nhập với email viết hoa không thành công`
+`Không đổi ngôn ngữ ở thông báo popup đỏ`
 
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Anh
 
 **Điều kiện tiên quyết:**
-`Khi vào trang và bắt đầu đăng nhập với email được viết hoa`
+`Đã đăng nhập tài khoản người dùng, hệ thống đang cài ngôn ngữ khác tiếng Việt (tiếng Anh)`
 
 **Bước tái hiện:**
 
-1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
-2. `Bước 2: Nhập mật khẩu`
-
+1. `Bước 1: Đăng nhập thành công tài khoản`
+2. `Bước 2: Vào Settings → đổi ngôn ngữ giao diện sang tiếng Anh`
+3. `Bước 3: Thực hiện một thao tác gây ra thông báo popup đỏ`
 **Kết quả mong đợi:**
-`Mong đợi vẫn có thể đăng nhập khi email đăng nhập viết hoa hay viết thường`
+`Popup đỏ hiển thị đúng ngôn ngữ đang được cài đặt trong hệ thống`
 
 **Kết quả thực tế:**
-`Lỗi đăng nhập khi viết hoa email đăng nhập`
+`Popup đỏ vẫn hiển thị nội dung tiếng Việt, không đổi sang ngôn ngữ đã chọn`
 
 **Tác động:**
-`Gây cản trở việc đăng nhập khi người dùng nhập in hoa thay vì in thường`
+`Trải nghiệm người dùng không nhất quán — giao diện hiển thị đúng ngôn ngữ nhưng thông báo lỗi thì không, gây khó hiểu cho người dùng không đọc được tiếng Việt`
 
 **Minh chứng:**
-![BUG-01](/submisions/images/BUG-01.png)
+![BUG-03](/submisions/images/BUG-03.png)
 
 **Đề xuất xử lý:**
-`Thêm function toLowerCase() trước khi đưa server xử lý`
+`Các chuỗi text trong popup đỏ cần được đưa vào file localization. Đảm bảo tất cả thông báo lỗi đều tuân theo ngôn ngữ đang được chọn — không hardcode tiếng Việt`
