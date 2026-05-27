@@ -54,3 +54,45 @@
 
 **Đề xuất xử lý:**
 `Thêm function toLowerCase() trước khi đưa server xử lý`
+
+## BUG-16
+
+| Thuộc tính          | Chi tiết          |
+| ------------------- | ----------------- |
+| **Mã lỗi**          | BUG-16            |
+| **TC liên quan**    | ``                |
+| **REQ liên quan**   | `REQ-03`          |
+| **Mức độ**          | `low`             |
+| **Người phát hiện** | `Hoàng Thành Đạt` |
+| **Ngày phát hiện**  | `25/05/2026`      |
+| **Trạng thái**      | `Open`            |
+
+**Tiêu đề:**
+`Lỗi dịch phân loại (Category) khi chuyển tiếng anh vẫn để nguyên là tiếng việt`
+
+**Môi trường:**
+
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Anh
+
+**Điều kiện tiên quyết:**
+`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, chuyển giao diên sang tiếng anh`
+
+**Bước tái hiện:**
+
+1. `Đăng nhập tài khoàn thành công `
+2. `Chuyển giao diện sang tiếng anh`
+   **Kết quả mong đợi:**
+   `Mong đợi khi chuyển giao diện sang tiếng anh toàn bộ trang web chuyển sang tiếng anh `
+
+**Kết quả thực tế:**
+`Lỗi hệ thống khi chuyển sang tiếng anh nhưng "avaliable categories:Công nghệ, giáo dục, kinh tế,kĩ năng mềm, quản trị,văn học" vẫn đang là tiếng việt`
+
+**Tác động:**
+`Gây khó khăn khi người dùng muốn dùng tiếng anh mà hệ thống vẫn có chỗ ghi tiếng việt`
+
+**Minh chứng:**
+![BUG-16](/submisions/images/BUG-16.png)
+**Đề xuất xử lý:**
+`Thay đổi chuyển toàn bộ sang tiếng anh `
