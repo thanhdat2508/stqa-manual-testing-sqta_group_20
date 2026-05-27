@@ -54,3 +54,47 @@
 
 **Đề xuất xử lý:**
 `Thêm function toLowerCase() trước khi đưa server xử lý`
+
+## BUG-10
+
+| Thuộc tính          | Chi tiết          |
+| ------------------- | ----------------- |
+| **Mã lỗi**          | BUG-10            |
+| **TC liên quan**    | ``                |
+| **REQ liên quan**   | `REQ-04`          |
+| **Mức độ**          | `low`             |
+| **Người phát hiện** | `Hoàng Thành Đạt` |
+| **Ngày phát hiện**  | `25/05/2026`      |
+| **Trạng thái**      | `Open`            |
+
+**Tiêu đề:**
+`Lỗi hiển thị số sách đang mượn ở mục Thành Viên, quá hạn đang mượn nhưng vẫn là đang mượn:0`
+
+**Môi trường:**
+
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở mục Mượn/Trả`
+
+**Bước tái hiện:**
+
+1. `Đăng nhập tài khoàn thành công`
+2. `Mượn một cuốn sách bất kì`
+   **Kết quả mong đợi:**
+   `Mong đợi khi mượn quá hạn hệ thống thông báo đã quá hạn`
+
+**Kết quả thực tế:**
+`Lỗi hệ thống sách quá hạn vẫn hiện thị là đang mượn:0`
+
+**Tác động:**
+`Gây hiểu lầm và chưa phân biệt sách đang mượn và quá hạn cho người dùng`
+
+**Minh chứng:**
+![BUG-10](./images/BUG-10/BUG-1O_01.png)
+![BUG-10](./images/BUG-10/BUG-1O_02.png)
+
+**Đề xuất xử lý:**
+`So sách time hiện tại và time trả sách. Nếu như time hiện tại nhỏ hơn hoặc bằng time trả sánh thì hiện thị là đang mượn và ngược lại`
