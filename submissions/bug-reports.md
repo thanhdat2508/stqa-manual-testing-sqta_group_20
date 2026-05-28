@@ -486,13 +486,13 @@
 | **Mã lỗi**          | `BUG-11`           |
 | **TC liên quan**    | `TC-01`            |
 | **REQ liên quan**   | `REQ-05`           |
-| **Mức độ**          | `Low`              |
+| **Mức độ**          | `High`             |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
 | **Ngày phát hiện**  | `25/05/2026`       |
 | **Trạng thái**      | `Open`             |
 
 **Tiêu đề:**
-`Lỗi POPUP khi nhấn 2 lần nút trả sách`
+`Lỗi nhảy 2 lần popup thành công và thất bại khi nhấn 2 lần nút `trả sách``
 
 **Môi trường:**
 
@@ -501,7 +501,7 @@
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`Tài khoản đủ yêu cầu và có sách đang mượn`
+`Tài khoản đủ yêu cầu (đang hoạt động và có khả năng mượn trả sách) và có sách đang mượn`
 
 **Bước tái hiện:**
 
@@ -518,12 +518,15 @@
 **Tác động:**
 `Gây hiểu nhầm đối với người dùng khi thực hiện thao tác click đúp hoặc nhấn quá nhanh vào nút bấm`
 
+**Chi tiết lỗi:**
+`Sau khi nhấn liên tục vào nút trả sách, hiển thị 2 lần popup thành công và thất bại dẫn đến gửi request 2 lần xuống dưới server làm cho server nhận và thực hiện request thừa. Có nguy cơ dẫn đến sai sót trong dữ liệu hệ thống và gây hiểu nhầm cho người dùng`
+
 **Minh chứng:**
 ![BUG-13-1](/submisions/images/BUG-13-1.png)
 ![BUG-13-2](/submisions/images/BUG-13-2.png)
 
 **Đề xuất xử lý:**
-`Khi đang xử lý yêu cầu, nút bấm hiển thị cần được chuyển sang trạng thái disabled (hoặc thêm hiệu ứng loading spinner) để chặn các tương tác tiếp theo từ phía client cho đến khi nhận được response từ server.`
+`Khi đang xử lý yêu cầu, nút bấm hiển thị cần được chuyển sang trạng thái disabled và thêm hiệu ứng loading nhằm tăng trải nghiệm người dùng và chặn các tương tác tiếp theo từ phía client cho đến khi nhận được response từ server, điều này làm giảm tình trạng gửi quá nhiều request không cần thiết xuống cho server xử lý`
 
 ---
 
