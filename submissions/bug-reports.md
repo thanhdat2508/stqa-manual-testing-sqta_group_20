@@ -86,7 +86,7 @@
 3. `Tìm thêm 1 cuốn sách bất kỳ còn trong kho, bấm "Mượn sách" trên cuốn thứ 4`
 
 **Kết quả mong đợi:**
-`Hệ thống báo lỗi đã đạt giới hạn mượn sách tối đa (3 sách) và không cho phép mượn tiếp cuốn thứ 4`
+`Hệ thống báo lỗi đã đạt giới hạn mượn sách tối đa (3 sách) and không cho phép mượn tiếp cuốn thứ 4`
 
 **Kết quả thực tế:**
 `Hệ thống vẫn cho phép mượn cuốn thứ 4, không có thông báo chặn nào xuất hiện.`
@@ -363,7 +363,7 @@
 `Lỗi hệ thống khi sách rơi vào trạng thái quá hạn vẫn hiển thị số lượng sách đang mượn là: 0.`
 
 **Tác động:**
-`Gây hiểu lầm, không phân biệt rõ ràng giữa sách đang mượn trong hạn và sách đã quá hạn cho người dùng quản lý.`
+`Gây hiểu nhầm, không phân biệt rõ ràng giữa sách đang mượn trong hạn và sách đã quá hạn cho người dùng quản lý.`
 
 **Minh chứng:**
 ![BUG-10](./images/BUG-10/BUG-1O_01.png)
@@ -687,3 +687,48 @@
 
 **Đề xuất xử lý:**
 `Triển khai Regex kiểm tra chặt chẽ định dạng email ở cả Front-end trước khi submit và Back-end trước khi ghi dữ liệu. Đồng thời kết hợp gửi mã/link kích hoạt xác thực tài khoản đến email để đảm bảo hòm thư đó tồn tại thật.`
+
+---
+
+## BUG-19
+
+| Thuộc tính          | Chi tiết                |
+| ------------------- | ----------------------- |
+| **Mã lỗi** | `BUG-19`                |
+| **TC liên quan** | `TC-19`                 |
+| **REQ liên quan** | `REQ-06`                |
+| **Mức độ** | `High`                  |
+| **Người phát hiện** | `Nguyễn Cao Hoàng Đạt`  |
+| **Ngày phát hiện** | `25/05/2026`            |
+| **Trạng thái** | `Open`                  |
+
+**Tiêu đề:**
+`Hiển thị sai số lượng sách quá hạn khi nhấn nút lần thứ 2 'Kiểm tra quá hạn'`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt - Tiếng Anh
+
+**Điều kiện tiên quyết:**
+`Đã đăng nhập tài khoản thủ thư, hệ thống có ít nhất 1 số sách đang quá hạn, đang ở màn hình quản lý/ kiểm tra quá hạn.`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập tài khoản thủ thư thành công.`
+2. `Bước 2: Vào mục "Kiểm tra quá hạn". Bấm nút "Kiểm tra quá hạn" lần đầu → ghi nhận số lượng sách quá hạn hiển thị.`
+3. `Bước 3: Bấm nút "Kiểm tra quá hạn" lần thứ 2.`
+
+**Kết quả mong đợi:**
+`Mỗi lần bấm "Kiểm tra quá hạn" phải trả về cùng một kết quả chính xác, nhất quán nếu dữ liệu hệ thống không có sự thay đổi nào.`
+
+**Kết quả thực tế:**
+`Lần bấm thứ 2 hiển thị số lượng sách quá hạn sai lệch, khác với lần đầu, dù không có sự biến động dữ liệu nào giữa 2 lần tương tác.`
+
+**Tác động:**
+`Làm giảm độ tin cậy của hệ thống, khiến thủ thư bối rối không biết tin vào kết quả nào. Có thể dẫn đến nghiệp vụ bỏ sót hoặc xử lý sai lệch hồ sơ sách quá hạn của người dùng.`
+
+**Minh chứng:**
+![BUG-19](/submisions/images/BUG-19.png)
+
+**Đề xuất xử lý:**
+`Kiểm tra lại luồng xử lý dữ liệu ở Client-side: đảm bảo làm sạch (clear/reset) cấu trúc lưu trữ danh sách hoặc bộ đếm đè cũ trước khi nhận mảng dữ liệu mới từ API trả về để tránh tình trạng append (gộp dữ liệu thừa). Phía Server-side cần cam kết cung cấp snapshot dữ liệu độc lập tại thời điểm request.`
