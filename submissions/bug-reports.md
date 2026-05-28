@@ -29,7 +29,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `MacOS`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
@@ -76,7 +76,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
@@ -123,7 +123,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Anh
 
 **Điều kiện tiên quyết:**
@@ -170,7 +170,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `MacOS`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
@@ -216,7 +216,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 10`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
@@ -244,11 +244,11 @@
 
 ---
 
-## BUG-07
+## BUG-06
 
 | Thuộc tính          | Chi tiết     |
 | ------------------- | ------------ |
-| **Mã lỗi**          | `BUG-07`     |
+| **Mã lỗi**          | `BUG-06`     |
 | **TC liên quan**    | `TC-xx`      |
 | **REQ liên quan**   | `REQ-05`     |
 | **Mức độ**          | `High`       |
@@ -262,7 +262,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: `Tiếng Việt & Tiếng Anh`
 
 **Điều kiện tiên quyết:**
@@ -291,11 +291,11 @@
 
 ---
 
-## BUG-08
+## BUG-07
 
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
-| **Mã lỗi**          | `BUG-08`               |
+| **Mã lỗi**          | `BUG-07`               |
 | **TC liên quan**    | `TC-08`                |
 | **REQ liên quan**   | `REQ-05`               |
 | **Mức độ**          | `High`                 |
@@ -309,7 +309,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Việt - Tiếng Anh
 
 **Điều kiện tiên quyết:**
@@ -339,11 +339,11 @@
 
 ---
 
-## BUG-10
+## BUG-08
 
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
-| **Mã lỗi**          | `BUG-10`          |
+| **Mã lỗi**          | `BUG-08`          |
 | **TC liên quan**    | `TC-xx`           |
 | **REQ liên quan**   | `REQ-04`          |
 | **Mức độ**          | `Low`             |
@@ -357,7 +357,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
@@ -386,11 +386,11 @@
 
 ---
 
-## BUG-11
+## BUG-09
 
 | Thuộc tính          | Chi tiết        |
 | ------------------- | --------------- |
-| **Mã lỗi**          | `BUG-11`        |
+| **Mã lỗi**          | `BUG-09`        |
 | **TC liên quan**    | `TC-01`         |
 | **REQ liên quan**   | `REQ-04`        |
 | **Mức độ**          | `High`          |
@@ -432,11 +432,11 @@
 
 ---
 
-## BUG-12
+## BUG-10
 
 | Thuộc tính          | Chi tiết     |
 | ------------------- | ------------ |
-| **Mã lỗi**          | `BUG-12`     |
+| **Mã lỗi**          | `BUG-10`     |
 | **TC liên quan**    | `TC-01`      |
 | **REQ liên quan**   | `REQ-05`     |
 | **Mức độ**          | `Medium`     |
@@ -450,7 +450,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Việt & Tiếng Anh
 
 **Điều kiện tiên quyết:**
@@ -479,11 +479,11 @@
 
 ---
 
-## BUG-13
+## BUG-11
 
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
-| **Mã lỗi**          | `BUG-13`           |
+| **Mã lỗi**          | `BUG-11`           |
 | **TC liên quan**    | `TC-01`            |
 | **REQ liên quan**   | `REQ-05`           |
 | **Mức độ**          | `Low`              |
@@ -497,7 +497,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `MacOS`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
@@ -527,11 +527,11 @@
 
 ---
 
-## BUG-14
+## BUG-12
 
 | Thuộc tính          | Chi tiết        |
 | ------------------- | --------------- |
-| **Mã lỗi**          | `BUG-14`        |
+| **Mã lỗi**          | `BUG-12`        |
 | **TC liên quan**    | `TC-01`         |
 | **REQ liên quan**   | `REQ-07`        |
 | **Mức độ**          | `Medium`        |
@@ -574,11 +574,11 @@
 
 ---
 
-## BUG-15
+## BUG-13
 
 | Thuộc tính          | Chi tiết     |
 | ------------------- | ------------ |
-| **Mã lỗi**          | `BUG-15`     |
+| **Mã lỗi**          | `BUG-13`     |
 | **TC liên quan**    | `TC-01`      |
 | **REQ liên quan**   | `REQ-05`     |
 | **Mức độ**          | `High`       |
@@ -592,7 +592,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Việt & Tiếng Anh
 
 **Điều kiện tiên quyết:**
@@ -623,11 +623,11 @@
 
 ---
 
-## BUG-16
+## BUG-14
 
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
-| **Mã lỗi**          | `BUG-16`          |
+| **Mã lỗi**          | `BUG-14`          |
 | **TC liên quan**    | `TC-01`           |
 | **REQ liên quan**   | `REQ-03`          |
 | **Mức độ**          | `Low`             |
@@ -641,7 +641,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Anh
 
 **Điều kiện tiên quyết:**
@@ -669,11 +669,11 @@
 
 ---
 
-## BUG-17
+## BUG-15
 
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
-| **Mã lỗi**          | `BUG-17`          |
+| **Mã lỗi**          | `BUG-15`          |
 | **TC liên quan**    | `TC-01`           |
 | **REQ liên quan**   | `REQ-07`          |
 | **Mức độ**          | `High`            |
@@ -687,7 +687,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
@@ -717,11 +717,11 @@
 
 ---
 
-## BUG-19
+## BUG-16
 
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
-| **Mã lỗi**          | `BUG-19`               |
+| **Mã lỗi**          | `BUG-16`               |
 | **TC liên quan**    | `TC-19`                |
 | **REQ liên quan**   | `REQ-06`               |
 | **Mức độ**          | `High`                 |
@@ -735,7 +735,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Việt - Tiếng Anh
 
 **Điều kiện tiên quyết:**
@@ -762,11 +762,11 @@
 **Đề xuất xử lý:**
 `Kiểm tra lại luồng xử lý dữ liệu ở Client-side: đảm bảo làm sạch (clear/reset) cấu trúc lưu trữ danh sách hoặc bộ đếm đè cũ trước khi nhận mảng dữ liệu mới từ API trả về để tránh tình trạng append (gộp dữ liệu thừa). Phía Server-side cần cam kết cung cấp snapshot dữ liệu độc lập tại thời điểm request.`
 
-## BUG-10
+## BUG-17
 
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
-| **Mã lỗi**          | BUG-10            |
+| **Mã lỗi**          | `BUG-17`          |
 | **TC liên quan**    | ``                |
 | **REQ liên quan**   | `REQ-04`          |
 | **Mức độ**          | `low`             |
@@ -780,7 +780,7 @@
 **Môi trường:**
 
 - Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window`
+- Hệ điều hành: `Window 11`
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
