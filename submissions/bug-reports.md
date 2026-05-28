@@ -6,7 +6,7 @@
 
 | Thông tin        |              |
 | ---------------- | ------------ |
-| **Nhóm** | `Group 30`   |
+| **Nhóm**         | `Group 30`   |
 | **Ngày báo cáo** | `25/05/2026` |
 
 ---
@@ -15,18 +15,19 @@
 
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
-| **Mã lỗi** | `BUG-01 `          |
-| **TC liên quan** | `TC-01`            |
-| **REQ liên quan** | `REQ-01`           |
-| **Mức độ** | `High`             |
+| **Mã lỗi**          | `BUG-01 `          |
+| **TC liên quan**    | `TC-01`            |
+| **REQ liên quan**   | `REQ-01`           |
+| **Mức độ**          | `High`             |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện** | `25/05/2026`       |
-| **Trạng thái** | `Open`             |
+| **Ngày phát hiện**  | `25/05/2026`       |
+| **Trạng thái**      | `Open`             |
 
 **Tiêu đề:**
 `Email phân biệt chữ hoa và chữ thường khi đăng nhập`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -59,20 +60,21 @@
 
 ## BUG-02
 
-| Thuộc tính          | Chi tiết                   |
-| ------------------- | -------------------------- |
-| **Mã lỗi** | `BUG-02`                   |
-| **TC liên quan** | `TC-xx`                    |
-| **REQ liên quan** | `REQ-04`                   |
-| **Mức độ** | `High`                     |
-| **Người phát hiện** | `Nguyen Cao Hoang Dat`     |
-| **Ngày phát hiện** | `25/05/2026`               |
-| **Trạng thái** | `Open`                     |
+| Thuộc tính          | Chi tiết               |
+| ------------------- | ---------------------- |
+| **Mã lỗi**          | `BUG-02`               |
+| **TC liên quan**    | `TC-xx`                |
+| **REQ liên quan**   | `REQ-04`               |
+| **Mức độ**          | `High`                 |
+| **Người phát hiện** | `Nguyen Cao Hoang Dat` |
+| **Ngày phát hiện**  | `25/05/2026`           |
+| **Trạng thái**      | `Open`                 |
 
 **Tiêu đề:**
 `Mượn quá số sách cho phép`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -81,6 +83,7 @@
 `Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở trạng thái đã mượn đúng 3 sách (đạt giới hạn tối đa cho phép), dữ liệu chưa reset.`
 
 **Bước tái hiện:**
+
 1. `Đăng nhập tài khoàn thành công`
 2. `Mượn lần lượt 3 cuốn sách bất kỳ còn trong kho`
 3. `Tìm thêm 1 cuốn sách bất kỳ còn trong kho, bấm "Mượn sách" trên cuốn thứ 4`
@@ -106,18 +109,19 @@
 
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
-| **Mã lỗi** | `BUG-03`               |
-| **TC liên quan** | `TC-03`                |
-| **REQ liên quan** | `REQ-04`               |
-| **Mức độ** | `Medium`               |
+| **Mã lỗi**          | `BUG-03`               |
+| **TC liên quan**    | `TC-03`                |
+| **REQ liên quan**   | `REQ-04`               |
+| **Mức độ**          | `Medium`               |
 | **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
-| **Ngày phát hiện** | `25/05/2026`           |
-| **Trạng thái** | `Open`                 |
+| **Ngày phát hiện**  | `25/05/2026`           |
+| **Trạng thái**      | `Open`                 |
 
 **Tiêu đề:**
 `Không đổi ngôn ngữ ở thông báo popup đỏ`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Anh
@@ -152,18 +156,19 @@
 
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
-| **Mã lỗi** | `BUG-04`           |
-| **TC liên quan** | `TC-01`            |
-| **REQ liên quan** | `REQ-03`           |
-| **Mức độ** | `Cao`              |
+| **Mã lỗi**          | `BUG-04`           |
+| **TC liên quan**    | `TC-01`            |
+| **REQ liên quan**   | `REQ-03`           |
+| **Mức độ**          | `Cao`              |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện** | `26/05/2026`       |
-| **Trạng thái** | `Open`             |
+| **Ngày phát hiện**  | `26/05/2026`       |
+| **Trạng thái**      | `Open`             |
 
 **Tiêu đề:**
 `Filter bị phân biệt chữ hoa và chữ thường`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -195,20 +200,21 @@
 
 ## BUG-05
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi** | `BUG-05`           |
-| **TC liên quan** | `TC-01`            |
-| **REQ liên quan** | `REQ-06`           |
-| **Mức độ** | `High`             |
-| **Người phát hiện** | `Bùi Mạnh Hiếu`    |
-| **Ngày phát hiện** | `25/05/2026`       |
-| **Trạng thái** | `Open`             |
+| Thuộc tính          | Chi tiết        |
+| ------------------- | --------------- |
+| **Mã lỗi**          | `BUG-05`        |
+| **TC liên quan**    | `TC-01`         |
+| **REQ liên quan**   | `REQ-06`        |
+| **Mức độ**          | `High`          |
+| **Người phát hiện** | `Bùi Mạnh Hiếu` |
+| **Ngày phát hiện**  | `25/05/2026`    |
+| **Trạng thái**      | `Open`          |
 
 **Tiêu đề:**
 `Lỗi popup thông báo về trạng thái tài khoản, tài khoảng "Tạm ngưng" nhưng báo bị "Hết Hạn"`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -240,20 +246,21 @@
 
 ## BUG-07
 
-| Thuộc tính          | Chi tiết                |
-| ------------------- | ----------------------- |
-| **Mã lỗi** | `BUG-07`                |
-| **TC liên quan** | `TC-xx`                 |
-| **REQ liên quan** | `REQ-05`                |
-| **Mức độ** | `High`                  |
-| **Người phát hiện** | `Đỗ Hữu Đức`            |
-| **Ngày phát hiện** | `25/05/2026`            |
-| **Trạng thái** | `Open`                  |
+| Thuộc tính          | Chi tiết     |
+| ------------------- | ------------ |
+| **Mã lỗi**          | `BUG-07`     |
+| **TC liên quan**    | `TC-xx`      |
+| **REQ liên quan**   | `REQ-05`     |
+| **Mức độ**          | `High`       |
+| **Người phát hiện** | `Đỗ Hữu Đức` |
+| **Ngày phát hiện**  | `25/05/2026` |
+| **Trạng thái**      | `Open`       |
 
 **Tiêu đề:**
 `Các thành viên có thể tự do tra cứu mã của nhau`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: `Tiếng Việt & Tiếng Anh`
@@ -262,6 +269,7 @@
 `Tài khoản thành viên đã đăng nhập vào hệ thống và hệ thống đang kích hoạt chức năng quản lý mã mượn sách/mã thành viên.`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập vào hệ thống bằng tài khoản thành viên (VD: biet.hoang@email.com)`
 2. `Bước 2: Truy cập vào chức năng tra cứu hoặc tìm kiếm thông tin thành viên/mã mượn sách`
 3. `Bước 3: Thực hiện tìm kiếm thông tin hoặc mã của thành viên khác (VD: Nhập mã MEM002 của tài khoản ba.nguyen@email.com)`
@@ -287,18 +295,19 @@
 
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
-| **Mã lỗi** | `BUG-08`               |
-| **TC liên quan** | `TC-08`                |
-| **REQ liên quan** | `REQ-05`               |
-| **Mức độ** | `High`                 |
+| **Mã lỗi**          | `BUG-08`               |
+| **TC liên quan**    | `TC-08`                |
+| **REQ liên quan**   | `REQ-05`               |
+| **Mức độ**          | `High`                 |
 | **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
-| **Ngày phát hiện** | `25/05/2026`           |
-| **Trạng thái** | `Open`                 |
+| **Ngày phát hiện**  | `25/05/2026`           |
+| **Trạng thái**      | `Open`                 |
 
 **Tiêu đề:**
 `Không hiển thị cảnh báo trả sách quá hạn khi trả quá hạn`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt - Tiếng Anh
@@ -307,6 +316,7 @@
 `Đã đăng nhập tài khoản thành công, đang có ít nhất 1 cuốn sách quá hạn trả trong danh sách mượn`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập tài khoản thành công`
 2. `Bước 2: Vào mục "Sách đang mượn"`
 3. `Bước 3: Xác nhận có sách đã quá ngày hạn trả. Bấm "Trả sách" trên cuốn sách quá hạn đó`
@@ -331,20 +341,21 @@
 
 ## BUG-10
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi** | `BUG-10`           |
-| **TC liên quan** | `TC-xx`            |
-| **REQ liên quan** | `REQ-04`           |
-| **Mức độ** | `Low`              |
-| **Người phát hiện** | `Hoàng Thành Đạt`  |
-| **Ngày phát hiện** | `25/05/2026`       |
-| **Trạng thái** | `Open`             |
+| Thuộc tính          | Chi tiết          |
+| ------------------- | ----------------- |
+| **Mã lỗi**          | `BUG-10`          |
+| **TC liên quan**    | `TC-xx`           |
+| **REQ liên quan**   | `REQ-04`          |
+| **Mức độ**          | `Low`             |
+| **Người phát hiện** | `Hoàng Thành Đạt` |
+| **Ngày phát hiện**  | `25/05/2026`      |
+| **Trạng thái**      | `Open`            |
 
 **Tiêu đề:**
 `Lỗi hiển thị số sách đang mượn ở mục Thành Viên, quá hạn đang mượn nhưng vẫn hiển thị là đang mượn: 0`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -353,6 +364,7 @@
 `Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở mục Mượn/Trả`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập tài khoản thành công`
 2. `Bước 2: Mượn một cuốn sách bất kỳ và để trạng thái rơi vào quá hạn.`
 
@@ -376,20 +388,21 @@
 
 ## BUG-11
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi** | `BUG-11`           |
-| **TC liên quan** | `TC-01`            |
-| **REQ liên quan** | `REQ-04`           |
-| **Mức độ** | `High`             |
-| **Người phát hiện** | `Bùi Mạnh Hiếu`    |
-| **Ngày phát hiện** | `25/05/2026`       |
-| **Trạng thái** | `Open`             |
+| Thuộc tính          | Chi tiết        |
+| ------------------- | --------------- |
+| **Mã lỗi**          | `BUG-11`        |
+| **TC liên quan**    | `TC-01`         |
+| **REQ liên quan**   | `REQ-04`        |
+| **Mức độ**          | `High`          |
+| **Người phát hiện** | `Bùi Mạnh Hiếu` |
+| **Ngày phát hiện**  | `25/05/2026`    |
+| **Trạng thái**      | `Open`          |
 
 **Tiêu đề:**
 `Lỗi trắng trang web + mất dữ liệu khi spam nhiều lần mục mượn sách`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window 10`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -398,6 +411,7 @@
 `Đã đăng nhập được vào tài khoản và tương tác với trang web`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập tài khoản khả dụng`
 2. `Bước 2: Spam nhiều lần nút Mượn sau khi ấn vào ô dấu cộng`
 
@@ -420,20 +434,21 @@
 
 ## BUG-12
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi** | `BUG-12`           |
-| **TC liên quan** | `TC-01`            |
-| **REQ liên quan** | `REQ-05`           |
-| **Mức độ** | `Medium`           |
-| **Người phát hiện** | `Đỗ Hữu Đức`       |
-| **Ngày phát hiện** | `25/05/2026`       |
-| **Trạng thái** | `Open`             |
+| Thuộc tính          | Chi tiết     |
+| ------------------- | ------------ |
+| **Mã lỗi**          | `BUG-12`     |
+| **TC liên quan**    | `TC-01`      |
+| **REQ liên quan**   | `REQ-05`     |
+| **Mức độ**          | `Medium`     |
+| **Người phát hiện** | `Đỗ Hữu Đức` |
+| **Ngày phát hiện**  | `25/05/2026` |
+| **Trạng thái**      | `Open`       |
 
 **Tiêu đề:**
 `Người dùng có thể tự ý trả sách mà không cần thủ thư xác nhận`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt & Tiếng Anh
@@ -442,6 +457,7 @@
 `Thành viên đang có sách trong trạng thái "Đang mượn".`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập vào tài khoản thành viên.`
 2. `Bước 2: Truy cập vào mục quản lý sách đang mượn hoặc lịch sử mượn trả`
 3. `Bước 3: Nhấn vào nút hoặc thực hiện hành động "Trả sách" từ phía giao diện người dùng.`
@@ -467,18 +483,19 @@
 
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
-| **Mã lỗi** | `BUG-13`           |
-| **TC liên quan** | `TC-01`            |
-| **REQ liên quan** | `REQ-05`           |
-| **Mức độ** | `Low`              |
+| **Mã lỗi**          | `BUG-13`           |
+| **TC liên quan**    | `TC-01`            |
+| **REQ liên quan**   | `REQ-05`           |
+| **Mức độ**          | `Low`              |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện** | `25/05/2026`       |
-| **Trạng thái** | `Open`             |
+| **Ngày phát hiện**  | `25/05/2026`       |
+| **Trạng thái**      | `Open`             |
 
 **Tiêu đề:**
 `Lỗi POPUP khi nhấn 2 lần nút trả sách`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -487,6 +504,7 @@
 `Tài khoản đủ yêu cầu và có sách đang mượn`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập tài khoản đang hoạt động`
 2. `Bước 2: Vào mục mượn trả`
 3. `Bước 3: Nhấn liên tục vào nút trả sách`
@@ -511,20 +529,21 @@
 
 ## BUG-14
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi** | `BUG-14`           |
-| **TC liên quan** | `TC-01`            |
-| **REQ liên quan** | `REQ-07`           |
-| **Mức độ** | `Medium`           |
-| **Người phát hiện** | `Bùi Mạnh Hiếu`    |
-| **Ngày phát hiện** | `25/05/2026`       |
-| **Trạng thái** | `Open`             |
+| Thuộc tính          | Chi tiết        |
+| ------------------- | --------------- |
+| **Mã lỗi**          | `BUG-14`        |
+| **TC liên quan**    | `TC-01`         |
+| **REQ liên quan**   | `REQ-07`        |
+| **Mức độ**          | `Medium`        |
+| **Người phát hiện** | `Bùi Mạnh Hiếu` |
+| **Ngày phát hiện**  | `25/05/2026`    |
+| **Trạng thái**      | `Open`          |
 
 **Tiêu đề:**
 `Nhập email đã tồn tại nhưng lại báo "Email không hợp lệ" thay vì báo "Email đã tồn tại"`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Windows 10`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -533,6 +552,7 @@
 `Đăng nhập được vào tài khoản thủ thư`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập tài khoản thủ thư`
 2. `Bước 2: Thêm thành viên`
 3. `Bước 3: Nhập vào 1 email đã tồn tại`
@@ -556,29 +576,32 @@
 
 ## BUG-15
 
-| Thuộc tính          | Chi tiết                |
-| ------------------- | ----------------------- |
-| **Mã lỗi** | `BUG-15`                |
-| **TC liên quan** | `TC-01`                 |
-| **REQ liên quan** | `REQ-05`                |
-| **Mức độ** | `High`                  |
-| **Người phát hiện** | `Đỗ Hữu Đức`            |
-| **Ngày phát hiện** | `26/05/2026`            |
-| **Trạng thái** | `Open`                  |
+| Thuộc tính          | Chi tiết     |
+| ------------------- | ------------ |
+| **Mã lỗi**          | `BUG-15`     |
+| **TC liên quan**    | `TC-01`      |
+| **REQ liên quan**   | `REQ-05`     |
+| **Mức độ**          | `High`       |
+| **Người phát hiện** | `Đỗ Hữu Đức` |
+| **Ngày phát hiện**  | `26/05/2026` |
+| **Trạng thái**      | `Open`       |
 
 **Tiêu đề:**
 `Cho phép thành viên tự ý gia hạn hoặc trả sách của người khác`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt & Tiếng Anh
 
 **Điều kiện tiên quyết:**
+
 - Tài khoản thành viên đã đăng nhập vào hệ thống thành công.
 - Có một thành viên khác (Thành viên B) đang mượn sách và vô tình lộ mã mượn hoặc ID lượt mượn.
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập vào hệ thống bằng tài khoản của thành viên A.`
 2. `Bước 2: Truy cập vào mục Mượn/Trả (Tra cứu phiếu mượn) và nhập mã của thành viên B.`
 3. `Bước 3: Tiến hành thực hiện thao tác trả sách hoặc gia hạn.`
@@ -602,20 +625,21 @@
 
 ## BUG-16
 
-| Thuộc tính          | Chi tiết           |
+| Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
-| **Mã lỗi** | `BUG-16`          |
-| **TC liên quan** | `TC-01`           |
-| **REQ liên quan** | `REQ-03`          |
-| **Mức độ** | `Low`             |
+| **Mã lỗi**          | `BUG-16`          |
+| **TC liên quan**    | `TC-01`           |
+| **REQ liên quan**   | `REQ-03`          |
+| **Mức độ**          | `Low`             |
 | **Người phát hiện** | `Hoàng Thành Đạt` |
-| **Ngày phát hiện** | `25/05/2026`      |
-| **Trạng thái** | `Open`            |
+| **Ngày phát hiện**  | `25/05/2026`      |
+| **Trạng thái**      | `Open`            |
 
 **Tiêu đề:**
 `Lỗi dịch phân loại (Category) khi chuyển tiếng Anh vẫn để nguyên là tiếng Việt`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Anh
@@ -624,6 +648,7 @@
 `Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, chuyển giao diện sang tiếng Anh.`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập tài khoản thành công.`
 2. `Bước 2: Chuyển giao diện sang tiếng Anh.`
 
@@ -646,20 +671,21 @@
 
 ## BUG-17
 
-| Thuộc tính          | Chi tiết           |
+| Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
-| **Mã lỗi** | `BUG-17`          |
-| **TC liên quan** | `TC-01`           |
-| **REQ liên quan** | `REQ-07`          |
-| **Mức độ** | `High`            |
+| **Mã lỗi**          | `BUG-17`          |
+| **TC liên quan**    | `TC-01`           |
+| **REQ liên quan**   | `REQ-07`          |
+| **Mức độ**          | `High`            |
 | **Người phát hiện** | `Hoàng Thành Đạt` |
-| **Ngày phát hiện** | `25/05/2026`      |
-| **Trạng thái** | `Open`            |
+| **Ngày phát hiện**  | `25/05/2026`      |
+| **Trạng thái**      | `Open`            |
 
 **Tiêu đề:**
 `Lỗi thêm được thành viên với email không hợp lệ định dạng domain`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt
@@ -668,6 +694,7 @@
 `Trang đăng nhập đã mở, đăng nhập bằng tài khoản thủ thư, vào mục thêm thành viên.`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập tài khoản thành công bằng tài khoản thủ thư.`
 2. `Bước 2: Vào mục thêm thành viên.`
 3. `Bước 3: Nhập một thành viên với cấu trúc chuỗi email không hợp lệ (VD: hoangthanhdat212@gmail thay vì hoangthanhdat212@gmail.com).`
@@ -692,20 +719,21 @@
 
 ## BUG-19
 
-| Thuộc tính          | Chi tiết                |
-| ------------------- | ----------------------- |
-| **Mã lỗi** | `BUG-19`                |
-| **TC liên quan** | `TC-19`                 |
-| **REQ liên quan** | `REQ-06`                |
-| **Mức độ** | `High`                  |
-| **Người phát hiện** | `Nguyễn Cao Hoàng Đạt`  |
-| **Ngày phát hiện** | `25/05/2026`            |
-| **Trạng thái** | `Open`                  |
+| Thuộc tính          | Chi tiết               |
+| ------------------- | ---------------------- |
+| **Mã lỗi**          | `BUG-19`               |
+| **TC liên quan**    | `TC-19`                |
+| **REQ liên quan**   | `REQ-06`               |
+| **Mức độ**          | `High`                 |
+| **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
+| **Ngày phát hiện**  | `25/05/2026`           |
+| **Trạng thái**      | `Open`                 |
 
 **Tiêu đề:**
 `Hiển thị sai số lượng sách quá hạn khi nhấn nút lần thứ 2 'Kiểm tra quá hạn'`
 
 **Môi trường:**
+
 - Trình duyệt: Chrome `Version 148.0.7778.179`
 - Hệ điều hành: `Window`
 - Ngôn ngữ giao diện: Tiếng Việt - Tiếng Anh
@@ -714,6 +742,7 @@
 `Đã đăng nhập tài khoản thủ thư, hệ thống có ít nhất 1 số sách đang quá hạn, đang ở màn hình quản lý/ kiểm tra quá hạn.`
 
 **Bước tái hiện:**
+
 1. `Bước 1: Đăng nhập tài khoản thủ thư thành công.`
 2. `Bước 2: Vào mục "Kiểm tra quá hạn". Bấm nút "Kiểm tra quá hạn" lần đầu → ghi nhận số lượng sách quá hạn hiển thị.`
 3. `Bước 3: Bấm nút "Kiểm tra quá hạn" lần thứ 2.`
@@ -732,3 +761,47 @@
 
 **Đề xuất xử lý:**
 `Kiểm tra lại luồng xử lý dữ liệu ở Client-side: đảm bảo làm sạch (clear/reset) cấu trúc lưu trữ danh sách hoặc bộ đếm đè cũ trước khi nhận mảng dữ liệu mới từ API trả về để tránh tình trạng append (gộp dữ liệu thừa). Phía Server-side cần cam kết cung cấp snapshot dữ liệu độc lập tại thời điểm request.`
+
+## BUG-10
+
+| Thuộc tính          | Chi tiết          |
+| ------------------- | ----------------- |
+| **Mã lỗi**          | BUG-10            |
+| **TC liên quan**    | ``                |
+| **REQ liên quan**   | `REQ-04`          |
+| **Mức độ**          | `low`             |
+| **Người phát hiện** | `Hoàng Thành Đạt` |
+| **Ngày phát hiện**  | `25/05/2026`      |
+| **Trạng thái**      | `Open`            |
+
+**Tiêu đề:**
+`Lỗi hiển thị số sách đang mượn ở mục Thành Viên, quá hạn đang mượn nhưng vẫn là đang mượn:0`
+
+**Môi trường:**
+
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở mục Mượn/Trả`
+
+**Bước tái hiện:**
+
+1. `Đăng nhập tài khoàn thành công`
+2. `Mượn một cuốn sách bất kì`
+   **Kết quả mong đợi:**
+   `Mong đợi khi mượn quá hạn hệ thống thông báo đã quá hạn`
+
+**Kết quả thực tế:**
+`Lỗi hệ thống sách quá hạn vẫn hiện thị là đang mượn:0`
+
+**Tác động:**
+`Gây hiểu lầm và chưa phân biệt sách đang mượn và quá hạn cho người dùng`
+
+**Minh chứng:**
+![BUG-10](./images/BUG-10/BUG-1O_01.png)
+![BUG-10](./images/BUG-10/BUG-1O_02.png)
+
+**Đề xuất xử lý:**
+`So sách time hiện tại và time trả sách. Nếu như time hiện tại nhỏ hơn hoặc bằng time trả sánh thì hiện thị là đang mượn và ngược lại`
