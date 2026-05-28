@@ -329,6 +329,51 @@
 
 ---
 
+## BUG-10
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ------------------ |
+| **Mã lỗi** | `BUG-10`           |
+| **TC liên quan** | `TC-xx`            |
+| **REQ liên quan** | `REQ-04`           |
+| **Mức độ** | `Low`              |
+| **Người phát hiện** | `Hoàng Thành Đạt`  |
+| **Ngày phát hiện** | `25/05/2026`       |
+| **Trạng thái** | `Open`             |
+
+**Tiêu đề:**
+`Lỗi hiển thị số sách đang mượn ở mục Thành Viên, quá hạn đang mượn nhưng vẫn hiển thị là đang mượn: 0`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở mục Mượn/Trả`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập tài khoản thành công`
+2. `Bước 2: Mượn một cuốn sách bất kỳ và để trạng thái rơi vào quá hạn.`
+
+**Kết quả mong đợi:**
+`Khi có sách quá hạn, hệ thống cần có cơ chế đếm riêng hoặc hiển thị thông báo trạng thái "Quá hạn" rõ ràng thay vì bỏ qua bộ đếm.`
+
+**Kết quả thực tế:**
+`Lỗi hệ thống khi sách rơi vào trạng thái quá hạn vẫn hiển thị số lượng sách đang mượn là: 0.`
+
+**Tác động:**
+`Gây hiểu lầm, không phân biệt rõ ràng giữa sách đang mượn trong hạn và sách đã quá hạn cho người dùng quản lý.`
+
+**Minh chứng:**
+![BUG-10](./images/BUG-10/BUG-1O_01.png)
+![BUG-10](./images/BUG-10/BUG-1O_02.png)
+
+**Đề xuất xử lý:**
+`Thực hiện so sánh thời gian hiện tại (Current Timestamp) và hạn trả sách (Due Date). Nếu thời gian hiện tại lớn hơn hạn trả sách, hệ thống phải cập nhật trạng thái bản ghi thành "Quá hạn" và cộng dồn vào bộ đếm thống kê thích hợp trên UI.`
+
+---
+
 ## BUG-11
 
 | Thuộc tính          | Chi tiết           |
@@ -350,7 +395,7 @@
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Điều kiện tiên quyết:**
-`Đăng nhập được vào tài khoản và tương tác với trang web`
+`Đã đăng nhập được vào tài khoản và tương tác với trang web`
 
 **Bước tái hiện:**
 1. `Bước 1: Đăng nhập tài khoản khả dụng`
@@ -552,3 +597,93 @@
 
 **Đề xuất xử lý:**
 `Bổ sung kiểm tra quyền sở hữu (Authorization Check) ở tầng Backend đối với các API liên quan đến mượn/trả/gia hạn sách: Đảm bảo Session/Token ID của người dùng đang gửi Request phải trùng khớp với UserID ghi nhận trên lượt mượn của cuốn sách đó trong Database.`
+
+---
+
+## BUG-16
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ----------------- |
+| **Mã lỗi** | `BUG-16`          |
+| **TC liên quan** | `TC-01`           |
+| **REQ liên quan** | `REQ-03`          |
+| **Mức độ** | `Low`             |
+| **Người phát hiện** | `Hoàng Thành Đạt` |
+| **Ngày phát hiện** | `25/05/2026`      |
+| **Trạng thái** | `Open`            |
+
+**Tiêu đề:**
+`Lỗi dịch phân loại (Category) khi chuyển tiếng Anh vẫn để nguyên là tiếng Việt`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Anh
+
+**Điều kiện tiên quyết:**
+`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, chuyển giao diện sang tiếng Anh.`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập tài khoản thành công.`
+2. `Bước 2: Chuyển giao diện sang tiếng Anh.`
+
+**Kết quả mong đợi:**
+`Khi chuyển đổi giao diện sang ngôn ngữ tiếng Anh, toàn bộ các nhãn văn bản và dữ liệu tĩnh của phân loại (Category) hiển thị trên trang web phải được dịch sang tiếng Anh tương ứng.`
+
+**Kết quả thực tế:**
+`Hệ thống đổi giao diện nhưng danh mục phân loại "Available Categories: Công nghệ, giáo dục, kinh tế, kĩ năng mềm, quản trị, văn học" vẫn giữ nguyên nội dung hiển thị bằng tiếng Việt.`
+
+**Tác động:**
+`Gây mất tính đồng bộ nhất quán về trải nghiệm đa ngôn ngữ (Localization), cản trở khả năng tiếp cận đối với người dùng không sử dụng tiếng Việt.`
+
+**Minh chứng:**
+![BUG-16](/submisions/images/BUG-16.png)
+
+**Đề xuất xử lý:**
+`Đưa mảng danh sách phân loại (Categories) vào tệp lưu trữ localization dữ liệu đa ngôn ngữ hệ thống. Khi người dùng thực hiện switch ngôn ngữ, trigger hàm map để lấy chính xác bản dịch tiếng Anh tương ứng từ tệp ngôn ngữ.`
+
+---
+
+## BUG-17
+
+| Thuộc tính          | Chi tiết           |
+| ------------------- | ----------------- |
+| **Mã lỗi** | `BUG-17`          |
+| **TC liên quan** | `TC-01`           |
+| **REQ liên quan** | `REQ-07`          |
+| **Mức độ** | `High`            |
+| **Người phát hiện** | `Hoàng Thành Đạt` |
+| **Ngày phát hiện** | `25/05/2026`      |
+| **Trạng thái** | `Open`            |
+
+**Tiêu đề:**
+`Lỗi thêm được thành viên với email không hợp lệ định dạng domain`
+
+**Môi trường:**
+- Trình duyệt: Chrome `Version 148.0.7778.179`
+- Hệ điều hành: `Window`
+- Ngôn ngữ giao diện: Tiếng Việt
+
+**Điều kiện tiên quyết:**
+`Trang đăng nhập đã mở, đăng nhập bằng tài khoản thủ thư, vào mục thêm thành viên.`
+
+**Bước tái hiện:**
+1. `Bước 1: Đăng nhập tài khoản thành công bằng tài khoản thủ thư.`
+2. `Bước 2: Vào mục thêm thành viên.`
+3. `Bước 3: Nhập một thành viên với cấu trúc chuỗi email không hợp lệ (VD: hoangthanhdat212@gmail thay vì hoangthanhdat212@gmail.com).`
+
+**Kết quả mong đợi:**
+`Hệ thống kích hoạt validator validate định dạng email, chặn hành động submit dữ liệu và thông báo lỗi cấu trúc email sai.`
+
+**Kết quả thực tế:**
+`Hệ thống bỏ qua kiểm tra, vẫn thêm mới email không hợp lệ này vào cơ sở dữ liệu bình thường.`
+
+**Tác động:**
+`Gây khó khăn, sai lệch khi quản lý dữ liệu người dùng của thủ thư và làm rác hệ thống thông tin liên lạc.`
+
+**Minh chứng:**
+![BUG-17](/submisions/images/BUG-11/BUG-11_01.png)
+![BUG-17](/submisions/images/BUG-11/BUG-11_02.png)
+
+**Đề xuất xử lý:**
+`Triển khai Regex kiểm tra chặt chẽ định dạng email ở cả Front-end trước khi submit và Back-end trước khi ghi dữ liệu. Đồng thời kết hợp gửi mã/link kích hoạt xác thực tài khoản đến email để đảm bảo hòm thư đó tồn tại thật.`
