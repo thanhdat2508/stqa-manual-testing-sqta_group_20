@@ -66,11 +66,24 @@
 | ------------------------- | ----------------- | ------------------------ | ---------------- |
 | `<!-- Nhóm tự điền -->`   |                   |                          |                  |                     |
 
+
 ### IDM — Quản lý thành viên (REQ-07)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-| ------------------------- | ----------------- | ------------------------ | ---------------- |
-| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+| Đặc tính (Characteristic)   | Phân vùng (Block)                                               | Giá trị đại diện (Value)      | Kết quả mong đợi              |
+| :-------------------------- | :-------------------------------------------------------------- | :---------------------------- | :---------------------------- |
+| **Định dạng Email**         | Hợp lệ (Có `@` và có `.` trong domain, bao gồm cả giá trị biên) | `newmember@test.com`, `a@b.c` | Chấp nhận, pass validate      |
+|                             | Không hợp lệ (Thiếu dấu `.` trong domain)                       | `user@domain`                 | Báo lỗi: Email không hợp lệ   |
+|                             | Không hợp lệ (Thiếu ký tự `@`)                                  | `usertest.com`                | Báo lỗi: Email không hợp lệ   |
+|                             | Không hợp lệ (Bỏ trống)                                         | `[Bỏ trống]`                  | Báo lỗi: Không được để trống  |
+| **Sự tồn tại của Email**    | Email chưa tồn tại trong DB                                     | `newmember@test.com`          | Chấp nhận, cho phép tạo       |
+|                             | Email đã tồn tại trong DB                                       | `ba.nguyen@email.com`         | Báo lỗi: Email đã tồn tại     |
+| **Định dạng Họ và tên**     | Hợp lệ                                                          | `Nguyễn Test`                 | Chấp nhận, pass validate      |
+|                             | Không hợp lệ (Bỏ trống)                                         | `[Bỏ trống]`                  | Báo lỗi: Yêu cầu điền đầy đủ  |
+| **Định dạng Số điện thoại** | Hợp lệ (Đúng 10 chữ số)                                         | `0912345678`, `0987654321`    | Chấp nhận, pass validate      |
+|                             | Không hợp lệ (Chứa chữ cái/ký tự đặc biệt) - **`SRS GAP`**      | `0987abc321`                  | Báo lỗi: Chỉ chấp nhận chữ số |
+|                             | Không hợp lệ (Bỏ trống)                                         | `[Bỏ trống]`                  | Báo lỗi: Yêu cầu điền đầy đủ  |
+| **Phân quyền truy cập**     | Tài khoản có quyền (Thủ thư)                                    | Account: Thủ thư              | Cho phép truy cập, thêm mới   |
+|                             | Tài khoản không có quyền (Thành viên)                           | Account: Thành viên           | Chặn truy cập, báo lỗi quyền  |
 
 ### IDM — Tra cứu mượn sách (REQ-08)
 
@@ -101,14 +114,14 @@
 
 ### REQ-01 — Login
 
-| Mã TC | Mục tiêu kiểm thử                                   | Tiền điều kiện                            | Bước thực hiện                                                                                   | Dữ liệu đầu vào                                         | Kết quả mong đợi                                                                                  | REQ    | Kỹ thuật |
-| ----- | --------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------ | -------- |
-| TC-01 | Đăng nhập với email và password hợp lệ              | Có tồn tài tài khoản trên hệ thống        | Bước 1: Đăng nhập bằng email và password hợp lệ. Bước 2: Kiểm tra xem có vào được hệ thông không | Email: `ba.nguyen@email.com` và password: `password123` | Vào trang chủ và hiển thị tên `Nguyễn Học Bá` + vai trò `Thành viên / member` trên thanh ứng dụng | REQ-01 | EP       |
-| TC-02 | Đăng nhập tài khoản không tồn tại                   | Không tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email `nobody@test.com` và password `anything`          | Gửi thông báo lỗi đăng nhập "Không tìm thấy thành viên" nếu email sai                             | REQ-01 | EP       |
-| TC-03 | Đăng nhập tài khoản sai mật khẩu                    | Email tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email `ba.nguyen@email.com` và password `anything`      | Gửi thông báo lỗi "Mật khẩu không đúng"                                                           | REQ-01 | EP       |
-| TC-04 | Đăng nhập không nhập bỏ trống tài khoản và mật khẩu | Không tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email _(empty)_ và password _(empty)_                   | Gửi thông báo lỗi "Vui lòng nhập tài khoản vả mật khẩu"                                           | REQ-01 | EP       |
-| TC-05 | Đăng nhập với email in hoa và mật khẩu hợp lệ       | Tồn tại tài khoản trên hệ thống           | Bước 1: Đăng nhập bằng email in hoa. Bước 2: Kiểm tra xem có vào đươc hệ thống không             | Email `Ba.nguyen@email.com` và password `password123`   | Vào trang chủ và hiển thị tên người dùng + vai trò trên thanh ứng dụng                            | REQ-01 | EP       |
-| TC-06 | Đăng nhập với tài khoản tạm ngưng                   | Tài khoản đang trong trạng thái tạm ngưng | Bước 1: Đăng nhập bằng email in hoa. Bước 2: Kiểm tra xem có vào đươc hệ thống không             | Email in hoa và password                                | Vào trang chủ và hiển thị tên người dùng + vai trò trên thanh ứng dụng                            | REQ-01 | EP       |
+| Mã TC | Mục tiêu kiểm thử                                   | Tiền điều kiện                            | Bước thực hiện                                                                                   | Dữ liệu đầu vào                                         | Kết quả mong đợi                                                                                  | REQ    | Kỹ thuật      |
+| ----- | --------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------ | ------------- |
+| TC-01 | Đăng nhập với email và password hợp lệ              | Có tồn tài tài khoản trên hệ thống        | Bước 1: Đăng nhập bằng email và password hợp lệ. Bước 2: Kiểm tra xem có vào được hệ thông không | Email: `ba.nguyen@email.com` và password: `password123` | Vào trang chủ và hiển thị tên `Nguyễn Học Bá` + vai trò `Thành viên / member` trên thanh ứng dụng | REQ-01 | EP, Black-box |
+| TC-02 | Đăng nhập tài khoản không tồn tại                   | Không tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email `nobody@test.com` và password `anything`          | Gửi thông báo lỗi đăng nhập "Không tìm thấy thành viên" nếu email sai                             | REQ-01 | EP, Black-box |
+| TC-03 | Đăng nhập tài khoản sai mật khẩu                    | Email tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email `ba.nguyen@email.com` và password `anything`      | Gửi thông báo lỗi "Mật khẩu không đúng"                                                           | REQ-01 | EP, Black-box |
+| TC-04 | Đăng nhập không nhập bỏ trống tài khoản và mật khẩu | Không tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email _(empty)_ và password _(empty)_                   | Gửi thông báo lỗi "Vui lòng nhập tài khoản vả mật khẩu"                                           | REQ-01 | EP, Black-box |
+| TC-05 | Đăng nhập với email in hoa và mật khẩu hợp lệ       | Tồn tại tài khoản trên hệ thống           | Bước 1: Đăng nhập bằng email in hoa. Bước 2: Kiểm tra xem có vào đươc hệ thống không             | Email `Ba.nguyen@email.com` và password `password123`   | Vào trang chủ và hiển thị tên người dùng + vai trò trên thanh ứng dụng                            | REQ-01 | EP, Black-box |
+| TC-06 | Đăng nhập với tài khoản tạm ngưng                   | Tài khoản đang trong trạng thái tạm ngưng | Bước 1: Đăng nhập bằng email in hoa. Bước 2: Kiểm tra xem có vào đươc hệ thống không             | Email in hoa và password                                | Vào trang chủ và hiển thị tên người dùng + vai trò trên thanh ứng dụng                            | REQ-01 | EP, Black-box |
 
 ### REQ-02 — Xem danh sách sách
 
