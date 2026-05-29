@@ -82,6 +82,15 @@
 
 ### REQ-02 — Xem danh sách sách
 
+| TC-11 | Hiển thị danh sách tất cả sách trong thư viện | Đã đăng nhập tài khoản thành viên hợp lệ | Bước 1: Đăng nhập thành công. Bước 2: Vào trang danh sách sách. Bước 3: Quan sát danh sách hiển thị | "biet.hoang@email.com" và password: password123" | Hiển thị đầy đủ danh sách sách, không bị trống hay lỗi | REQ-02 | EP    |
+
+| TC-12 | Mỗi sách hiển thị đủ thông tin: tên, tác giả, thể loại, năm XB, trạng thái | Đã đăng nhập, đang xem danh sách sách | Bước 1: Vào danh sách sách. Bước 2: Quan sát thông tin từng cuốn sách. Bước 3: Kiểm tra đủ 5 trường thông tin | Sách mẫu: BOOK001 – Lập trình Flutter cơ bản | Mỗi sách hiển thị đủ: Tên sách, Tác giả, Thể loại, Năm xuất bản, Trạng thái | REQ-02 | EP |
+
+| TC-13 | Sách đang được mượn hiển thị trạng thái "Đang mượn" | Đã đăng nhập, trong phần danh sách sách | Bước 1: Tìm BOOK003 và BOOK013 | BOOK003: đã mượn bởi MEM002. BOOK013: đã mượn bởi MEM006 | Cả hai sách hiển thị trạng thái "Đang mượn" | REQ-02 | EP |
+
+| TC-14 | Sách thất lạc hiển thị đúng trạng thái "Thất lạc" | Đã đăng nhập, trong phần danh sách sách | Bước 1: Tìm BOOK007 và BOOK020 | BOOK007 và BOOK020: Thất lạc | Cả hai sách hiển thị trạng thái "Thất lạc" | REQ-02 | BVA |
+
+
 ### REQ-03 — Tìm kiếm và lọc sách
 
 ### REQ-04 — Mượn sách
