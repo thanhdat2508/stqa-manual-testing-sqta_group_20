@@ -88,6 +88,23 @@
 
 ### REQ-05 — Trả sách
 
+| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+| ----- | ----------------- | -------------- | -------------- | --------------- | ---------------- | --- | -------- |
+|TC-51  |Trả sách đang mượn thành công trong thời hạn cho phép|Hệ thống đang giữ dữ liệu mặc định ban đầu. Đăng nhập bằng tài khoản Thủ thư.                |Bước 1: Vào giao diện tab Mượn / Trả. Bước 2: Tìm đến phiếu mượn mã BR003 và nhấn nút Trả. Bước 3: Kiểm tra trạng thái phiếu và trạng thái sách.                |Mã phiếu BR003 và mã sách BOOK013                 |Trả sách thành công, trạng thái phiếu đổi sang "Đã trả" và sách chuyển về "Có sẵn".                  |REQ-05     |EP          |
+| TC-52 | Trả sách quá hạn thực tế và kiểm tra hệ thống hiển thị cảnh báo | Đăng nhập tài khoản Thủ thư. Đã kích hoạt quét bằng nút "Kiểm tra quá hạn". | Bước 1: Tại giao diện tab Mượn / Trả, tìm dòng kiểm tra sách quá hạn. Bước 2: Nhấn nút kiểm tra sách quá hạn. Bước 3: Kiểm tra thông báo hiển thị. | Mã phiếu BR001 và mã sách BOOK003 | Trả sách thành công, trạng thái phiếu đổi sang "Đã trả" và hiển thị cảnh báo quá hạn rõ ràng trên màn hình | REQ-05 | BVA |
+| TC-53 | Kiểm tra quyền hiển thị nút Trả trên tài khoản thành viên  | Có tài khoản thành viên đang trong trạng thái mượn sách. | Bước 1: Đăng nhập bằng tài khoản thành viên. Bước 2: Vào giao diện tab Mượn / Trả. Bước 3: Kiểm tra xem có hiển thị nút Trả ở phần tất cả phiếu mượn không. | `biet.hoang@email.com` và password: `password123` | Hệ thống không hiển thị nút "Trả sách" ở dòng phiếu mượn cá nhân | REQ-05 | EP |
+| TC-54 | Ngăn chặn hành động bấm trả sách của người khác | Đăng nhập bằng tài khoản thành viên |  Bước 1: Vào giao diện tab Mượn / Trả. Bước 2: Bấm vào tra cứu phiếu mượn và nhập mã của thành viên khác. Bước 3: Thử nhấn chọn hành động Trả trên dòng phiếu đó. | Email: `ba.nguyen@email.com` và password: `password123` | Hệ thống từ chối xử lý, không cho phép bấm trả hoặc nút bấm hoàn toàn bị vô hiệu hóa. | REQ-05 | EP |
+| TC-55 | Kiểm tra trạng thái nút trả đối với sách đã hoàn thành trả trước đó | Hệ thống đang giữ dữ liệu mặc định ban đầu. Đăng nhập bằng tài khoản thủ thư. | Bước 1: Vào giao diện tab Mượn / Trả. Bước 2: Tra cứu xem còn sách nào đã trả mà vẫn còn chữ Trả trên màn hình không | Mã phiếu: `BR002 (Trạng thái ban đầu: Đã trả)` | Trên những phiếu mượn đã trả sẽ hoàn toàn không còn chữ "Trả" | REQ-05 | EP |
+| TC-56 | Kiểm tra tính năng chặn gửi trùng yêu cầu (spam click) khi thực hiện trả sách. | Đăng nhập bằng tài khoản Thủ thư. | Bước 1: Vào giao diện tab Mượn / Trả. Bước 2: Tìm đến một phiếu mượn đang hoạt động. Bước 3: Nhấn chuột liên tục nhiều lần vào nút Trả và quan sát sổ lượng và nội dung popup hiện ra màn hình. | Mã phiếu: `BR003` và hành động click chuột liên tục | Hệ thống chỉ tiếp nhận và xử lý yêu cầu click đầu tiên, hiển thị duy nhất 01 popup thông báo "Trả sách thành công". | REQ-05 | EP |
+| TC-57 | Kiểm tra việc hiển thị cảnh báo quá hạn khi sách đã quá hạn trả. | Đăng nhập bằng tài khoản thành viên. | Bước 1: Vào giao diện tab Mượn / Trả. Bước 2: Quan sát xem hệ thống có hiển thị thông báo có cảnh báo quá hạn hay không. | Mã phiếu mượn và mã sách | Hệ thống bắt buộc phải hiển thị cảnh báo quá hạn rõ ràng trên màn hình giao diện. | REQ-05 | EP |
+
+
+
+
+
+
+
+
 ### REQ-06 — Xử lý sách quá hạn
 
 ### REQ-07 — Quản lý thành viên
