@@ -62,17 +62,10 @@
 
 ### IDM — Trả sách (REQ-05)
 
-| Đặc tính (Characteristic)                          | Phân vùng (Block)       | Giá trị đại diện (Value)                                                                 | Kết quả mong đợi                               |
-| -------------------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Sách đang mượn có thuộc về đúng người dùng không ? | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại)                                      | Trả sách thành công                            |
-|                                                    | Không                   | MEM006 trả sách BOOK003 (Kiểm thử phần mềm nhập môn) đang được mượn từ người dùng MEM006 | Trả sách không thành công                      |
-| Trạng thái sách thay đổi khi được trả ?            | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại) thành công                           | Cập nhập trạng thái thành Có Sẵn / Available   |
-|                                                    | Không                   | MEM006 chưa trả sách BOOK013 (Quản trị nhân sự hiện đại)                                 | Giữ nguyên trạng thái Đang Mượn / Borrowed     |
-| Sách thay đổi trạng thái khi trả sách thành công ? | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại) thành công                           | Cập nhập trạng thái trả sách Đã trả / Returned |
-|                                                    | Không                   | MEM006 chưa trả sách BOOK013 (Quản trị nhân sự hiện đại)                                 | Giữ nguyên trạng thái                          |
-| Trả sách đúng thời hạn không ?                     | Trả sách đúng hạn       | BR002(MEM003 trả sách vào 20/08/2024)                                                    | Trả thành công và không cảnh báo trả muộn      |
-|                                                    | Trả sách không đúng hạn | BR005(MEM003 trả sách vào 20/06/2024 )                                                   | Trả thành công và cảnh báo trả muộn            |
-|                                                    | Đã trả sách             | BR002 đã trả sách                                                                        | Trạng thái sách Đã Trả / Returned              |
+| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
+| ------------------------- | ----------------- | ------------------------ | ---------------- |
+| `<!-- Nhóm tự điền -->`   |                   |                          |                  |                     |
+
 
 ### IDM — Quản lý thành viên (REQ-07)
 
@@ -96,7 +89,13 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 | ------------------------- | ----------------- | ------------------------ | ---------------- |
-| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+| Từng vị trí có vai trò gì ?     | Vai trò Thủ thư    | `librarian@library.com` | Xem được toàn bộ phiếu mượn của hệ thống.              |
+|                                 | Vai trò Thành viên | `ba.nguyen@email.com`   | Chỉ nhìn thấy phiếu của chính mình, ẩn hoàn toàn phiếu người khác.|
+| Thông tin phiếu hiển thị là gì ?| Đầy đủ thuộc tính  | `Các trường thông tin trên bảng` | Hiển thị đủ: Mã phiếu, sách mượn, ngày mượn, ngày hết hạn, trạng thái.|
+| Trạng thái phiếu mượn là gì ? | Đang mượn            | `Phiếu mượn (VD:BR001)`                | Hiển thị đúng nhãn trạng thái "Đang mượn".|
+|                               | Đã trả               | `Phiếu mượn (VD:BR002)`               | Hiển thị đúng nhãn trạng thái "Đã trả".    |
+|                               | Quá hạn              | `Phiếu mượn (VD:BR003)`               | Hiển thị đúng nhãn trạng thái "Quá hạn".   |
+
 
 ### IDM — Xử lý sách quá hạn (REQ-06)
 
