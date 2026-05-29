@@ -1,16 +1,16 @@
-# Ví dụ mẫu: Trường hợp kiểm thử (*Sample Test Case*)
+# Ví dụ mẫu: Trường hợp kiểm thử (_Sample Test Case_)
 
 > Đây là ví dụ minh họa từ **hệ thống khác** (ứng dụng máy tính bỏ túi) để bạn hiểu cách viết một trường hợp kiểm thử hoàn chỉnh. **Áp dụng format này cho hệ thống thư viện, không sao chép nội dung.**
 
 ---
 
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
-|-------|-------------------|---------------|---------------|-----------------|------------------|-----|--------|
-| TC-03 | Chia cho số 0 | Ứng dụng máy tính đã mở | 1. Nhập `10` vào ô số bị chia. 2. Chọn phép tính **Chia (/)**. 3. Nhập `0` vào ô số chia. 4. Nhấn nút **=**. | Số bị chia: `10`, Số chia: `0` | Hiển thị thông báo lỗi “Không thể chia cho 0”. Không hiển thị kết quả số. | REQ-02 | EP, BVA |
+| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện          | Bước thực hiện                                                                                               | Dữ liệu đầu vào                | Kết quả mong đợi                                                          | REQ    | Kỹ thuật |
+| ----- | ----------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------------------- | ------ | -------- |
+| TC-03 | Chia cho số 0     | Ứng dụng máy tính đã mở | 1. Nhập `10` vào ô số bị chia. 2. Chọn phép tính **Chia (/)**. 3. Nhập `0` vào ô số chia. 4. Nhấn nút **=**. | Số bị chia: `10`, Số chia: `0` | Hiển thị thông báo lỗi “Không thể chia cho 0”. Không hiển thị kết quả số. | REQ-02 | EP, BVA  |
 
 ---
 
-## Giải thích cách viết (*Explanation*)
+## Giải thích cách viết (_Explanation_)
 
 ### Tại sao TC này tốt?
 
@@ -24,14 +24,13 @@
 
 ### Kỹ thuật được áp dụng
 
-- **EP (*Phân lớp tương đương*)**: Số chia được chia thành 2 lớp — khác 0 (hợp lệ) và bằng 0 (không hợp lệ). TC này thuộc lớp không hợp lệ.
-- **BVA (*Phân tích giá trị biên*)**: `0` là giá trị biên — ranh giới giữa số dương nhỏ nhất và số không hợp lệ.
+- **EP (_Phân lớp tương đương_)**: Số chia được chia thành 2 lớp — khác 0 (hợp lệ) và bằng 0 (không hợp lệ). TC này thuộc lớp không hợp lệ.
+- **BVA (_Phân tích giá trị biên_)**: `0` là giá trị biên — ranh giới giữa số dương nhỏ nhất và số không hợp lệ.
 
 ### Lỗi thường gặp khi viết TC
 
-| Sai | Đúng | Lý do |
-|-----|------|-------|
-| Dữ liệu: "số sai" | Dữ liệu: `10` và `0` | Phải ghi giá trị cụ thể để người khác tái hiện được |
-| Bước: "Thực hiện phép chia sai" | Bước: 1. Nhập số... 2. Chọn phép tính... 3. Nhấn nút... | Phải tách từng hành động |
-| Mong đợi: "Báo lỗi" | Mong đợi: "Hiển thị thông báo 'Không thể chia cho 0'" | Phải ghi rõ nội dung thông báo |
-
+| Sai                             | Đúng                                                    | Lý do                                               |
+| ------------------------------- | ------------------------------------------------------- | --------------------------------------------------- |
+| Dữ liệu: "số sai"               | Dữ liệu: `10` và `0`                                    | Phải ghi giá trị cụ thể để người khác tái hiện được |
+| Bước: "Thực hiện phép chia sai" | Bước: 1. Nhập số... 2. Chọn phép tính... 3. Nhấn nút... | Phải tách từng hành động                            |
+| Mong đợi: "Báo lỗi"             | Mong đợi: "Hiển thị thông báo 'Không thể chia cho 0'"   | Phải ghi rõ nội dung thông báo                      |
