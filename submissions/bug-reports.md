@@ -16,7 +16,7 @@
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
 | **Mã lỗi**          | `BUG-01 `          |
-| **TC liên quan**    | `TC-01`            |
+| **TC liên quan**    | `TC-05`            |
 | **REQ liên quan**   | `REQ-01`           |
 | **Mức độ**          | `High`             |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
@@ -63,7 +63,7 @@
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
 | **Mã lỗi**          | `BUG-02`               |
-| **TC liên quan**    | `TC-xx`                |
+| **TC liên quan**    | `TC-23`                |
 | **REQ liên quan**   | `REQ-04`               |
 | **Mức độ**          | `High`                 |
 | **Người phát hiện** | `Nguyen Cao Hoang Dat` |
@@ -110,7 +110,7 @@
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
 | **Mã lỗi**          | `BUG-03`               |
-| **TC liên quan**    | `TC-03`                |
+| **TC liên quan**    | `Tc-28`                |
 | **REQ liên quan**   | `REQ-04`               |
 | **Mức độ**          | `Medium`               |
 | **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
@@ -157,7 +157,7 @@
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
 | **Mã lỗi**          | `BUG-04`           |
-| **TC liên quan**    | `TC-01`            |
+| **TC liên quan**    | `TC-16, TC-17`     |
 | **REQ liên quan**   | `REQ-03`           |
 | **Mức độ**          | `Cao`              |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
@@ -203,8 +203,8 @@
 | Thuộc tính          | Chi tiết        |
 | ------------------- | --------------- |
 | **Mã lỗi**          | `BUG-05`        |
-| **TC liên quan**    | `TC-01`         |
-| **REQ liên quan**   | `REQ-06`        |
+| **TC liên quan**    | `TC-24`         |
+| **REQ liên quan**   | `REQ-04`        |
 | **Mức độ**          | `High`          |
 | **Người phát hiện** | `Bùi Mạnh Hiếu` |
 | **Ngày phát hiện**  | `25/05/2026`    |
@@ -246,15 +246,15 @@
 
 ## BUG-06
 
-| Thuộc tính          | Chi tiết     |
-| ------------------- | ------------ |
-| **Mã lỗi**          | `BUG-06`     |
-| **TC liên quan**    | `TC-xx`      |
-| **REQ liên quan**   | `REQ-05`     |
-| **Mức độ**          | `High`       |
-| **Người phát hiện** | `Đỗ Hữu Đức` |
-| **Ngày phát hiện**  | `25/05/2026` |
-| **Trạng thái**      | `Open`       |
+| Thuộc tính          | Chi tiết      |
+| ------------------- | ------------- |
+| **Mã lỗi**          | `BUG-06`      |
+| **TC liên quan**    | `TC-53,TC-54` |
+| **REQ liên quan**   | `REQ-08`      |
+| **Mức độ**          | `High`        |
+| **Người phát hiện** | `Đỗ Hữu Đức`  |
+| **Ngày phát hiện**  | `25/05/2026`  |
+| **Trạng thái**      | `Open`        |
 
 **Tiêu đề:**
 `Các thành viên có thể tự do tra cứu mã của nhau`
@@ -296,7 +296,7 @@
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
 | **Mã lỗi**          | `BUG-07`               |
-| **TC liên quan**    | `TC-08`                |
+| **TC liên quan**    | `TC-30`                |
 | **REQ liên quan**   | `REQ-05`               |
 | **Mức độ**          | `High`                 |
 | **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
@@ -344,7 +344,7 @@
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
 | **Mã lỗi**          | `BUG-08`          |
-| **TC liên quan**    | `TC-xx`           |
+| **TC liên quan**    | `TC-26`           |
 | **REQ liên quan**   | `REQ-04`          |
 | **Mức độ**          | `Low`             |
 | **Người phát hiện** | `Hoàng Thành Đạt` |
@@ -391,7 +391,7 @@
 | Thuộc tính          | Chi tiết        |
 | ------------------- | --------------- |
 | **Mã lỗi**          | `BUG-09`        |
-| **TC liên quan**    | `TC-01`         |
+| **TC liên quan**    | `TC-27`         |
 | **REQ liên quan**   | `REQ-04`        |
 | **Mức độ**          | `High`          |
 | **Người phát hiện** | `Bùi Mạnh Hiếu` |
@@ -437,7 +437,7 @@
 | Thuộc tính          | Chi tiết     |
 | ------------------- | ------------ |
 | **Mã lỗi**          | `BUG-10`     |
-| **TC liên quan**    | `TC-01`      |
+| **TC liên quan**    | `TC-31`      |
 | **REQ liên quan**   | `REQ-05`     |
 | **Mức độ**          | `Medium`     |
 | **Người phát hiện** | `Đỗ Hữu Đức` |
@@ -484,7 +484,7 @@
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
 | **Mã lỗi**          | `BUG-11`           |
-| **TC liên quan**    | `TC-01`            |
+| **TC liên quan**    | `TC-34`            |
 | **REQ liên quan**   | `REQ-05`           |
 | **Mức độ**          | `High`             |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
@@ -535,7 +535,7 @@
 | Thuộc tính          | Chi tiết        |
 | ------------------- | --------------- |
 | **Mã lỗi**          | `BUG-12`        |
-| **TC liên quan**    | `TC-01`         |
+| **TC liên quan**    | `TC-45`         |
 | **REQ liên quan**   | `REQ-07`        |
 | **Mức độ**          | `Medium`        |
 | **Người phát hiện** | `Bùi Mạnh Hiếu` |
@@ -677,7 +677,7 @@
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
 | **Mã lỗi**          | `BUG-15`          |
-| **TC liên quan**    | `TC-01`           |
+| **TC liên quan**    | `TC-44`           |
 | **REQ liên quan**   | `REQ-07`          |
 | **Mức độ**          | `High`            |
 | **Người phát hiện** | `Hoàng Thành Đạt` |
@@ -770,7 +770,7 @@
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
 | **Mã lỗi**          | `BUG-17`          |
-| **TC liên quan**    | ``                |
+| **TC liên quan**    | `TC-26`           |
 | **REQ liên quan**   | `REQ-04`          |
 | **Mức độ**          | `low`             |
 | **Người phát hiện** | `Hoàng Thành Đạt` |
