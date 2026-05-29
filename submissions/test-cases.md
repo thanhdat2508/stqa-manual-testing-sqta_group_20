@@ -64,7 +64,7 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 | ------------------------- | ----------------- | ------------------------ | ---------------- |
-| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+| `<!-- Nhóm tự điền -->`   |                   |                          |                  |                     |
 
 ### IDM — Quản lý thành viên (REQ-07)
 
@@ -76,7 +76,13 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 | ------------------------- | ----------------- | ------------------------ | ---------------- |
-| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+| Từng vị trí có vai trò gì ?     | Vai trò Thủ thư    | `librarian@library.com` | Xem được toàn bộ phiếu mượn của hệ thống.              |
+|                                 | Vai trò Thành viên | `ba.nguyen@email.com`   | Chỉ nhìn thấy phiếu của chính mình, ẩn hoàn toàn phiếu người khác.|
+| Thông tin phiếu hiển thị là gì ?| Đầy đủ thuộc tính  | `Các trường thông tin trên bảng` | Hiển thị đủ: Mã phiếu, sách mượn, ngày mượn, ngày hết hạn, trạng thái.|
+| Trạng thái phiếu mượn là gì ? | Đang mượn            | `Phiếu mượn (VD:BR001)`                | Hiển thị đúng nhãn trạng thái "Đang mượn".|
+|                               | Đã trả               | `Phiếu mượn (VD:BR002)`               | Hiển thị đúng nhãn trạng thái "Đã trả".    |
+|                               | Quá hạn              | `Phiếu mượn (VD:BR003)`               | Hiển thị đúng nhãn trạng thái "Quá hạn".   |
+
 
 ### IDM — Xử lý sách quá hạn (REQ-06)
 
