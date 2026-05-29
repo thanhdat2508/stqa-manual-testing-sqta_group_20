@@ -62,25 +62,12 @@
 
 ### IDM — Trả sách (REQ-05)
 
-| Đặc tính (Characteristic)                          | Phân vùng (Block)       | Giá trị đại diện (Value)                                                                 | Kết quả mong đợi                               |
-| -------------------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Sách đang mượn có thuộc về đúng người dùng không ? | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại)                                      | Trả sách thành công                            |
-|                                                    | Không                   | MEM006 trả sách BOOK003 (Kiểm thử phần mềm nhập môn) đang được mượn từ người dùng MEM006 | Trả sách không thành công                      |
-| Trạng thái sách thay đổi khi được trả ?            | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại) thành công                           | Cập nhập trạng thái thành Có Sẵn / Available   |
-|                                                    | Không                   | MEM006 chưa trả sách BOOK013 (Quản trị nhân sự hiện đại)                                 | Giữ nguyên trạng thái Đang Mượn / Borrowed     |
-| Sách thay đổi trạng thái khi trả sách thành công ? | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại) thành công                           | Cập nhập trạng thái trả sách Đã trả / Returned |
-|                                                    | Không                   | MEM006 chưa trả sách BOOK013 (Quản trị nhân sự hiện đại)                                 | Giữ nguyên trạng thái                          |
-| Trả sách đúng thời hạn không ?                     | Trả sách đúng hạn       | BR002(MEM003 trả sách vào 20/08/2024)                                                    | Trả thành công và không cảnh báo trả muộn      |
-|                                                    | Trả sách không đúng hạn | BR005(MEM003 trả sách vào 20/06/2024 )                                                   | Trả thành công và cảnh báo trả muộn            |
-|                                                    | Đã trả sách             | BR002 đã trả sách                                                                        | Trạng thái sách Đã Trả / Returned              |
-
-### IDM — Quản lý thành viên (REQ-07)
-
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 | ------------------------- | ----------------- | ------------------------ | ---------------- |
-| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+| `<!-- Nhóm tự điền -->`   |                   |                          |                  |                     |
 
-### IDM — Tra cứu mượn sách (REQ-08)
+
+### IDM — Quản lý thành viên (REQ-07)
 
 | Đặc tính (Characteristic)   | Phân vùng (Block)                                               | Giá trị đại diện (Value)      | Kết quả mong đợi              |
 | :-------------------------- | :-------------------------------------------------------------- | :---------------------------- | :---------------------------- |
@@ -97,6 +84,17 @@
 |                             | Không hợp lệ (Bỏ trống)                                         | `[Bỏ trống]`                  | Báo lỗi: Yêu cầu điền đầy đủ  |
 | **Phân quyền truy cập**     | Tài khoản có quyền (Thủ thư)                                    | Account: Thủ thư              | Cho phép truy cập, thêm mới   |
 |                             | Tài khoản không có quyền (Thành viên)                           | Account: Thành viên           | Chặn truy cập, báo lỗi quyền  |
+
+### IDM — Tra cứu mượn sách (REQ-08)
+
+| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
+| ------------------------- | ----------------- | ------------------------ | ---------------- |
+| Từng vị trí có vai trò gì ?     | Vai trò Thủ thư    | `librarian@library.com` | Xem được toàn bộ phiếu mượn của hệ thống.              |
+|                                 | Vai trò Thành viên | `ba.nguyen@email.com`   | Chỉ nhìn thấy phiếu của chính mình, ẩn hoàn toàn phiếu người khác.|
+| Thông tin phiếu hiển thị là gì ?| Đầy đủ thuộc tính  | `Các trường thông tin trên bảng` | Hiển thị đủ: Mã phiếu, sách mượn, ngày mượn, ngày hết hạn, trạng thái.|
+| Trạng thái phiếu mượn là gì ? | Đang mượn            | `Phiếu mượn (VD:BR001)`                | Hiển thị đúng nhãn trạng thái "Đang mượn".|
+|                               | Đã trả               | `Phiếu mượn (VD:BR002)`               | Hiển thị đúng nhãn trạng thái "Đã trả".    |
+|                               | Quá hạn              | `Phiếu mượn (VD:BR003)`               | Hiển thị đúng nhãn trạng thái "Quá hạn".   |
 
 ### IDM — Xử lý sách quá hạn (REQ-06)
 
@@ -115,14 +113,14 @@
 
 ### REQ-01 — Login
 
-| Mã TC | Mục tiêu kiểm thử                                   | Tiền điều kiện                            | Bước thực hiện                                                                                   | Dữ liệu đầu vào                                         | Kết quả mong đợi                                                                                  | REQ    | Kỹ thuật |
-| ----- | --------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------ | -------- |
-| TC-01 | Đăng nhập với email và password hợp lệ              | Có tồn tài tài khoản trên hệ thống        | Bước 1: Đăng nhập bằng email và password hợp lệ. Bước 2: Kiểm tra xem có vào được hệ thông không | Email: `ba.nguyen@email.com` và password: `password123` | Vào trang chủ và hiển thị tên `Nguyễn Học Bá` + vai trò `Thành viên / member` trên thanh ứng dụng | REQ-01 | EP       |
-| TC-02 | Đăng nhập tài khoản không tồn tại                   | Không tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email `nobody@test.com` và password `anything`          | Gửi thông báo lỗi đăng nhập "Không tìm thấy thành viên" nếu email sai                             | REQ-01 | EP       |
-| TC-03 | Đăng nhập tài khoản sai mật khẩu                    | Email tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email `ba.nguyen@email.com` và password `anything`      | Gửi thông báo lỗi "Mật khẩu không đúng"                                                           | REQ-01 | EP       |
-| TC-04 | Đăng nhập không nhập bỏ trống tài khoản và mật khẩu | Không tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email _(empty)_ và password _(empty)_                   | Gửi thông báo lỗi "Vui lòng nhập tài khoản vả mật khẩu"                                           | REQ-01 | EP       |
-| TC-05 | Đăng nhập với email in hoa và mật khẩu hợp lệ       | Tồn tại tài khoản trên hệ thống           | Bước 1: Đăng nhập bằng email in hoa. Bước 2: Kiểm tra xem có vào đươc hệ thống không             | Email `Ba.nguyen@email.com` và password `password123`   | Vào trang chủ và hiển thị tên người dùng + vai trò trên thanh ứng dụng                            | REQ-01 | EP       |
-| TC-06 | Đăng nhập với tài khoản tạm ngưng                   | Tài khoản đang trong trạng thái tạm ngưng | Bước 1: Đăng nhập bằng email in hoa. Bước 2: Kiểm tra xem có vào đươc hệ thống không             | Email in hoa và password                                | Vào trang chủ và hiển thị tên người dùng + vai trò trên thanh ứng dụng                            | REQ-01 | EP       |
+| Mã TC | Mục tiêu kiểm thử                                   | Tiền điều kiện                            | Bước thực hiện                                                                                   | Dữ liệu đầu vào                                         | Kết quả mong đợi                                                                                  | REQ    | Kỹ thuật      |
+| ----- | --------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------ | ------------- |
+| TC-01 | Đăng nhập với email và password hợp lệ              | Có tồn tài tài khoản trên hệ thống        | Bước 1: Đăng nhập bằng email và password hợp lệ. Bước 2: Kiểm tra xem có vào được hệ thông không | Email: `ba.nguyen@email.com` và password: `password123` | Vào trang chủ và hiển thị tên `Nguyễn Học Bá` + vai trò `Thành viên / member` trên thanh ứng dụng | REQ-01 | EP, Black-box |
+| TC-02 | Đăng nhập tài khoản không tồn tại                   | Không tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email `nobody@test.com` và password `anything`          | Gửi thông báo lỗi đăng nhập "Không tìm thấy thành viên" nếu email sai                             | REQ-01 | EP, Black-box |
+| TC-03 | Đăng nhập tài khoản sai mật khẩu                    | Email tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email `ba.nguyen@email.com` và password `anything`      | Gửi thông báo lỗi "Mật khẩu không đúng"                                                           | REQ-01 | EP, Black-box |
+| TC-04 | Đăng nhập không nhập bỏ trống tài khoản và mật khẩu | Không tồn tại trên hệ thống               | Bước 1: Đăng nhập bằng tài khoản và mật khẩu không hợp lệ                                        | Email _(empty)_ và password _(empty)_                   | Gửi thông báo lỗi "Vui lòng nhập tài khoản vả mật khẩu"                                           | REQ-01 | EP, Black-box |
+| TC-05 | Đăng nhập với email in hoa và mật khẩu hợp lệ       | Tồn tại tài khoản trên hệ thống           | Bước 1: Đăng nhập bằng email in hoa. Bước 2: Kiểm tra xem có vào đươc hệ thống không             | Email `Ba.nguyen@email.com` và password `password123`   | Vào trang chủ và hiển thị tên người dùng + vai trò trên thanh ứng dụng                            | REQ-01 | EP, Black-box |
+| TC-06 | Đăng nhập với tài khoản tạm ngưng                   | Tài khoản đang trong trạng thái tạm ngưng | Bước 1: Đăng nhập bằng email in hoa. Bước 2: Kiểm tra xem có vào đươc hệ thống không             | Email in hoa và password                                | Vào trang chủ và hiển thị tên người dùng + vai trò trên thanh ứng dụng                            | REQ-01 | EP, Black-box |
 
 ### REQ-02 — Xem danh sách sách
 
