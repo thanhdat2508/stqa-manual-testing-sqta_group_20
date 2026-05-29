@@ -62,9 +62,17 @@
 
 ### IDM — Trả sách (REQ-05)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-| ------------------------- | ----------------- | ------------------------ | ---------------- |
-| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+| Đặc tính (Characteristic)                          | Phân vùng (Block)       | Giá trị đại diện (Value)                                                                 | Kết quả mong đợi                               |
+| -------------------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Sách đang mượn có thuộc về đúng người dùng không ? | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại)                                      | Trả sách thành công                            |
+|                                                    | Không                   | MEM006 trả sách BOOK003 (Kiểm thử phần mềm nhập môn) đang được mượn từ người dùng MEM006 | Trả sách không thành công                      |
+| Trạng thái sách thay đổi khi được trả ?            | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại) thành công                           | Cập nhập trạng thái thành Có Sẵn / Available   |
+|                                                    | Không                   | MEM006 chưa trả sách BOOK013 (Quản trị nhân sự hiện đại)                                 | Giữ nguyên trạng thái Đang Mượn / Borrowed     |
+| Sách thay đổi trạng thái khi trả sách thành công ? | Có                      | MEM006 trả sách BOOK013 (Quản trị nhân sự hiện đại) thành công                           | Cập nhập trạng thái trả sách Đã trả / Returned |
+|                                                    | Không                   | MEM006 chưa trả sách BOOK013 (Quản trị nhân sự hiện đại)                                 | Giữ nguyên trạng thái                          |
+| Trả sách đúng thời hạn không ?                     | Trả sách đúng hạn       | BR002(MEM003 trả sách vào 20/08/2024)                                                    | Trả thành công và không cảnh báo trả muộn      |
+|                                                    | Trả sách không đúng hạn | BR005(MEM003 trả sách vào 20/06/2024 )                                                   | Trả thành công và cảnh báo trả muộn            |
+|                                                    | Đã trả sách             | BR002 đã trả sách                                                                        | Trạng thái sách Đã Trả / Returned              |
 
 ### IDM — Quản lý thành viên (REQ-07)
 
