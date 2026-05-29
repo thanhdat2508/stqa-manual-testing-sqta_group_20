@@ -16,7 +16,7 @@
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
 | **Mã lỗi**          | `BUG-01 `          |
-| **TC liên quan**    | `TC-01`            |
+| **TC liên quan**    | `TC-05`            |
 | **REQ liên quan**   | `REQ-01`           |
 | **Mức độ**          | `High`             |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
@@ -63,7 +63,7 @@
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
 | **Mã lỗi**          | `BUG-02`               |
-| **TC liên quan**    | `TC-xx`                |
+| **TC liên quan**    | `TC-23`                |
 | **REQ liên quan**   | `REQ-04`               |
 | **Mức độ**          | `High`                 |
 | **Người phát hiện** | `Nguyen Cao Hoang Dat` |
@@ -110,7 +110,7 @@
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
 | **Mã lỗi**          | `BUG-03`               |
-| **TC liên quan**    | `TC-03`                |
+| **TC liên quan**    | `Tc-28`                |
 | **REQ liên quan**   | `REQ-04`               |
 | **Mức độ**          | `Medium`               |
 | **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
@@ -157,7 +157,7 @@
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
 | **Mã lỗi**          | `BUG-04`           |
-| **TC liên quan**    | `TC-01`            |
+| **TC liên quan**    | `TC-16, TC-17`     |
 | **REQ liên quan**   | `REQ-03`           |
 | **Mức độ**          | `Cao`              |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
@@ -203,8 +203,8 @@
 | Thuộc tính          | Chi tiết        |
 | ------------------- | --------------- |
 | **Mã lỗi**          | `BUG-05`        |
-| **TC liên quan**    | `TC-01`         |
-| **REQ liên quan**   | `REQ-06`        |
+| **TC liên quan**    | `TC-24`         |
+| **REQ liên quan**   | `REQ-04`        |
 | **Mức độ**          | `High`          |
 | **Người phát hiện** | `Bùi Mạnh Hiếu` |
 | **Ngày phát hiện**  | `25/05/2026`    |
@@ -246,15 +246,15 @@
 
 ## BUG-06
 
-| Thuộc tính          | Chi tiết     |
-| ------------------- | ------------ |
-| **Mã lỗi**          | `BUG-06`     |
-| **TC liên quan**    | `TC-xx`      |
-| **REQ liên quan**   | `REQ-05`     |
-| **Mức độ**          | `High`       |
-| **Người phát hiện** | `Đỗ Hữu Đức` |
-| **Ngày phát hiện**  | `25/05/2026` |
-| **Trạng thái**      | `Open`       |
+| Thuộc tính          | Chi tiết      |
+| ------------------- | ------------- |
+| **Mã lỗi**          | `BUG-06`      |
+| **TC liên quan**    | `TC-53,TC-54` |
+| **REQ liên quan**   | `REQ-08`      |
+| **Mức độ**          | `High`        |
+| **Người phát hiện** | `Đỗ Hữu Đức`  |
+| **Ngày phát hiện**  | `25/05/2026`  |
+| **Trạng thái**      | `Open`        |
 
 **Tiêu đề:**
 `Các thành viên có thể tự do tra cứu mã của nhau`
@@ -296,7 +296,7 @@
 | Thuộc tính          | Chi tiết               |
 | ------------------- | ---------------------- |
 | **Mã lỗi**          | `BUG-07`               |
-| **TC liên quan**    | `TC-08`                |
+| **TC liên quan**    | `TC-30`                |
 | **REQ liên quan**   | `REQ-05`               |
 | **Mức độ**          | `High`                 |
 | **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
@@ -344,7 +344,7 @@
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
 | **Mã lỗi**          | `BUG-08`          |
-| **TC liên quan**    | `TC-xx`           |
+| **TC liên quan**    | `TC-26`           |
 | **REQ liên quan**   | `REQ-04`          |
 | **Mức độ**          | `Low`             |
 | **Người phát hiện** | `Hoàng Thành Đạt` |
@@ -391,7 +391,7 @@
 | Thuộc tính          | Chi tiết        |
 | ------------------- | --------------- |
 | **Mã lỗi**          | `BUG-09`        |
-| **TC liên quan**    | `TC-01`         |
+| **TC liên quan**    | `TC-27`         |
 | **REQ liên quan**   | `REQ-04`        |
 | **Mức độ**          | `High`          |
 | **Người phát hiện** | `Bùi Mạnh Hiếu` |
@@ -437,7 +437,7 @@
 | Thuộc tính          | Chi tiết     |
 | ------------------- | ------------ |
 | **Mã lỗi**          | `BUG-10`     |
-| **TC liên quan**    | `TC-01`      |
+| **TC liên quan**    | `TC-31`      |
 | **REQ liên quan**   | `REQ-05`     |
 | **Mức độ**          | `Medium`     |
 | **Người phát hiện** | `Đỗ Hữu Đức` |
@@ -484,7 +484,7 @@
 | Thuộc tính          | Chi tiết           |
 | ------------------- | ------------------ |
 | **Mã lỗi**          | `BUG-11`           |
-| **TC liên quan**    | `TC-01`            |
+| **TC liên quan**    | `TC-34`            |
 | **REQ liên quan**   | `REQ-05`           |
 | **Mức độ**          | `High`             |
 | **Người phát hiện** | `Nguyễn Thành Đạt` |
@@ -535,7 +535,7 @@
 | Thuộc tính          | Chi tiết        |
 | ------------------- | --------------- |
 | **Mã lỗi**          | `BUG-12`        |
-| **TC liên quan**    | `TC-01`         |
+| **TC liên quan**    | `TC-45`         |
 | **REQ liên quan**   | `REQ-07`        |
 | **Mức độ**          | `Medium`        |
 | **Người phát hiện** | `Bùi Mạnh Hiếu` |
@@ -677,7 +677,7 @@
 | Thuộc tính          | Chi tiết          |
 | ------------------- | ----------------- |
 | **Mã lỗi**          | `BUG-15`          |
-| **TC liên quan**    | `TC-01`           |
+| **TC liên quan**    | `TC-44`           |
 | **REQ liên quan**   | `REQ-07`          |
 | **Mức độ**          | `High`            |
 | **Người phát hiện** | `Hoàng Thành Đạt` |
@@ -764,47 +764,3 @@
 
 **Đề xuất xử lý:**
 `Kiểm tra lại luồng xử lý dữ liệu ở Client-side: đảm bảo làm sạch (clear/reset) cấu trúc lưu trữ danh sách hoặc bộ đếm đè cũ trước khi nhận mảng dữ liệu mới từ API trả về để tránh tình trạng append (gộp dữ liệu thừa). Phía Server-side cần cam kết cung cấp snapshot dữ liệu độc lập tại thời điểm request.`
-
-## BUG-17
-
-| Thuộc tính          | Chi tiết          |
-| ------------------- | ----------------- |
-| **Mã lỗi**          | `BUG-17`          |
-| **TC liên quan**    | ``                |
-| **REQ liên quan**   | `REQ-04`          |
-| **Mức độ**          | `low`             |
-| **Người phát hiện** | `Hoàng Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`      |
-| **Trạng thái**      | `Open`            |
-
-**Tiêu đề:**
-`Lỗi hiển thị số sách đang mượn ở mục Thành Viên, quá hạn đang mượn nhưng vẫn là đang mượn:0`
-
-**Môi trường:**
-
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Việt
-
-**Điều kiện tiên quyết:**
-`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở mục Mượn/Trả`
-
-**Bước tái hiện:**
-
-1. `Đăng nhập tài khoàn thành công`
-2. `Mượn một cuốn sách bất kì`
-   **Kết quả mong đợi:**
-   `Mong đợi khi mượn quá hạn hệ thống thông báo đã quá hạn`
-
-**Kết quả thực tế:**
-`Lỗi hệ thống sách quá hạn vẫn hiện thị là đang mượn:0`
-
-**Tác động:**
-`Gây hiểu lầm và chưa phân biệt sách đang mượn và quá hạn cho người dùng`
-
-**Minh chứng:**
-![BUG-10](./images/BUG-10/BUG-1O_01.png)
-![BUG-10](./images/BUG-10/BUG-1O_02.png)
-
-**Đề xuất xử lý:**
-`So sách time hiện tại và time trả sách. Nếu như time hiện tại nhỏ hơn hoặc bằng time trả sánh thì hiện thị là đang mượn và ngược lại`
