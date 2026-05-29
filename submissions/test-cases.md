@@ -107,6 +107,18 @@
 | TC-32 | Vừa tìm kiếm vừa lọc thể loại sách khi 1 trong 2 hoặc cả 2 không tồn tại **`SRS GAP`** | Đã đăng nhập vào hệ thống bằng tài khoản hợp lệ và đang ở trang Sách | Bước 1: Đăng nhập bằng tài khoản hợp lệ. Bước 2: Lọc sách với `Công nghệ` và tìm kiếm `Linux` | Lọc với thể loại: `Truyện tranh`, Tìm kiếm `Linux` | TH1: Danh sách hiển thị tất cả sách chứa Linux và tất cả sách thuộc thể loại Công nghệ **(OR)**. TH2: Trả về danh sách rỗng và hiển thị lời nhắn `Không tìm thấy sách nào` **(AND)** | REQ-03 | EP       |
 
 ### REQ-04 — Mượn sách
+| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+| TC-31 | Không thể mượn khi đã đạt giới hạn 3 sách | Đã đăng nhập biet.hoang@email.com; thành viên đang mượn đúng 3 cuốn sách | Bước 1: Xác nhận đang mượn 3 sách. Bước 2: Tìm một cuốn sách có sẵn bất kỳ. Bước 3: Bấm "Mượn sách" | Email: biet.hoang@email.com; Số sách đang mượn: 3/3 | Hệ thống từ chối mượn; hiển thị thông báo "Bạn đã đạt giới hạn 3 sách mượn" | REQ-04 | BVA |
+
+| TC-32 | Không thể mượn sách khi tài khoản bị tạm ngưng | Tài khoản cu.le@email.com (MEM004) đang ở trạng thái "Tạm ngưng" | Bước 1: Đăng nhập cu.le@email.com. Bước 2: Chọn sách Có sẵn bất kỳ. Bước 3: Bấm "Mượn sách" | Email: cu.le@email.com, password: password123 (Tạm ngưng – MEM004) | Hệ thống từ chối với thông báo rõ lý do "Tài khoản đang bị tạm ngưng" | REQ-04 | EP |
+
+| TC-33 | Không thể mượn sách khi tài khoản hết hạn | Tài khoản binh.pham@email.com (MEM005) đang ở trạng thái Hết hạn | Bước 1: Đăng nhập binh.pham@email.com. Bước 2: Chọn sách Có sẵn bất kỳ. Bước 3: Bấm "Mượn sách" | Email: binh.pham@email.com, password: password123 (Hết hạn – MEM005) | Hệ thống từ chối với thông báo rõ lý do "Tài khoản đã hết hạn" | REQ-04 | EP |
+
+| TC-34 | Số lượng sách đang mượn hiển thị đúng trong mục "Thành viên" | Đã đăng nhập librarian@library.com; nhấn vào mục "kiểm tra quá hạn" | Bước 1: Vào mục Thành viên. Bước 2: Kiểm tra số sách đang mượn hiển thị | Email: librarian@library.com | Số sách đang mượn hiển thị đúng và khớp với số thực tế trong "Sách đang mượn" | REQ-04 | EP |
+
+| TC-35 | Hệ thống chỉ xử lý 1 lần khi spam bấm nút "Mượn sách" nhiều lần liên tiếp | Đã đăng nhập biet.hoang@email.com; đang xem chi tiết sách Có sẵn | Bước 1: Vào trang chi tiết sách Có sẵn. Bước 2: Bấm nút "Mượn sách" liên tục 5–10 lần rất nhanh. | Email: biet.hoang@email.com; thao tác: spam click nút Mượn sách | Hệ thống chỉ xử lý đúng 1 lần mượn; không bị trắng màn hình, không mất dữ liệu | REQ-04 | EP |
+
+| Tc-36 | Thông báo lỗi từ chối mượn hiển thị đúng ngôn ngữ giao diện | Đã đăng nhập dam.tran@email.com; giao diện đang bật ngôn ngữ tiếng Anh | Bước 1: Chuyển ngôn ngữ giao diện sang tiếng Anh. Bước 2: Thực hiện thao tác bị từ chối mượn (VD: mượn quá 3 sách). Bước 3: Quan sát popup thông báo lỗi | Email: dam.tran@email.com; ngôn ngữ: tiếng Anh | Popup thông báo lỗi hiển thị đúng ngôn ngữ đang được chọn | REQ-04 | EP |
 
 ### REQ-05 — Trả sách
 
