@@ -54,7 +54,31 @@
 | Số sách đang mượn?        | < 3 (BVA: 0, 1, 2)  | MEM006 (0 sách)          | Cho phép mượn                    |
 |                           | = 3 (BVA: giới hạn) | MEM đã mượn 3 sách       | Từ chối, thông báo vượt giới hạn |
 
-### IDM — `<!-- Nhóm tự bổ sung cho REQ-05 đến REQ-08 -->`
+### IDM — Xem danh sách sách (REQ-02)
+
+| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
+| ------------------------- | ----------------- | ------------------------ | ---------------- |
+| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+
+### IDM — Trả sách (REQ-05)
+
+| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
+| ------------------------- | ----------------- | ------------------------ | ---------------- |
+| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+
+### IDM — Quản lý thành viên (REQ-07)
+
+| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
+| ------------------------- | ----------------- | ------------------------ | ---------------- |
+| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+
+### IDM — Tra cứu mượn sách (REQ-08)
+
+| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
+| ------------------------- | ----------------- | ------------------------ | ---------------- |
+| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+
+### IDM — Xử lý sách quá hạn (REQ-06)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 | ------------------------- | ----------------- | ------------------------ | ---------------- |
