@@ -56,30 +56,28 @@
 
 ### IDM — Xem danh sách sách (REQ-02)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-| ------------------------- | ----------------- | ------------------------ | ---------------- |
-| Quyền truy cập của tài khoản?   |   Thành viên hoạt động    |     biet.hoang@email.com     |      Hiển thị toàn bộ danh sách sách thành công     |
-|                           | Thủ thư | librarian@library.com | Hiển thị toàn bộ danh sách sách thành công |
-|                           | Tạm ngưng | cu.le@email.com | Xử lý bình thường hoặc thông báo tài khoản tạm ngưng |
-|                           | Hết hạn | binh.pham@email.com | Xử lý bình thường hoặc thông báo tài khoản hết hạn |
-| Trạng thái hiển thị của sách? | Có sẵn | BOOK001 | Hiển thị trạng thái "Có sẵn" |
-|                           | Đang mượn | BOOK003 | Hiển thị trạng thái "Đang mượn" |
-|                           | Thất lạc | BOOK007 | Hiển thị trạng thái "Thất lạc" |
-| Thông tin hiển thị đủ 5 trường hợp? | Đủ | Tên, Tác giả, Thể loại, Năm XB, Trạng thái | Hiển thị đầy đủ 5 trường, không trường nào bị trống hay ẩn |
-|                           | Thiếu | Thiếu 1 hoặc nhiều trong 5 trường hợp | Vẫn hiển thị sách, trường thiếu hiển thị ký hiệu thay thế |
-| Cập nhật real-time sau mượn/trả? | Có (vừa mượn sách) | biet.hoang@email.com mượn BOOK001 | Trạng thái BOOK001 chuyển "Đang mượn" ngay, không cần reload |
-|                           | Có (vừa trả sách) | biet.hoang@email.com trả BOOK013 | Trạng thái BOOK013 chuyển "Có sẵn" ngay, không cần reload |
-|                           | Không (không có thao tác mượn/trả) | chỉ xem, không thao tác | Danh sách giữ nguyên, không thay đổi |
-| Số lượng sách trong danh sách? | Có sách (≥ 1 cuốn) | 20 cuốn sách | Hiển thị đầy đủ tất cả sách, không bị thiếu |
-|                           | Không có sách (= 0 cuốn) | Rỗng | Hiển thị thông báo "Chưa có sách trong thư viện" |
-
+| Đặc tính (Characteristic)           | Phân vùng (Block)                  | Giá trị đại diện (Value)                   | Kết quả mong đợi                                             |
+| ----------------------------------- | ---------------------------------- | ------------------------------------------ | ------------------------------------------------------------ |
+| Quyền truy cập của tài khoản?       | Thành viên hoạt động               | biet.hoang@email.com                       | Hiển thị toàn bộ danh sách sách thành công                   |
+|                                     | Thủ thư                            | librarian@library.com                      | Hiển thị toàn bộ danh sách sách thành công                   |
+|                                     | Tạm ngưng                          | cu.le@email.com                            | Xử lý bình thường hoặc thông báo tài khoản tạm ngưng         |
+|                                     | Hết hạn                            | binh.pham@email.com                        | Xử lý bình thường hoặc thông báo tài khoản hết hạn           |
+| Trạng thái hiển thị của sách?       | Có sẵn                             | BOOK001                                    | Hiển thị trạng thái "Có sẵn"                                 |
+|                                     | Đang mượn                          | BOOK003                                    | Hiển thị trạng thái "Đang mượn"                              |
+|                                     | Thất lạc                           | BOOK007                                    | Hiển thị trạng thái "Thất lạc"                               |
+| Thông tin hiển thị đủ 5 trường hợp? | Đủ                                 | Tên, Tác giả, Thể loại, Năm XB, Trạng thái | Hiển thị đầy đủ 5 trường, không trường nào bị trống hay ẩn   |
+|                                     | Thiếu                              | Thiếu 1 hoặc nhiều trong 5 trường hợp      | Vẫn hiển thị sách, trường thiếu hiển thị ký hiệu thay thế    |
+| Cập nhật real-time sau mượn/trả?    | Có (vừa mượn sách)                 | biet.hoang@email.com mượn BOOK001          | Trạng thái BOOK001 chuyển "Đang mượn" ngay, không cần reload |
+|                                     | Có (vừa trả sách)                  | biet.hoang@email.com trả BOOK013           | Trạng thái BOOK013 chuyển "Có sẵn" ngay, không cần reload    |
+|                                     | Không (không có thao tác mượn/trả) | chỉ xem, không thao tác                    | Danh sách giữ nguyên, không thay đổi                         |
+| Số lượng sách trong danh sách?      | Có sách (≥ 1 cuốn)                 | 20 cuốn sách                               | Hiển thị đầy đủ tất cả sách, không bị thiếu                  |
+|                                     | Không có sách (= 0 cuốn)           | Rỗng                                       | Hiển thị thông báo "Chưa có sách trong thư viện"             |
 
 ### IDM — Trả sách (REQ-05)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-| ------------------------- | ----------------- | ------------------------ | ---------------- |
-| `<!-- Nhóm tự điền -->`   |                   |                          |                  |                     |
-
+| ------------------------- | ----------------- | ------------------------ | ---------------- | --- |
+| `<!-- Nhóm tự điền -->`   |                   |                          |                  |     |
 
 ### IDM — Quản lý thành viên (REQ-07)
 
@@ -101,20 +99,34 @@
 
 ### IDM — Tra cứu mượn sách (REQ-08)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-| ------------------------- | ----------------- | ------------------------ | ---------------- |
-| Từng vị trí có vai trò gì ?     | Vai trò Thủ thư    | `librarian@library.com` | Xem được toàn bộ phiếu mượn của hệ thống.              |
-|                                 | Vai trò Thành viên | `ba.nguyen@email.com`   | Chỉ nhìn thấy phiếu của chính mình, ẩn hoàn toàn phiếu người khác.|
-| Thông tin phiếu hiển thị là gì ?| Đầy đủ thuộc tính  | `Các trường thông tin trên bảng` | Hiển thị đủ: Mã phiếu, sách mượn, ngày mượn, ngày hết hạn, trạng thái.|
-| Trạng thái phiếu mượn là gì ? | Đang mượn            | `Phiếu mượn (VD:BR001)`                | Hiển thị đúng nhãn trạng thái "Đang mượn".|
-|                               | Đã trả               | `Phiếu mượn (VD:BR002)`               | Hiển thị đúng nhãn trạng thái "Đã trả".    |
-|                               | Quá hạn              | `Phiếu mượn (VD:BR003)`               | Hiển thị đúng nhãn trạng thái "Quá hạn".   |
+| Đặc tính (Characteristic)        | Phân vùng (Block)  | Giá trị đại diện (Value)         | Kết quả mong đợi                                                       |
+| -------------------------------- | ------------------ | -------------------------------- | ---------------------------------------------------------------------- |
+| Từng vị trí có vai trò gì ?      | Vai trò Thủ thư    | `librarian@library.com`          | Xem được toàn bộ phiếu mượn của hệ thống.                              |
+|                                  | Vai trò Thành viên | `ba.nguyen@email.com`            | Chỉ nhìn thấy phiếu của chính mình, ẩn hoàn toàn phiếu người khác.     |
+| Thông tin phiếu hiển thị là gì ? | Đầy đủ thuộc tính  | `Các trường thông tin trên bảng` | Hiển thị đủ: Mã phiếu, sách mượn, ngày mượn, ngày hết hạn, trạng thái. |
+| Trạng thái phiếu mượn là gì ?    | Đang mượn          | `Phiếu mượn (VD:BR001)`          | Hiển thị đúng nhãn trạng thái "Đang mượn".                             |
+|                                  | Đã trả             | `Phiếu mượn (VD:BR002)`          | Hiển thị đúng nhãn trạng thái "Đã trả".                                |
+|                                  | Quá hạn            | `Phiếu mượn (VD:BR003)`          | Hiển thị đúng nhãn trạng thái "Quá hạn".                               |
 
 ### IDM — Xử lý sách quá hạn (REQ-06)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-| ------------------------- | ----------------- | ------------------------ | ---------------- |
-| `<!-- Nhóm tự điền -->`   |                   |                          |                  |
+| Đặc tính (Characteristic)                                         | Phân vùng (Block)          | Giá trị đại diện (Value)                       | Kết quả mong đợi                                   |
+| ----------------------------------------------------------------- | -------------------------- | ---------------------------------------------- | -------------------------------------------------- |
+| Ngày hiện tại có vượt quá hạn trả của phiếu mượn không?           | Có                         | Hạn trả: 28/05/2026, Ngày hiện tại: 29/05/2026 | Hệ thống cập nhật trạng thái phiếu thành "Quá hạn" |
+|                                                                   | Không                      | Hạn trả: 30/05/2026, Ngày hiện tại: 29/05/2026 | Hệ thống không cập nhật trạng thái phiếu           |
+|                                                                   | Bằng hạn trả(giá trị biên) | Hạn trả: 29/05/2026, Ngày hiện tại: 29/05/2026 | Hệ thống không cập nhật trạng thái phiếu           |
+| Phiếu mượn có được trả chưa ?                                     | Chưa trả                   | BR001 - Trạng thái: Đang mượn                  | Phiếu được đưa vào quá trình kiểm tra quá hạn      |
+|                                                                   | Đã trả                     | BR002 - Trạng thái: Đã trả                     | Phiếu không được cập nhật thành quá hạn            |
+| Hệ thống có tồn tại phiếu mượn quá hạn hay không?                 | Có ít nhất 1 phiếu quá hạn | BR001 quá hạn 5 ngày                           | Hệ thống cập nhật trạng thái các phiếu quá hạn     |
+|                                                                   | Không có phiếu quá hạn     | Tất cả phiếu đều còn hạn                       | Không có phiếu nào được cập nhật                   |
+| Có bao nhiêu phiếu mượn quá hạn cần cập nhật?                     | 0 phiếu                    | Không có phiếu quá hạn                         | Hiển thị "Đã cập nhật: 0 phiếu mượn quá hạn"       |
+|                                                                   | 1 phiếu                    | BR001                                          | Hiển thị "Đã cập nhật: 1 phiếu mượn quá hạn"       |
+|                                                                   | Nhiều phiếu                | BR001, BR003, BR005                            | Hiển thị đúng số lượng phiếu được cập nhật         |
+| Trạng thái hiện tại của phiếu mượn là gì?                         | Đang mượn                  | BR001                                          | Có thể được chuyển sang trạng thái "Quá hạn"       |
+|                                                                   | Quá hạn                    | BR003                                          | Giữ nguyên trạng thái "quá hạn"                    |
+|                                                                   | Đã trả                     | BR002                                          | Không thay đổi trạng thái                          |
+| Thủ thư có thực hiện chức năng "Kiểm tra sách quá hạn" hay không? | Có                         | Nhấn nút "Kiểm tra sách quá hạn"               | Hệ thống tiến hành kiểm tra và cập nhật            |
+|                                                                   | Không                      | không nhấn nút                                 | Không có thay đổi dữ liệu                          |
 
 > 💡 **Gợi ý kỹ thuật**: Sử dụng **Phân lớp tương đương (EP)** cho các phân vùng rời rạc, **Phân tích giá trị biên (BVA)** cho các phân vùng số (ví dụ: giới hạn 3 sách). Xem textbook §6.1–6.3.
 
