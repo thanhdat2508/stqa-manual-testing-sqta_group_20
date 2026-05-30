@@ -403,8 +403,8 @@
 
 **Enviroment:**
 
-- Browser: Chrome `Version 148.0.7778.179`
-- OS: `Window 10`
+- Browser: Chrome `Version: 131.0.5877.97`
+- OS: `Opera One`
 - UI Language: `Vietnammese`
 
 **Prerequisites:**
