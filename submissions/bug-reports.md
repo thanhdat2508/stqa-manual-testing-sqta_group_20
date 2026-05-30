@@ -4,763 +4,763 @@
 > Xem [examples/sample-bug-report.md](../examples/sample-bug-report.md) để hiểu cách viết bug report tốt.
 > Mỗi bug cần: tiêu đề mô tả hành vi lỗi, bước tái hiện, expected vs actual, severity + giải thích.
 
-| Thông tin        |              |
-| ---------------- | ------------ |
-| **Nhóm**         | `Group 30`   |
-| **Ngày báo cáo** | `25/05/2026` |
+| Information     |              |
+| --------------- | ------------ |
+| **Group**       | `Group 30`   |
+| **Report date** | `25/05/2026` |
 
 ---
 
 ## BUG-01
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi**          | `BUG-01 `          |
-| **TC liên quan**    | `TC-05`            |
-| **REQ liên quan**   | `REQ-01`           |
-| **Mức độ**          | `High`             |
-| **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`       |
-| **Trạng thái**      | `Open`             |
+| Attribute       | Details            |
+| --------------- | ------------------ |
+| **BUG ID**      | `BUG-01 `          |
+| **Related TC**  | `TC-05`            |
+| **Related REQ** | `REQ-01`           |
+| **Severity**    | `High`             |
+| **Reporter**    | `Nguyễn Thành Đạt` |
+| **Date Found**  | `25/05/2026`       |
+| **Status**      | `Open`             |
 
-**Tiêu đề:**
-`Email phân biệt chữ hoa và chữ thường khi đăng nhập`
+**Title:**
+`Email login is case-sensitive`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `MacOS`
+- UI Language: Tiếng Việt
 
-**Điều kiện tiên quyết:**
-`Đã tồn tại tài khoản trên hệ thống`
+**Prerequisites:**
+`An account already exists on the system`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Nhập email với chữ cái in hoa, VD: Ba.nguyen@email.com thay vì ba.nguyen@email.com`
-2. `Bước 2: Nhập mật khẩu`
-3. `Bước 3: Nhấn đăng nhập`
+1. `Step 1: Enter your email address in uppercase letters, e.g., Ba.nguyen@email.com instead of ba.nguyen@email.com`
+2. `Step 2: Enter your password`
+3. `Step 3: Click login`
 
-**Kết quả mong đợi:**
-`Hệ thống cho phép đăng nhập thành công (không phân biệt chữ hoa/thường đối với Email)`
+**Expected Result:**
+`The system has allowed successful login (case-insensitive for email addresses)`
 
-**Kết quả thực tế:**
-`Hệ thống không nhận diện được tài khoản và báo lỗi đăng nhập`
+**Actual Result:**
+`The system could not recognize the account and reported a login error`
 
-**Tác động:**
-`Ảnh hưởng trực tiếp đến trải nghiệm người dùng khi đăng nhập`
+**Impact:**
+`This directly impacts the user experience during login`
 
-**Minh chứng:**
+**Evidence:**
 ![BUG-01](./images/BUG-01.png)
 
-**Đề xuất xử lý:**
-`Thêm function toLowerCase() để biến hết tất cả email được truyền từ user sang kiểu lowercase, sau đó mới đưa cho logic đăng nhập xử lý`
+**Proposed Solution:**
+`Add a function toLowerCase() to convert all emails sent from the user to lowercase before processing them in the login logic.`
 
 ---
 
 ## BUG-02
 
-| Thuộc tính          | Chi tiết               |
-| ------------------- | ---------------------- |
-| **Mã lỗi**          | `BUG-02`               |
-| **TC liên quan**    | `TC-23`                |
-| **REQ liên quan**   | `REQ-04`               |
-| **Mức độ**          | `High`                 |
-| **Người phát hiện** | `Nguyen Cao Hoang Dat` |
-| **Ngày phát hiện**  | `25/05/2026`           |
-| **Trạng thái**      | `Open`                 |
+| **Attribute**   | Details                |
+| --------------- | ---------------------- |
+| **BUG ID**      | `BUG-02`               |
+| **Related ID**  | `TC-23`                |
+| **Related Req** | `REQ-04`               |
+| **Severity**    | `High`                 |
+| **Reporter**    | `Nguyễn Cao Hoàng Đạt` |
+| **Date Found**  | `25/05/2026`           |
+| **Status**      | `Open`                 |
 
-**Tiêu đề:**
-`Mượn quá số sách cho phép`
+**Title:**
+`Borrowing more books than allowed`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: Vietnammese
 
-**Điều kiện tiên quyết:**
-`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở trạng thái đã mượn đúng 3 sách (đạt giới hạn tối đa cho phép), dữ liệu chưa reset.`
+**Prerequisites:**
+`The login page has opened, the account has successfully logged in, the system is currently showing that exactly 3 books have been borrowed (reaching the maximum allowed limit), and the data has not been reset`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Đăng nhập tài khoàn thành công`
-2. `Mượn lần lượt 3 cuốn sách bất kỳ còn trong kho`
-3. `Tìm thêm 1 cuốn sách bất kỳ còn trong kho, bấm "Mượn sách" trên cuốn thứ 4`
+1. `Account successfully logged in`
+2. `Borrow any 3 books available in the library one by one`
+3. `Find one more book available in the library, click icon '+' on the 4th book`
 
-**Kết quả mong đợi:**
-`Hệ thống báo lỗi đã đạt giới hạn mượn sách tối đa (3 sách) and không cho phép mượn tiếp cuốn thứ 4`
+**Expected Result:**
+`The system is reporting an error: the maximum borrowing limit (3 books) has been reached and a 4th book cannot be borrowed`
 
-**Kết quả thực tế:**
-`Hệ thống vẫn cho phép mượn cuốn thứ 4, không có thông báo chặn nào xuất hiện.`
+**Actual Result:**
+`The system still allows borrowing the fourth book; no blocking notification has appeared`
 
-**Tác động:**
-`Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn`
+**Impact:**
+`Violation of core business rules, allowing borrowing beyond limits`
 
-**Minh chứng:**
+**Evidence:**
 ![BUG-02](./images/BUG-02.png)
 
-**Đề xuất xử lý:**
-`Kiểm tra số sách đang mượn hiện tại của người dùng trước khi hiển thị nút "Mượn sách". Nếu đã đạt 3 cuốn → vô hiệu hóa nút hoặc ẩn nút "Mượn sách"`
+**Proposed Solution:**
+`Check the current number of books the user is borrowing before displaying the "Borrow Book" button. If 3 books have been borrowed, disable or hide the icon "+" button`
 
 ---
 
 ## BUG-03
 
-| Thuộc tính          | Chi tiết               |
-| ------------------- | ---------------------- |
-| **Mã lỗi**          | `BUG-03`               |
-| **TC liên quan**    | `Tc-28`                |
-| **REQ liên quan**   | `REQ-04`               |
-| **Mức độ**          | `Medium`               |
-| **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`           |
-| **Trạng thái**      | `Open`                 |
+| **Attribute**   | Details                |
+| --------------- | ---------------------- |
+| **BUG ID**      | `BUG-03`               |
+| **Related ID**  | `Tc-28`                |
+| **Related Req** | `REQ-04`               |
+| **Severity**    | `Medium`               |
+| **Reporter**    | `Nguyễn Cao Hoàng Đạt` |
+| **Date Found**  | `25/05/2026`           |
+| **Status**      | `Open`                 |
 
-**Tiêu đề:**
-`Không đổi ngôn ngữ ở thông báo popup đỏ`
+**Title:**
+`Do not change the language in the red popup notification`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Anh
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: English
 
-**Điều kiện tiên quyết:**
-`Đã đăng nhập tài khoản người dùng, hệ thống đang cài ngôn ngữ khác tiếng Việt (tiếng Anh)`
+**Prerequisites:**
+`User account logged in, system is installing a language other than Vietnamese (English)`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập thành công tài khoản`
-2. `Bước 2: Vào Settings → đổi ngôn ngữ giao diện sang tiếng Anh`
-3. `Bước 3: Thực hiện một thao tác gây ra thông báo popup đỏ`
+1. `Step 1: Successfully log in to your account`
+2. `Step 2: Go to Settings then change the interface language to English`
+3. `Step 3: Perform an action that causes a red popup notification`
 
-**Kết quả mong đợi:**
-`Popup đỏ hiển thị đúng ngôn ngữ đang được cài đặt trong hệ thống`
+**Expected Result:**
+`The red popup displays the correct language currently installed in the system`
 
-**Kết quả thực tế:**
-`Popup đỏ vẫn hiển thị nội dung tiếng Việt, không đổi sang ngôn ngữ đã chọn`
+**Actual Result:**
+`The red popup will continue to display the content in Vietnamese, it will not switch to the selected language`
 
-**Tác động:**
-`Trải nghiệm người dùng không nhất quán — giao diện hiển thị đúng ngôn ngữ nhưng thông báo lỗi thì không, gây khó hiểu cho người dùng không đọc được tiếng Việt`
+**Impact:**
+`Inconsistent user experience — the interface displays the correct language, but error messages are not, causing confusion for users who cannot read Vietnamese`
 
-**Minh chứng:**
-![BUG-03](/submisions/images/BUG-03.png)
+**Evidence:**
+![BUG-03](./images/BUG-03.png)
 
-**Đề xuất xử lý:**
-`Các chuỗi text trong popup đỏ cần được đưa vào file localization. Đảm bảo tất cả thông báo lỗi đều tuân theo ngôn ngữ đang được chọn — không hardcode tiếng Việt`
+**Proposed Solution:**
+`The text strings in the red popup need to be included in the localization file. Ensure all error messages adhere to the selected language — do not hardcode Vietnamese`
 
 ---
 
 ## BUG-04
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi**          | `BUG-04`           |
-| **TC liên quan**    | `TC-16, TC-17`     |
-| **REQ liên quan**   | `REQ-03`           |
-| **Mức độ**          | `Cao`              |
-| **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `26/05/2026`       |
-| **Trạng thái**      | `Open`             |
+| **Attribute**   | Details            |
+| --------------- | ------------------ |
+| **BUG ID**      | `BUG-04`           |
+| **Related ID**  | `TC-16, TC-17`     |
+| **Related Req** | `REQ-03`           |
+| **Severity**    | `High`             |
+| **Reporter**    | `Nguyễn Thành Đạt` |
+| **Date Found**  | `26/05/2026`       |
+| **Status**      | `Open`             |
 
-**Tiêu đề:**
-`Filter bị phân biệt chữ hoa và chữ thường`
+**Title:**
+`Filter is case-sensitive`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `MacOS`
+- UI Language: Vietnammese
 
-**Điều kiện tiên quyết:**
-`Đăng nhập vào hệ thống thành công và vào được trang Sách`
+**Prerequisites:**
+`Login to the system successful and I can now access the Books page`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập vào hệ thống ( Bất kỳ tài khoản nào )`
-2. `Bước 2: Tìm kiếm theo filter không in hoa`
+1. `Step 1: Log in to the system (any account)`
+2. `Step 2: Search using a filter that does not use uppercase letters`
 
-**Kết quả mong đợi:**
-`Mong đợi ra được kết quả các sách có cùng thể loại dù lọc theo thể loại in hoa hay không in hoa`
+**Expected Result:**
+`Expect to see results showing books of the same genre, regardless of whether the filter is in uppercase or lowercase letters`
 
-**Kết quả thực tế:**
-`Không ra kết quả danh sách sách với thể loại được lọc`
+**Actual Result:**
+`No results were found for the list of books filtered by that category`
 
-**Tác động:**
-`Gây ảnh hưởng đến việc tìm kiếm sản phẩm`
+**Impact:**
+`Influencing product search`
 
-**Minh chứng:**
+**Evidence:**
 ![BUG-04](./images/BUG-04.png)
 
-**Đề xuất xử lý:**
-`Lấy filter từ user sau đó sử dụng function toLowerCase() để chuyển thành dạng viết thường. Sau đó mới đưa có function logic xử lý`
+**Proposed Solution:**
+`Get the user filter, then use the `toLowerCase()` function to convert it to lowercase. Only then should you pass it to the function for processing`
 
 ---
 
 ## BUG-05
 
-| Thuộc tính          | Chi tiết        |
-| ------------------- | --------------- |
-| **Mã lỗi**          | `BUG-05`        |
-| **TC liên quan**    | `TC-24`         |
-| **REQ liên quan**   | `REQ-04`        |
-| **Mức độ**          | `High`          |
-| **Người phát hiện** | `Bùi Mạnh Hiếu` |
-| **Ngày phát hiện**  | `25/05/2026`    |
-| **Trạng thái**      | `Open`          |
+| **Attribute**   | Details         |
+| --------------- | --------------- |
+| **BUG ID**      | `BUG-05`        |
+| **Related ID**  | `TC-24`         |
+| **Related Req** | `REQ-04`        |
+| **Severity**    | `High`          |
+| **Reporter**    | `Bùi Mạnh Hiếu` |
+| **Date Found**  | `25/05/2026`    |
+| **Status**      | `Open`          |
 
-**Tiêu đề:**
-`Lỗi popup thông báo về trạng thái tài khoản, tài khoảng "Tạm ngưng" nhưng báo bị "Hết Hạn"`
+**Title:**
+`Account status notification popup error: Account is "Suspended" but shows as "Expired"`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 10`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 10`
+- UI Language: Vietnammese
 
-**Điều kiện tiên quyết:**
-`Đã đăng nhập và sử dụng tài khoản trạng thái "Tạm ngưng"`
+**Prerequisites:**
+`Login and use account with "Temporarily suspended" status`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập vào tài khoản có trạng thái "Tạm ngưng"`
-2. `Bước 2: Mượn sách`
+1. `Step 1: Log in to your account with the "Temporarily Suspended" status`
+2. `Step 2: Borrow a book`
 
-**Kết quả mong đợi:**
-`Mong đợi hệ thống thông báo popup sẽ hiện cảnh báo riêng cho từng loại tài khoản`
+**Expected Result:**
+`Expect the popup notification system to display separate alerts for each account type`
 
-**Kết quả thực tế:**
-`Thông báo lỗi sai trạng thái tài khoản`
+**Actual Result:**
+`Error message: Incorrect account status`
 
-**Tác động:**
-`Gây hiểu nhầm về trạng thái thành viên, không đồng nhất trạng thái`
+**Impact:**
+`Causes misunderstanding regarding member status, inconsistent status`
 
-**Minh chứng:**
+**Evidence:**
 ![BUG-05](./images/BUG-05.png)
 
-**Đề xuất xử lý:**
-`Kiểm tra chính xác enum hoặc chuỗi điều kiện trạng thái tài khoản trả về từ API trước khi hiển thị text trên popup thông báo, tránh hardcode chung một câu thông báo lỗi.`
+**Proposed Solution:**
+`Check the exact enum or account status condition string returned from the API before displaying text in the notification popup, avoiding hardcoding a single error message`
 
 ---
 
 ## BUG-06
 
-| Thuộc tính          | Chi tiết      |
-| ------------------- | ------------- |
-| **Mã lỗi**          | `BUG-06`      |
-| **TC liên quan**    | `TC-53,TC-54` |
-| **REQ liên quan**   | `REQ-08`      |
-| **Mức độ**          | `High`        |
-| **Người phát hiện** | `Đỗ Hữu Đức`  |
-| **Ngày phát hiện**  | `25/05/2026`  |
-| **Trạng thái**      | `Open`        |
+| **Attribute**   | Details       |
+| --------------- | ------------- |
+| **BUG ID**      | `BUG-06`      |
+| **Related ID**  | `TC-53,TC-54` |
+| **Related Req** | `REQ-08`      |
+| **Severity**    | `High`        |
+| **Reporter**    | `Đỗ Hữu Đức`  |
+| **Date Found**  | `25/05/2026`  |
+| **Status**      | `Open`        |
 
-**Tiêu đề:**
-`Các thành viên có thể tự do tra cứu mã của nhau`
+**Title:**
+`Members are free to look up each other's codes`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: `Tiếng Việt & Tiếng Anh`
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: `English & Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Tài khoản thành viên đã đăng nhập vào hệ thống và hệ thống đang kích hoạt chức năng quản lý mã mượn sách/mã thành viên.`
+**Prerequisites:**
+`The member account has logged into the system, and the system is activating the book borrowing code/member code management function`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập vào hệ thống bằng tài khoản thành viên (VD: biet.hoang@email.com)`
-2. `Bước 2: Truy cập vào chức năng tra cứu hoặc tìm kiếm thông tin thành viên/mã mượn sách`
-3. `Bước 3: Thực hiện tìm kiếm thông tin hoặc mã của thành viên khác (VD: Nhập mã MEM002 của tài khoản ba.nguyen@email.com)`
+1. `Step 1: Log in to the system using your member account (e.g., biet.hoang@email.com)`
+2. `Step 2: Access the function to look up or search for member information/book borrowing code`
+3. `Step 3: Search for information or codes of other members (e.g., Enter code MEM002 of account ba.nguyen@email.com)`
 
-**Kết quả mong đợi:**
-`Thành viên chỉ được phép xem phiếu mượn của chính mình và hoàn toàn KHÔNG được quyền xem phiếu mượn của thành viên khác.`
+**Expected Result:**
+`Members are only permitted to view their own loan slips and are absolutely NOT allowed to view other members' loan slips`
 
-**Kết quả thực tế:**
-`Hệ thống không chặn quyền, cho phép các thành viên dễ dàng tra cứu thông tin và mã mượn sách of nhau.`
+**Actual Result:**
+`The system does not restrict access, allowing members to easily look up each other's information and book borrowing codes`
 
-**Tác động:**
-`Gây rủi ro nghiêm trọng về bảo mật thông tin tài khoản, vi phạm quy tắc định danh cá nhân và rò rỉ dữ liệu người dùng.`
+**Impact:**
+`This poses a serious risk to account security, violates personal identification rules, and leads to user data leaks.`
 
-**Minh chứng:**
+**Evidence:**
 ![BUG-07](./images/BUG-07.png)
 
-**Đề xuất xử lý:**
-`Thực hiện phân quyền nghiêm ngặt ở cả Client-side (ẩn ô tìm kiếm của user khác) lẫn Server-side (kiểm tra session/token, nếu ID yêu cầu tra cứu không trùng với ID đăng nhập và không phải role Thủ thư/Admin thì lập tức từ chối request).`
+**Proposed Solution:**
+`Implement strict permission control on both the client-side (hide other users' search boxes) and server-side (check session/token; if the ID requesting the lookup does not match the login ID and is not the Librarian/Admin role, immediately reject the request)`
 
 ---
 
 ## BUG-07
 
-| Thuộc tính          | Chi tiết               |
-| ------------------- | ---------------------- |
-| **Mã lỗi**          | `BUG-07`               |
-| **TC liên quan**    | `TC-30`                |
-| **REQ liên quan**   | `REQ-05`               |
-| **Mức độ**          | `High`                 |
-| **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`           |
-| **Trạng thái**      | `Open`                 |
+| **Attribute**   | Details                |
+| --------------- | ---------------------- |
+| **BUG ID**      | `BUG-07`               |
+| **Related ID**  | `TC-30`                |
+| **Related Req** | `REQ-05`               |
+| **Severity**    | `High`                 |
+| **Reporter**    | `Nguyễn Cao Hoàng Đạt` |
+| **Date Found**  | `25/05/2026`           |
+| **Status**      | `Open`                 |
 
-**Tiêu đề:**
-`Không hiển thị cảnh báo trả sách quá hạn khi trả quá hạn`
+**Title:**
+`Do not display overdue book return warnings when returns are overdue`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Việt - Tiếng Anh
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: `English & Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Đã đăng nhập tài khoản thành công, đang có ít nhất 1 cuốn sách quá hạn trả trong danh sách mượn`
+**Prerequisites:**
+`Account successfully logged in, at least one book is overdue for return in the borrowing list`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập tài khoản thành công`
-2. `Bước 2: Vào mục "Sách đang mượn"`
-3. `Bước 3: Xác nhận có sách đã quá ngày hạn trả. Bấm "Trả sách" trên cuốn sách quá hạn đó`
-4. `Bước 4: Xác nhận trả sách`
+1. `Step 1: Log in to your account successfully`
+2. `Step 2: Go to the "Borrowed Books" section`
+3. `Step 3: Confirm that there are books that are overdue. Click "Return Book" on that overdue book`
+4. `Step 4: Confirm returning the book`
 
-**Kết quả mong đợi:**
+**Expected Result:**
 `After returning, the system must display a warning notification like "Book is overdue by X days, you may be fined" so users are aware`
 
-**Kết quả thực tế:**
-`Hệ thống xử lý trả sách bình thường, không hiển thị bất kỳ cảnh báo hay thông báo phí phạt nào`
+**Actual Result:**
+`The book return process is normal; no warnings or penalty notices are displayed`
 
-**Tác động:**
-`Người dùng không biết mình bị phạt, gây bất ngờ và khiếu nại. Thủ thư không có cơ sở thông báo phí phạt vì hệ thống không ghi nhận. Ảnh hưởng đến tính minh bạch của hệ thống thư viện`
+**Impact:**
+`Users are unaware of being fined, leading to surprise and complaints. Librarians have no basis to notify them of the fine because the system doesn't record it. This affects the transparency of the library system`
 
-**Minh chứng:**
-![BUG-08](/submisions/images/BUG-08.png)
+**Evidence:**
+![BUG-08](./images/BUG-08.png)
 
-**Đề xuất xử lý:**
-`Thêm popup cảnh báo trước khi xác nhận trả sách quá hạn, hiển thị số ngày trễ và mức phí phạt tương ứng. Đồng thời Backend cần tính toán và trả về thông tin phí phạt kèm theo response khi trả sách quá hạn và lưu lại lịch sử phạt vào database để thủ thư tra cứu.`
+**Proposed Solution:**
+`Add a warning popup before confirming overdue book returns, displaying the number of days late and the corresponding penalty fee. The backend should also calculate and return the penalty fee information along with the response for overdue book returns, and save the penalty history to the database for librarians to review`
 
 ---
 
 ## BUG-08
 
-| Thuộc tính          | Chi tiết          |
-| ------------------- | ----------------- |
-| **Mã lỗi**          | `BUG-08`          |
-| **TC liên quan**    | `TC-26`           |
-| **REQ liên quan**   | `REQ-04`          |
-| **Mức độ**          | `Low`             |
-| **Người phát hiện** | `Hoàng Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`      |
-| **Trạng thái**      | `Open`            |
+| **Attribute**   | Details           |
+| --------------- | ----------------- |
+| **BUG ID**      | `BUG-08`          |
+| **Related ID**  | `TC-26`           |
+| **Related Req** | `REQ-04`          |
+| **Severity**    | `Low`             |
+| **Reporter**    | `Hoàng Thành Đạt` |
+| **Date Found**  | `25/05/2026`      |
+| **Status**      | `Open`            |
 
-**Tiêu đề:**
-`Lỗi hiển thị số sách đang mượn ở mục Thành Viên, quá hạn đang mượn nhưng vẫn hiển thị là đang mượn: 0`
+**Title:**
+`Error displaying the number of books currently borrowed in the Members section; books that are past the borrowing deadline are still showing as borrowed: 0`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: `Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, hệ thống đang ở mục Mượn/Trả`
+**Prerequisites:**
+`The login page has opened, the account has successfully logged in, and the system is currently in the Borrow/Return section`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập tài khoản thành công`
-2. `Bước 2: Mượn một cuốn sách bất kỳ và để trạng thái rơi vào quá hạn.`
+1. `Step 1: Log in to your account successfully`
+2. `Step 2: Borrow any book and set your borrowing status to overdue`
 
-**Kết quả mong đợi:**
-`Khi có sách quá hạn, hệ thống cần có cơ chế đếm riêng hoặc hiển thị thông báo trạng thái "Quá hạn" rõ ràng thay vì bỏ qua bộ đếm.`
+**Expected Result:**
+`When books become overdue, the system needs a separate counting mechanism or a clear "Overdue" status message instead of ignoring the counter`
 
-**Kết quả thực tế:**
-`Lỗi hệ thống khi sách rơi vào trạng thái quá hạn vẫn hiển thị số lượng sách đang mượn là: 0.`
+**Actual Result:**
+`System error: When a book becomes overdue, the number of borrowed books displayed is still 0`
 
-**Tác động:**
-`Gây hiểu nhầm, không phân biệt rõ ràng giữa sách đang mượn trong hạn và sách đã quá hạn cho người dùng quản lý.`
+**Impact:**
+`This creates confusion and makes it difficult for users to distinguish between books that are still borrowed within the repayment period and books that are overdue`
 
-**Minh chứng:**
-![BUG-10](./images/BUG-10/BUG-1O_01.png)
-![BUG-10](./images/BUG-10/BUG-1O_02.png)
+**Evidence:**
+![BUG-10](./images/BUG-10_01.png)
+![BUG-10](./images/BUG-10_02.png)
 
-**Đề xuất xử lý:**
-`Thực hiện so sánh thời gian hiện tại (Current Timestamp) và hạn trả sách (Due Date). Nếu thời gian hiện tại lớn hơn hạn trả sách, hệ thống phải cập nhật trạng thái bản ghi thành "Quá hạn" và cộng dồn vào bộ đếm thống kê thích hợp trên UI.`
+**Proposed Solution:**
+`Compare the current timestamp and the book return due date. If the current timestamp is greater than the due date, the system must update the record status to "Overdue" and add it to the appropriate statistical counter on the UI`
 
 ---
 
 ## BUG-09
 
-| Thuộc tính          | Chi tiết        |
-| ------------------- | --------------- |
-| **Mã lỗi**          | `BUG-09`        |
-| **TC liên quan**    | `TC-27`         |
-| **REQ liên quan**   | `REQ-04`        |
-| **Mức độ**          | `High`          |
-| **Người phát hiện** | `Bùi Mạnh Hiếu` |
-| **Ngày phát hiện**  | `25/05/2026`    |
-| **Trạng thái**      | `Open`          |
+| **Attribute**   | Details         |
+| --------------- | --------------- |
+| **BUG ID**      | `BUG-09`        |
+| **Related ID**  | `TC-27`         |
+| **Related Req** | `REQ-04`        |
+| **Severity**    | `High`          |
+| **Reporter**    | `Bùi Mạnh Hiếu` |
+| **Date Found**  | `25/05/2026`    |
+| **Status**      | `Open`          |
 
-**Tiêu đề:**
-`Lỗi trắng trang web + mất dữ liệu khi spam nhiều lần mục mượn sách`
+**Title:**
+`Website blank page error + data loss when spamming the book borrowing section multiple times`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 10`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 10`
+- UI Language: `Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Đã đăng nhập được vào tài khoản và tương tác với trang web`
+**Prerequisites:**
+`I have successfully logged into my account and am interacting with the website`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập tài khoản khả dụng`
-2. `Bước 2: Spam nhiều lần nút Mượn sau khi ấn vào ô dấu cộng`
+1. `Step 1: Log in with an available account`
+2. `Step 2: Spam the "Borrow" button multiple times after clicking the plus sign`
 
-**Kết quả mong đợi:**
-`Hệ thống cần ngăn người dùng spam liên tiếp nhằm phòng tránh các lỗi phát sinh từ máy chủ hoặc làm mất tính đồng bộ dữ liệu.`
+**Expected Result:**
+`The system needs to prevent users from spamming repeatedly to avoid server errors or data inconsistencies`
 
-**Kết quả thực tế:**
-`Người dùng vẫn spam click được liên tục dẫn đến xung đột request gây lỗi trắng trang và mất dữ liệu hiển thị.`
+**Actual Result:**
+`Users are still spamming clicks repeatedly, leading to request conflicts that cause blank pages and loss of displayed data`
 
-**Tác động:**
-`Gây quá tải cục bộ cho server nhận request và làm hỏng trải nghiệm cốt lõi của người dùng.`
+**Impact:**
+`This causes local overload on the server receiving the request and degrades the core user experience`
 
-**Minh chứng:**
-![BUG-11](/submisions/images/BUG-11.png)
+**Evidence:**
+![BUG-11](./images/BUG-11.png)
 
-**Đề xuất xử lý:**
-`Thêm thuộc tính disabled cho button mượn sách ngay sau lượt click đầu tiên để tránh người dùng tiếp tục spam request trong lúc server đang xử lý dữ liệu.`
+**Proposed Solution:**
+`Add the **disabled** attribute to the book borrowing button immediately after the first click to prevent users from continuing to spam requests while the server is processing data`
 
 ---
 
 ## BUG-10
 
-| Thuộc tính          | Chi tiết     |
-| ------------------- | ------------ |
-| **Mã lỗi**          | `BUG-10`     |
-| **TC liên quan**    | `TC-31`      |
-| **REQ liên quan**   | `REQ-05`     |
-| **Mức độ**          | `Medium`     |
-| **Người phát hiện** | `Đỗ Hữu Đức` |
-| **Ngày phát hiện**  | `25/05/2026` |
-| **Trạng thái**      | `Open`       |
+| **Attribute**   | Details      |
+| --------------- | ------------ |
+| **BUG ID**      | `BUG-10`     |
+| **Related ID**  | `TC-31`      |
+| **Related Req** | `REQ-05`     |
+| **Severity**    | `Medium`     |
+| **Reporter**    | `Đỗ Hữu Đức` |
+| **Date Found**  | `25/05/2026` |
+| **Status**      | `Open`       |
 
-**Tiêu đề:**
-`Người dùng có thể tự ý trả sách mà không cần thủ thư xác nhận`
+**Title:**
+`Users can return books at their own discretion without needing confirmation from the librarian`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Việt & Tiếng Anh
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: `English & Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Thành viên đang có sách trong trạng thái "Đang mượn".`
+**Prerequisites:**
+`The member currently has the book listed as "Borrowed"`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập vào tài khoản thành viên.`
-2. `Bước 2: Truy cập vào mục quản lý sách đang mượn hoặc lịch sử mượn trả`
-3. `Bước 3: Nhấn vào nút hoặc thực hiện hành động "Trả sách" từ phía giao diện người dùng.`
+1. `Step 1: Log in to your member account`
+2. `Step 2: Access the section for managing borrowed books or borrowing/returning history`
+3. `Step 3: Click the "Return Book" button or perform the "Return Book" action from the user interface`
 
-**Kết quả mong đợi:**
-`Hành động trả sách từ phía người dùng chỉ là gửi "Yêu cầu trả sách". Sách chỉ được tính là đã trả sau khi Thủ thư tiếp nhận, kiểm tra tình trạng sách vật lý và xác nhận trên hệ thống.`
+**Expected Result:**
+`The user's action of returning a book is simply submitting a "Book Return Request". The book is only considered returned after the librarian receives it, checks its physical condition, and confirms the return in the system`
 
-**Kết quả thực tế:**
-`Hệ thống cho phép người dùng tự ý bấm trả sách và trạng thái chuyển thành đã trả thành công mà không cần qua bước kiểm tra, xác nhận của thủ thư.`
+**Actual Result:**
+`The system allows users to independently return books, and the status changes to "successfully returned" without requiring verification or confirmation from the librarian`
 
-**Tác động:**
-`Sai lệch dữ liệu kho sách vật lý và hệ thống. Thành viên có thể gian lận bằng cách bấm trả trên hệ thống nhưng không trả sách thật, gây thất thoát tài sản của thư viện.`
+**Impact:**
+`Data discrepancies exist between the physical book inventory and the system. Members may commit fraud by clicking 'return' on the system but not returning the actual books, resulting in loss of library assets`
 
-**Minh chứng:**
+**Evidence:**
 ![BUG-12](./images/BUG-12.png)
 
-**Đề xuất xử lý:**
-`Chuyển luồng xử lý: Khi user bấm trả sách, trạng thái chuyển thành "Chờ thủ thư xác nhận". Chỉ tài khoản có quyền Thủ thư mới có quyền phê duyệt hoàn thành quy trình trả sách.`
+**Proposed Solution:**
+`Processing flow: When the user clicks "Return Book," the status changes to "Waiting for Librarian Confirmation." Only accounts with Librarian privileges have the authority to approve the completion of the book return process`
 
 ---
 
 ## BUG-11
 
-| Thuộc tính          | Chi tiết           |
-| ------------------- | ------------------ |
-| **Mã lỗi**          | `BUG-11`           |
-| **TC liên quan**    | `TC-34`            |
-| **REQ liên quan**   | `REQ-05`           |
-| **Mức độ**          | `High`             |
-| **Người phát hiện** | `Nguyễn Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`       |
-| **Trạng thái**      | `Open`             |
+| **Attribute**   | Details            |
+| --------------- | ------------------ |
+| **BUG ID**      | `BUG-11`           |
+| **Related ID**  | `TC-34`            |
+| **Related Req** | `REQ-05`           |
+| **Severity**    | `High`             |
+| **Reporter**    | `Nguyễn Thành Đạt` |
+| **Date Found**  | `25/05/2026`       |
+| **Status**      | `Open`             |
 
-**Tiêu đề:**
-`Lỗi nhảy 2 lần popup thành công và thất bại khi nhấn 2 lần nút `trả sách``
+**Title:**
+`Error: The popup appears twice, successfully and unsuccessfully, when pressing the "return book" button twice`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `MacOS`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `MacOS`
+- UI Language: `Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Tài khoản đủ yêu cầu (đang hoạt động và có khả năng mượn trả sách) và có sách đang mượn`
+**Prerequisites:**
+`The account meets the requirements (is active and has the ability to borrow and return books) and has books currently borrowed`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập tài khoản đang hoạt động`
-2. `Bước 2: Vào mục mượn trả`
-3. `Bước 3: Nhấn liên tục vào nút trả sách`
+1. `Step 1: Log in to your active account`
+2. `Step 2: Go to the borrowing/returning section`
+3. `Step 3: Press the book return button repeatedly`
 
-**Kết quả mong đợi:**
-`Chỉ hiện duy nhất 1 popup thành công khi nhấn trả sách`
+**Expected Result:**
+`Only one successful popup will appear when you click "Return Book"`
 
-**Kết quả thực tế:**
-`Bị lỗi hiển thị popup thành công sau đó xuất hiện luôn popup lỗi`
+**Actual Result:**
+`The success popup is displayed first, then the error popup appears immediately.`
 
-**Tác động:**
-`Gây hiểu nhầm đối với người dùng khi thực hiện thao tác click đúp hoặc nhấn quá nhanh vào nút bấm`
+**Impact:**
+`This can cause misunderstanding for users when performing double-clicking or pressing the button too quickly.`
 
-**Chi tiết lỗi:**
-`Sau khi nhấn liên tục vào nút trả sách, hiển thị 2 lần popup thành công và thất bại dẫn đến gửi request 2 lần xuống dưới server làm cho server nhận và thực hiện request thừa. Có nguy cơ dẫn đến sai sót trong dữ liệu hệ thống và gây hiểu nhầm cho người dùng`
+**Detailslỗi:**
+`After repeatedly clicking the book return button, two success and failure pop-ups are displayed, resulting in two requests being sent to the server. This causes the server to receive and execute unnecessary requests, potentially leading to system data errors and user misunderstandings`
 
-**Minh chứng:**
-![BUG-13-1](/submisions/images/BUG-13-1.png)
-![BUG-13-2](/submisions/images/BUG-13-2.png)
+**Evidence:**
+![BUG-13-1](./images/BUG-13-1.png)
+![BUG-13-2](./images/BUG-13-2.png)
 
-**Đề xuất xử lý:**
-`Khi đang xử lý yêu cầu, nút bấm hiển thị cần được chuyển sang trạng thái disabled và thêm hiệu ứng loading nhằm tăng trải nghiệm người dùng và chặn các tương tác tiếp theo từ phía client cho đến khi nhận được response từ server, điều này làm giảm tình trạng gửi quá nhiều request không cần thiết xuống cho server xử lý`
+**Proposed Solution:**
+`While processing requests, the displayed button should be disabled and a loading effect added to enhance user experience and block further client interactions until a response is received from the server. This reduces the number of unnecessary requests sent to the server`
 
 ---
 
 ## BUG-12
 
-| Thuộc tính          | Chi tiết        |
-| ------------------- | --------------- |
-| **Mã lỗi**          | `BUG-12`        |
-| **TC liên quan**    | `TC-45`         |
-| **REQ liên quan**   | `REQ-07`        |
-| **Mức độ**          | `Medium`        |
-| **Người phát hiện** | `Bùi Mạnh Hiếu` |
-| **Ngày phát hiện**  | `25/05/2026`    |
-| **Trạng thái**      | `Open`          |
+| **Attribute**   | Details         |
+| --------------- | --------------- |
+| **BUG ID**      | `BUG-12`        |
+| **Related ID**  | `TC-45`         |
+| **Related Req** | `REQ-07`        |
+| **Severity**    | `Medium`        |
+| **Reporter**    | `Bùi Mạnh Hiếu` |
+| **Date Found**  | `25/05/2026`    |
+| **Status**      | `Open`          |
 
-**Tiêu đề:**
-`Nhập email đã tồn tại nhưng lại báo "Email không hợp lệ" thay vì báo "Email đã tồn tại"`
+**Title:**
+`Entering an existing email address results in a "Invalid email address" message instead of "Email address already exists"`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Windows 10`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Windows 10`
+- UI Language: `Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Đăng nhập được vào tài khoản thủ thư`
+**Prerequisites:**
+`Login to librarian account successful`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập tài khoản thủ thư`
-2. `Bước 2: Thêm thành viên`
-3. `Bước 3: Nhập vào 1 email đã tồn tại`
+1. `Step 1: Log in to your librarian account`
+2. `Step 2: Add a member`
+3. `Step 3: Enter an existing email address`
 
-**Kết quả mong đợi:**
-`Hệ thống trả về thông báo lỗi phân biệt rõ ràng: "Email này đã được đăng ký trên hệ thống" để người vận hành nắm rõ lý do.`
+**Expected Result:**
+`The system returns a clear error message: "This email address is already registered on the system" so that the operator understands the reason`
 
-**Kết quả thực tế:**
-`Hệ thống hiển thị một thông báo chung chung là "Email không hợp lệ", dễ gây lầm tưởng rằng định dạng cấu trúc chuỗi email bị sai.`
+**Actual Result:**
+`The system displays a generic message saying "Invalid email" which can easily lead to the misconception that the email string structure is incorrect`
 
-**Tác động:**
-`Gây cản trở và nhầm lẫn cho thủ thư trong quá trình quản lý, tạo mới hồ sơ thành viên.`
+**Impact:**
+`This causes obstruction and confusion for librarians during the process of managing and creating new member records`
 
-**Minh chứng:**
-![BUG-14](/submisions/images/BUG-14.png)
+**Evidence:**
+![BUG-14](./images/BUG-14.png)
 
-**Đề xuất xử lý:**
-`Cập nhật lại logic validate ở cả Client-side và Server-side. Khi nhận mã lỗi trùng lặp cơ sở dữ liệu (ví dụ: lỗi Unique Constraint từ cơ sở dữ liệu), hệ thống cần map đúng thông báo tương ứng thay vì gộp chung vào validation định dạng.`
+**Proposed Solution:**
+`Update the validation logic on both the client-side and server-side. When receiving database duplicate error codes (e.g., Unique Constraint error from the database), the system needs to map the correct corresponding message instead of including it in the format validation`
 
 ---
 
 ## BUG-13
 
-| Thuộc tính          | Chi tiết     |
-| ------------------- | ------------ |
-| **Mã lỗi**          | `BUG-13`     |
-| **TC liên quan**    | `TC-01`      |
-| **REQ liên quan**   | `REQ-05`     |
-| **Mức độ**          | `High`       |
-| **Người phát hiện** | `Đỗ Hữu Đức` |
-| **Ngày phát hiện**  | `26/05/2026` |
-| **Trạng thái**      | `Open`       |
+| **Attribute**   | Details      |
+| --------------- | ------------ |
+| **BUG ID**      | `BUG-13`     |
+| **Related ID**  | `TC-01`      |
+| **Related Req** | `REQ-05`     |
+| **Severity**    | `High`       |
+| **Reporter**    | `Đỗ Hữu Đức` |
+| **Date Found**  | `26/05/2026` |
+| **Status**      | `Open`       |
 
-**Tiêu đề:**
-`Cho phép thành viên tự ý gia hạn hoặc trả sách của người khác`
+**Title:**
+`Allows members to renew or return other people's books at their own discretion`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Việt & Tiếng Anh
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: `Vietnammese & English`
 
-**Điều kiện tiên quyết:**
+**Prerequisites:**
 
-- Tài khoản thành viên đã đăng nhập vào hệ thống thành công.
-- Có một thành viên khác (Thành viên B) đang mượn sách và vô tình lộ mã mượn hoặc ID lượt mượn.
+- `The member's account has successfully logged into the system`
+- `Another member (Member B) is borrowing books and has inadvertently revealed their borrowing code or borrowing ID`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập vào hệ thống bằng tài khoản của thành viên A.`
-2. `Bước 2: Truy cập vào mục Mượn/Trả (Tra cứu phiếu mượn) và nhập mã của thành viên B.`
-3. `Bước 3: Tiến hành thực hiện thao tác trả sách hoặc gia hạn.`
+1. `Step 1: Log in to the system using member A's account`
+2. `Step 2: Access the Borrow/Return section (Look up loan slip) and enter member B's code`
+3. `Step 3: Proceed to return the book or renew the loan`
 
-**Kết quả mong đợi:**
-`Hệ thống phải chặn hành động này lại và báo lỗi phân quyền (403 Forbidden). Chỉ chính chủ tài khoản đang mượn sách (hoặc Thủ thư/Admin) mới có quyền gửi yêu cầu hoặc thực hiện thao tác xử lý phiếu mượn đó.`
+**Expected Result:**
+`The system must block this action and report a permission error (403 Forbidden). Only the account holder borrowing the book (or the librarian/administrator) has the right to send the request or process the loan slip`
 
-**Kết quả thực tế:**
-`Hệ thống cho phép thành viên A tự ý bấm trả sách (hoặc gửi lệnh API trả sách thành công) cho các cuốn sách thuộc sở hữu lượt mượn của thành viên B.`
+**Actual Result:**
+`The system allows member A to independently return books (or send a successful book return API command) for books borrowed by member B`
 
-**Tác động:**
-`Phá hoại dữ liệu mượn trả của người khác. Gây lỗi logic nghiêm trọng trong quản lý quy trình mượn sách, khiến thành viên B bị mất sách trên thực tế nhưng hệ thống lại ghi nhận là đã trả, gây tranh chấp và khó khăn khi thủ thư đối chiếu dữ liệu kho.`
+**Impact:**
+`Destroying other users' borrowing and returning data. Causing serious logical errors in the book borrowing process management, resulting in user B losing the book in reality but the system recording it as returned, causing disputes and difficulties for librarians when cross-referencing inventory data`
 
-**Minh chứng:**
-![BUG-15](/submisions/images/BUG-15.png)
+**Evidence:**
+![BUG-15](./images/BUG-15.png)
 
-**Đề xuất xử lý:**
-`Bổ sung kiểm tra quyền sở hữu (Authorization Check) ở tầng Backend đối với các API liên quan đến mượn/trả/gia hạn sách: Đảm bảo Session/Token ID của người dùng đang gửi Request phải trùng khớp với UserID ghi nhận trên lượt mượn của cuốn sách đó trong Database.`
+**Proposed Solution:**
+`Add backend authorization checks for APIs related to borrowing/returning/renewing books: Ensure the Session/Token ID of the user sending the request matches the UserID recorded in the database for that book's borrowing history`
 
 ---
 
 ## BUG-14
 
-| Thuộc tính          | Chi tiết          |
-| ------------------- | ----------------- |
-| **Mã lỗi**          | `BUG-14`          |
-| **TC liên quan**    | `TC-01`           |
-| **REQ liên quan**   | `REQ-03`          |
-| **Mức độ**          | `Low`             |
-| **Người phát hiện** | `Hoàng Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`      |
-| **Trạng thái**      | `Open`            |
+| **Attribute**   | Details           |
+| --------------- | ----------------- |
+| **BUG ID**      | `BUG-14`          |
+| **Related ID**  | `TC-01`           |
+| **Related Req** | `REQ-03`          |
+| **Severity**    | `Low`             |
+| **Reporter**    | `Hoàng Thành Đạt` |
+| **Date Found**  | `25/05/2026`      |
+| **Status**      | `Open`            |
 
-**Tiêu đề:**
-`Lỗi dịch phân loại (Category) khi chuyển tiếng Anh vẫn để nguyên là tiếng Việt`
+**Title:**
+`Category translation error: when translating from English, the text remains in Vietnamese`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Anh
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: `English`
 
-**Điều kiện tiên quyết:**
-`Trang đăng nhập đã mở, tài khoản đã đăng nhập thành công, chuyển giao diện sang tiếng Anh.`
+**Prerequisites:**
+`The login page has opened, the account has successfully logged in, and the interface has switched to English`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập tài khoản thành công.`
-2. `Bước 2: Chuyển giao diện sang tiếng Anh.`
+1. `Step 1: Log in to your account successfully`
+2. `Step 2: Switch the interface to English`
 
-**Kết quả mong đợi:**
-`Khi chuyển đổi giao diện sang ngôn ngữ tiếng Anh, toàn bộ các nhãn văn bản và dữ liệu tĩnh của phân loại (Category) hiển thị trên trang web phải được dịch sang tiếng Anh tương ứng.`
+**Expected Result:**
+`When switching the interface to English, all text labels and static category data displayed on the website must be translated into English accordingly`
 
-**Kết quả thực tế:**
-`Hệ thống đổi giao diện nhưng danh mục phân loại "Available Categories: Công nghệ, giáo dục, kinh tế, kĩ năng mềm, quản trị, văn học" vẫn giữ nguyên nội dung hiển thị bằng tiếng Việt.`
+**Actual Result:**
+`The system's interface has changed, but the category list "Available Categories: Technology, Education, Economics, Soft Skills, Management, Literature" retains its original content displayed in Vietnamese`
 
-**Tác động:**
-`Gây mất tính đồng bộ nhất quán về trải nghiệm đa ngôn ngữ (Localization), cản trở khả năng tiếp cận đối với người dùng không sử dụng tiếng Việt.`
+**Impact:**
+`This leads to a lack of consistency in the multilingual (localization) experience, hindering accessibility for users who do not speak Vietnamese`
 
-**Minh chứng:**
-![BUG-16](/submisions/images/BUG-16.png)
+**Evidence:**
+![BUG-16](./images/BUG-16.png)
 
-**Đề xuất xử lý:**
-`Đưa mảng danh sách phân loại (Categories) vào tệp lưu trữ localization dữ liệu đa ngôn ngữ hệ thống. Khi người dùng thực hiện switch ngôn ngữ, trigger hàm map để lấy chính xác bản dịch tiếng Anh tương ứng từ tệp ngôn ngữ.`
+**Proposed Solution:**
+`Includes an array of categories in the system's multilingual data localization file. When the user switches languages, triggers the map function to retrieve the exact corresponding English translation from the language file`
 
 ---
 
 ## BUG-15
 
-| Thuộc tính          | Chi tiết          |
-| ------------------- | ----------------- |
-| **Mã lỗi**          | `BUG-15`          |
-| **TC liên quan**    | `TC-44`           |
-| **REQ liên quan**   | `REQ-07`          |
-| **Mức độ**          | `High`            |
-| **Người phát hiện** | `Hoàng Thành Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`      |
-| **Trạng thái**      | `Open`            |
+| **Attribute**   | Details           |
+| --------------- | ----------------- |
+| **BUG ID**      | `BUG-15`          |
+| **Related ID**  | `TC-44`           |
+| **Related Req** | `REQ-07`          |
+| **Severity**    | `High`            |
+| **Reporter**    | `Hoàng Thành Đạt` |
+| **Date Found**  | `25/05/2026`      |
+| **Status**      | `Open`            |
 
-**Tiêu đề:**
-`Lỗi thêm được thành viên với email không hợp lệ định dạng domain`
+**Title:**
+`Error: Member added with invalid email address formatted incorrectly`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Việt
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: `Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Trang đăng nhập đã mở, đăng nhập bằng tài khoản thủ thư, vào mục thêm thành viên.`
+**Prerequisites:**
+`The login page is open. Log in using your librarian account and go to the "add member" section`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập tài khoản thành công bằng tài khoản thủ thư.`
-2. `Bước 2: Vào mục thêm thành viên.`
-3. `Bước 3: Nhập một thành viên với cấu trúc chuỗi email không hợp lệ (VD: hoangthanhdat212@gmail thay vì hoangthanhdat212@gmail.com).`
+1. `Step 1: Log in successfully using your librarian account`
+2. `Step 2: Go to the "Add Member" section`
+3. `Step 3: Enter a member with an invalid email address (e.g., hoangthanhdat212@gmail.com instead of hoangthanhdat212@gmail.com)`
 
-**Kết quả mong đợi:**
-`Hệ thống kích hoạt validator validate định dạng email, chặn hành động submit dữ liệu và thông báo lỗi cấu trúc email sai.`
+**Expected Result:**
+`The system activates a validator to validate email formatting, blocking data submission attempts and displaying an error message indicating incorrect email structure`
 
-**Kết quả thực tế:**
-`Hệ thống bỏ qua kiểm tra, vẫn thêm mới email không hợp lệ này vào cơ sở dữ liệu bình thường.`
+**Actual Result:**
+`The system bypassed the check and added this invalid email address to the database as usual`
 
-**Tác động:**
-`Gây khó khăn, sai lệch khi quản lý dữ liệu người dùng của thủ thư và làm rác hệ thống thông tin liên lạc.`
+**Impact:**
+`This creates difficulties and inaccuracies in librarians' management of user data and clutters the communication system`
 
-**Minh chứng:**
-![BUG-17](/submisions/images/BUG-11/BUG-11_01.png)
-![BUG-17](/submisions/images/BUG-11/BUG-11_02.png)
+**Evidence:**
+![BUG-17](./images/BUG-11/BUG-11_01.png)
+![BUG-17](./images/BUG-11/BUG-11_02.png)
 
-**Đề xuất xử lý:**
-`Triển khai Regex kiểm tra chặt chẽ định dạng email ở cả Front-end trước khi submit và Back-end trước khi ghi dữ liệu. Đồng thời kết hợp gửi mã/link kích hoạt xác thực tài khoản đến email để đảm bảo hòm thư đó tồn tại thật.`
+**Proposed Solution:**
+`Implementing Regex rigorously checks email format on both the front-end before submission and the back-end before writing data. It also involves sending activation codes/links to the email address to verify the account and ensure the mailbox exists`
 
 ---
 
 ## BUG-16
 
-| Thuộc tính          | Chi tiết               |
-| ------------------- | ---------------------- |
-| **Mã lỗi**          | `BUG-16`               |
-| **TC liên quan**    | `TC-19`                |
-| **REQ liên quan**   | `REQ-06`               |
-| **Mức độ**          | `High`                 |
-| **Người phát hiện** | `Nguyễn Cao Hoàng Đạt` |
-| **Ngày phát hiện**  | `25/05/2026`           |
-| **Trạng thái**      | `Open`                 |
+| **Attribute**   | Details                |
+| --------------- | ---------------------- |
+| **BUG ID**      | `BUG-16`               |
+| **Related ID**  | `TC-19`                |
+| **Related Req** | `REQ-06`               |
+| **Severity**    | `High`                 |
+| **Reporter**    | `Nguyễn Cao Hoàng Đạt` |
+| **Date Found**  | `25/05/2026`           |
+| **Status**      | `Open`                 |
 
-**Tiêu đề:**
-`Hiển thị sai số lượng sách quá hạn khi nhấn nút lần thứ 2 'Kiểm tra quá hạn'`
+**Title:**
+`Incorrect number of overdue books displayed when pressing the 'Check Overdue' button a second time`
 
-**Môi trường:**
+**Enviroment:**
 
-- Trình duyệt: Chrome `Version 148.0.7778.179`
-- Hệ điều hành: `Window 11`
-- Ngôn ngữ giao diện: Tiếng Việt - Tiếng Anh
+- Browser: Chrome `Version 148.0.7778.179`
+- OS: `Window 11`
+- UI Language: `English & Vietnammese`
 
-**Điều kiện tiên quyết:**
-`Đã đăng nhập tài khoản thủ thư, hệ thống có ít nhất 1 số sách đang quá hạn, đang ở màn hình quản lý/ kiểm tra quá hạn.`
+**Prerequisites:**
+`The librarian account has been logged in, and the system has at least one book that is overdue; it is currently on the overdue book management/checking screen`
 
-**Bước tái hiện:**
+**Steps to Reproduce:**
 
-1. `Bước 1: Đăng nhập tài khoản thủ thư thành công.`
-2. `Bước 2: Vào mục "Kiểm tra quá hạn". Bấm nút "Kiểm tra quá hạn" lần đầu → ghi nhận số lượng sách quá hạn hiển thị.`
-3. `Bước 3: Bấm nút "Kiểm tra quá hạn" lần thứ 2.`
+1. `Step 1: Successfully log in to your librarian account`
+2. `Step 2: Go to the "Check Overdue" section. Click the "Check Overdue" button the first time → record the number of overdue books displayed`
+3. `Step 3: Click the "Check Overdue" button a second time`
 
-**Kết quả mong đợi:**
-`Mỗi lần bấm "Kiểm tra quá hạn" phải trả về cùng một kết quả chính xác, nhất quán nếu dữ liệu hệ thống không có sự thay đổi nào.`
+**Expected Result:**
+`Each time the "Check for Overdue Date" button is clicked, it must return the same accurate and consistent result if the system data has not changed`
 
-**Kết quả thực tế:**
-`Lần bấm thứ 2 hiển thị số lượng sách quá hạn sai lệch, khác với lần đầu, dù không có sự biến động dữ liệu nào giữa 2 lần tương tác.`
+**Actual Result:**
+`The second click displayed an incorrect number of overdue books, different from the first, even though there was no data fluctuation between the two interactions`
 
-**Tác động:**
-`Làm giảm độ tin cậy của hệ thống, khiến thủ thư bối rối không biết tin vào kết quả nào. Có thể dẫn đến nghiệp vụ bỏ sót hoặc xử lý sai lệch hồ sơ sách quá hạn của người dùng.`
+**Impact:**
+`This reduces the reliability of the system, confusing librarians who don't know which results to trust. It can lead to missed or incorrect processing of users' overdue book records`
 
-**Minh chứng:**
-![BUG-19](/submisions/images/BUG-19.png)
+**Evidence:**
+![BUG-19](./images/BUG-19.png)
 
-**Đề xuất xử lý:**
-`Kiểm tra lại luồng xử lý dữ liệu ở Client-side: đảm bảo làm sạch (clear/reset) cấu trúc lưu trữ danh sách hoặc bộ đếm đè cũ trước khi nhận mảng dữ liệu mới từ API trả về để tránh tình trạng append (gộp dữ liệu thừa). Phía Server-side cần cam kết cung cấp snapshot dữ liệu độc lập tại thời điểm request.`
+**Proposed Solution:**
+`Review the client-side data processing flow: ensure that the list storage structure or override counter is cleaned (cleared/reset) before receiving the new data array from the API to avoid appending (merging redundant data). The server-side needs to commit to providing independent data snapshots at the time of the request`
