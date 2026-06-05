@@ -257,7 +257,7 @@
 | **Status**      | `Open`        |
 
 **Title:**
-`Members are free to look up each other's codes`
+`Members are free to look up each other's borrowing books without any restrictions`
 
 **Enviroment:**
 
@@ -346,7 +346,7 @@
 | **BUG ID**      | `BUG-08`          |
 | **Related ID**  | `TC-26`           |
 | **Related Req** | `REQ-04`          |
-| **Severity**    | `Low`             |
+| **Severity**    | `Medium`             |
 | **Reporter**    | `Hoàng Thành Đạt` |
 | **Date Found**  | `25/05/2026`      |
 | **Status**      | `Open`            |
