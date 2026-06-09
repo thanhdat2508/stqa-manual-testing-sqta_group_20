@@ -346,7 +346,7 @@
 | **BUG ID**      | `BUG-08`          |
 | **Related ID**  | `TC-26`           |
 | **Related Req** | `REQ-04`          |
-| **Severity**    | `Medium`             |
+| **Severity**    | `Medium`          |
 | **Reporter**    | `Hoàng Thành Đạt` |
 | **Date Found**  | `25/05/2026`      |
 | **Status**      | `Open`            |
