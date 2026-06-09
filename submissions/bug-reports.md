@@ -712,8 +712,8 @@
 `This creates difficulties and inaccuracies in librarians' management of user data and clutters the communication system`
 
 **Evidence:**
-![BUG-17](./images/BUG-11/BUG-11_01.png)
-![BUG-17](./images/BUG-11/BUG-11_02.png)
+![BUG-17](./images/BUG-11_01.png)
+![BUG-17](./images/BUG-11_02.png)
 
 **Proposed Solution:**
 `Implementing Regex rigorously checks email format on both the front-end before submission and the back-end before writing data. It also involves sending activation codes/links to the email address to verify the account and ensure the mailbox exists`
